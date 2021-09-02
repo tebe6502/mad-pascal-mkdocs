@@ -42,7 +42,7 @@ Jeśli jest to możliwe kompilator przekazuje parametry do funkcji poprzez zmien
 
 **Procedury/Funkcje** oznaczona przez `ASSEMBLER` mogą składać się tylko z bloku **ASM**. Kompilator nie dokonuje analizy składni takich bloków, traktuje je jak komentarz, ewentualne błędy zostaną wychwycone dopiero podczas asemblacji.
 
-!!! Wymagane jest aby zachować stan rejestru X, który używany jest do obsługi stosu programowego MP. !!!
+	Wymagane jest aby zachować stan rejestru X, który używany jest do obsługi stosu programowego MP.
 
 Kompilator dopuszcza dwie składnie bloku `ASM`, z klamrami { } jak dla komentarza i standardową bez klamer.
 

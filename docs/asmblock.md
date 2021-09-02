@@ -4,6 +4,8 @@
 
 Bloki assemblera nie są przez kompilator weryfikowane pod względem składni, dokonuje tego dopiero **Mad Assembler**.
 
+	Wymagane jest aby zachować stan rejestru X, który używany jest do obsługi stosu programowego MP.
+
 Kompilator dopuszcza dwie składnie bloku `ASM`, z klamrami { } jak dla komentarza i standardową bez klamer
 
 ```delphi
