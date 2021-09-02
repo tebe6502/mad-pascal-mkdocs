@@ -42,10 +42,38 @@ Jeśli jest to możliwe kompilator przekazuje parametry do funkcji poprzez zmien
 
 **Procedury/Funkcje** oznaczona przez `ASSEMBLER` mogą składać się tylko z bloku **ASM**. Kompilator nie dokonuje analizy składni takich bloków, traktuje je jak komentarz, ewentualne błędy zostaną wychwycone dopiero podczas asemblacji.
 
+!!! Wymagane jest aby zachować stan rejestru X, który używany jest do obsługi stosu programowego MP. !!!
+
+Kompilator dopuszcza dwie składnie bloku `ASM`, z klamrami { } jak dla komentarza i standardową bez klamer.
+
 ```delphi
-procedure color(a: byte); assembler;
+ASM
+  lda #10
+  sta 712
+END;
+```
+
+```delphi
+ASM
+{  lda #10
+   sta 712
+};
+```
+
+```delphi
+procedure name; assembler;
 asm
-{   mva a 712
+  lda #10
+  sta 712
+end;
+```
+
+```delphi
+procedure name; assembler;
+asm
+{
+  lda #10
+  sta 712
 };
 end;
 ```

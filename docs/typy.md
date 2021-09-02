@@ -252,6 +252,8 @@ numread  .word      ; pointer to variable, length of loaded data
 
 Do procedur, funkcji typ `FILE` może być przekazywany tylko jako zmienna.
 
+Typy, procedury i funkcje związane z plikami binarnymi:
+`Assign` - `Close` - `Reset` - `Rewrite` - `BlockRead` - `BlockWrite` - `FileExists` - `IOResult`
 
 ## [Plikowe tekstowe](https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4)
 
@@ -278,3 +280,6 @@ numread  .word      ; pointer to variable, length of loaded data
 ```
 
 Do procedur, funkcji typ `TEXT` może być przekazywany tylko jako zmienna.
+
+Typy, procedury i funkcje związane z plikami tekstowymi:
+`Assign` - `Close` - `Reset` - `Rewrite` - `Append` - `Readln` - `Writeln` - `FileExists` - `IOResult`

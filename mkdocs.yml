@@ -12,6 +12,7 @@ theme:
 
 nav:
     - Wprowadzenie: wprowadzenie.md
+    - Mapa pamięci: mapa.md
     - Sposób użycia: sposob-uzycia.md
     - Składnia: skladnia.md
     - Wstawki assemblera: asmblock.md
