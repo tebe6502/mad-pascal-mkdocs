@@ -303,7 +303,9 @@ Zestaw znaków z **ROM** `$E000..$E3FF` zostaje przepisany pod ten sam adres w *
 RCLABEL RCTYPE RCFILE [PAR0 PAR1 PAR2 PAR3 PAR4 PAR5 PAR6 PAR7]
 ```
 
-Dyrektywa dołączenia pliku z zasobami. Plik zasobów jest plikiem tekstowym, każdy jego kolejny wiersz powinien składać się z trzech pól rozdzielonych "białym znakiem": etykieta `RCLABEL` (jej deklaracja musi znaleźć się także w programie), typ zasobów `RCTYPE`, lokalizacja pliku `RCFILE`. Aktualnie w pliku `BASE\RES6502.ASM` znajdują się makra do obsługi 10 typów zasobów `RCTYPE`:
+Dyrektywa dołączenia pliku z zasobami.
+
+Plik zasobów jest plikiem tekstowym, każdy jego kolejny wiersz powinien składać się z trzech pól rozdzielonych "białym znakiem": etykieta `RCLABEL` (jej deklaracja musi znaleźć się także w programie), typ zasobów `RCTYPE`, lokalizacja pliku `RCFILE`. Aktualnie w pliku `BASE\RES6502.ASM` znajdują się makra do obsługi 10 typów zasobów `RCTYPE`:
 
 #### `RCDATA`
 
