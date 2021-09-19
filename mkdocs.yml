@@ -15,16 +15,17 @@ nav:
     - Mapa pamięci: mapa.md
     - Sposób użycia: sposob-uzycia.md
     - Składnia: skladnia.md
-    - Wstawki assemblera: asmblock.md
-    - Pliki zasobów: zasoby.md
     - Typy: typy.md
     - Stałe: stale.md
     - Zmienne: zmienne.md
     - Instrukcje: instrukcje.md
+    - Makra: makra.md
+    - Wstawki assemblera: asm.md
+    - Pliki zasobów: zasoby.md
     - Procedury, funkcje, modyfikatory: procedury-funkcje.md
     - Obsługa przerwań: przerwania.md
     - Moduły: moduly.md
     - Biblioteki podstawowe: biblioteki-podstawowe.md
-    - Porady: tricks.md
+    - Porady: porady.md
     - Przykłady: przyklady.md
     - Projekty: projekty.md

@@ -2,7 +2,7 @@
 
 ## VBL, DLI
 
-Do obsługi przerwań VBL, DLI dedykowane są dwie procedury GetIntVec oraz SetIntVec. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
+Do obsługi przerwań **VBL**, **DLI** dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
 
 ### GetIntVec
 
@@ -40,12 +40,12 @@ SetIntVec(iVBL, @newVBL);
 end.
 ```
 
-Przerwanie `VBL` kończymy skokiem pod adres `XITVBV` ($E462) co spowoduje przywrócenie wartości rejestrów A-X-Y CPU6502.
+Przerwanie **VBL** kończymy skokiem pod adres `XITVBV` ($E462) co spowoduje przywrócenie wartości rejestrów `A` `X` `Y` **CPU6502**.
 
 
 ## IRQ - TIMER1, TIMER2, TIMER4
 
-Do obsługi przerwań IRQ - TIMER1, TIMER2, TIMER4 dedykowane są dwie procedury GetIntVec oraz SetIntVec. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
+Do obsługi przerwań **IRQ** - **TIMER1**, **TIMER2**, **TIMER4** dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
 
 ### GetIntVec
 
@@ -90,7 +90,7 @@ end.
 
 System wykonując skok do procedury obsługi przerwania odkłada wcześniej zawartość akumulatora na stos, należy o tym pamiętać i kończyć obsługę przerwania przez `PLA`.
 
-Do uruchomienia nowego przerwania IRQ wymagane jest podanie dodatkowych parametrów, takich jak wybór zegara bazowego `clock_base = [0,1]` oraz częstotliwość `rate = [6.255]`. Wartości `rate` mniejsze
+Do uruchomienia nowego przerwania **IRQ** wymagane jest podanie dodatkowych parametrów, takich jak wybór zegara bazowego `clock_base = [0,1]` oraz częstotliwość `rate = [6.255]`. Wartości `rate` mniejsze
 od `6` spowodują mocne spowolnienie systemu aż do ewentualnego jego zawieszenia.
 
     SetIntVec(iTIM1, pointer, clock_base, rate);
