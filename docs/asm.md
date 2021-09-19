@@ -4,7 +4,8 @@
 
 Bloki assemblera nie są przez kompilator weryfikowane pod względem składni, dokonuje tego dopiero **Mad Assembler**.
 
-> UWAGA: Wymagane jest aby zachować stan rejestru `X` `CPU6502`, który używany jest do obsługi stosu programowego **MP**.
+> **UWAGA:**  
+> _Wymagane jest aby zachować stan rejestru `X` `CPU6502`, który używany jest do obsługi stosu programowego **MP**._
 
 Kompilator dopuszcza dwie składnie bloku `ASM`, z klamrami { } jak dla komentarza i standardową bez klamer.
 
