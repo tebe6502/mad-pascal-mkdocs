@@ -24,6 +24,7 @@ Typ zasobu określa format włączanego pliku.
 | Typ zasobu | Opis                                                                                                   |
 |:----------:|--------------------------------------------------------------------------------------------------------|
 | RCDATA     | Dowolny typ danych.                                                                                    |
+| EXTMEM     | Dowolny typ danych ładowany do pamięci dodatkowej PORTB, adres ładowania ustalany jest na podstawie `RCLABEL`|
 | RCASM      | Plik w assemblerze, który zostanie dołączony i zasemblowany.                                           |
 | DOSFILE    | Plik z nagłówkiem **Atari DOS**, adres ładowania takiego pliku powinien być identyczny jak `RCLABEL`       |
 | RELOC      | Plik relokowalny w formacie **Mad Assemblera**, plik zostanie poddany relokacji pod wskazany adres `RCLABEL`|

@@ -74,7 +74,7 @@ begin
 end.
 ```
 
-Makra z parametrami obsługiwane są przez **MP** ale już nie są przez **FPC**, należy mieć to na uwadze jeśli zamierzamy testować kod na innych platformach sprzętowych.
+Makra z parametrami obsługiwane są przez **MP** ale nie są przez **FPC**, należy mieć to na uwadze jeśli zamierzamy testować kod na innych platformach sprzętowych.
 
 ```delphi
 {$define SIGN_MASK := $8000}

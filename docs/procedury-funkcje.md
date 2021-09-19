@@ -42,7 +42,8 @@ Jeśli jest to możliwe kompilator przekazuje parametry do funkcji poprzez zmien
 
 **Procedury/Funkcje** oznaczona przez `ASSEMBLER` mogą składać się tylko z bloku **ASM**. Kompilator nie dokonuje analizy składni takich bloków, traktuje je jak komentarz, ewentualne błędy zostaną wychwycone dopiero podczas asemblacji.
 
-	Wymagane jest aby zachować stan rejestru X, który używany jest do obsługi stosu programowego MP.
+> **UWAGA:**  
+> _Wymagane jest aby zachować stan rejestru `X` `CPU6502`, który używany jest do obsługi stosu programowego **MP**._
 
 Kompilator dopuszcza dwie składnie bloku `ASM`, z klamrami { } jak dla komentarza i standardową bez klamer.
 
@@ -134,7 +135,9 @@ Użycie modyfikatora `REGISTER` spowoduje, że trzy pierwsze parametry formalne 
 ### `interrupt`
 
 **Procedury/Funkcje** oznaczone przez `INTERRUPT` kompilator będzie kończył rozkazem `RTI` (standardowo `RTS`).
+
 Niezależnie czy w programie wystąpi wywołanie takiej **procedury/funkcji** kompilator zawsze wygeneruje dla niej kod.
+
 Na wejściu **procedury/funkcji** oznaczonej przez `INTERRUPT` programista musi zadbać o zachowanie rejestrów **CPU** `A` `X` `Y`, na wyjściu o przywrócenie stanu takich rejestrów, kompilator ogranicza się tylko do wstawienia końcowego rozkazu `RTI`.
 Kompilator zgłosi błąd jeśli w takiej procedurze/funkcji wystąpią rozkazy odwołujące się do zmiennych `:BP`, `:BP2` lub `:STACKORIGIN`.
 
@@ -162,6 +165,6 @@ Użycie modyfikatora `STDCALL` spowoduje wymuszenie przekazywania parametrów do
 
 ### `inline`
 
-Procedura, funkcja zostaje zamieniona na makro.
+Procedura, funkcja zostaje zamieniona na makro **Mad Assemblera**, pozbywamy się wywołań z udziałem rozkazu `JSR`.
 
-
+Nie ma możliwości używania rekurencji dla takich **procedur/funkcji**.

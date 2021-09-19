@@ -222,6 +222,8 @@ type
     end;
 ```
 
+W obiektach możliwe jest użycie procedur `CONSTRUCTOR` oraz `DESTRUCTOR`. Wywołanie takich procedur odbywa się tylko ręcznie.
+
 ## [Plikowe binarne](https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4)
 
 Typ `FILE` reprezentuje uchwyt do pliku oraz definiuje rozmiar rekordu.
