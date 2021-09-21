@@ -7,8 +7,8 @@
 # Historia
 
 ## [1.6.5](https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.5)
-- przepisana obsługa obsługa CASE OF
-- przerobiony kod optymalizacja dla tablic nie przekraczających 256 bajtów
+- przepisana obsługa CASE OF
+- przepisany kod optymalizacji dla tablic nie przekraczających 256 bajtów
 - optymalizacja dla warunków '>', '<='
 - dodana alokacja pamięci dla tablic typu STRING (do tej pory odkładany był tylko wskaźnik, działało to jak 'tablica ^string')
 - dodana nowa platforma, Commodore C4 Plus
