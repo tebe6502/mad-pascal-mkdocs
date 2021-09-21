@@ -6,6 +6,23 @@
 
 # Historia
 
+## [1.6.5](https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.5)
+- przepisana obsługa obsługa CASE OF
+- przerobiony kod optymalizacja dla tablic nie przekraczających 256 bajtów
+- optymalizacja dla warunków '>', '<='
+- dodana alokacja pamięci dla tablic typu STRING (do tej pory odkładany był tylko wskaźnik, działało to jak 'tablica ^string')
+- dodana nowa platforma, Commodore C4 Plus
+- unit GRAPHICS: procedura Font(charset: pointer);
+- unit STRINGUTILS
+- unit MISC, RMT, CMC, MPT: DetectAntic
+- unit SYSTEM zmieniony w celu uwzględnienia platform ATARI, C64, C4Plus
+- unit ZX0
+- unit HCM2
+- dodano obsługa $resource (RCDATA, RCASM) dla platform C64, C4Plus, zasoby są sortowane według rosnących adresów
+- rozszerzony zasób RCDATA o możliwość określenia ofsetu dla ładowanego pliku
+- dodano obsługę składni zgodnej z Pascalem dla bloku ASM, nie są wymagane nawiasy { }
+- dodana nowa dyrektywa {$codealign proc = wartość}, {$codealign loop = wartość} pozwalająca na wyrównanie wygenerowanego kodu
+
 ## [1.6.4](https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.4)
 
 - procedury mnożenie u8x8, u16x16 zastąpione kodem z CC65
