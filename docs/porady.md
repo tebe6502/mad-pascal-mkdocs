@@ -12,7 +12,7 @@ for i:=0 to 10 do;
 **FPC** po zakończeniu petli `i = 10`, **MP** `i = 11`
 
 
-## PARAMETRY FUNKCJI, PROCEDURY
+## PARAMETRY FUNKCJI, PROCEDUR
 
 Dla poniższego przykładu **FPC** wygeneruje inny wynik niż **MP**
 
