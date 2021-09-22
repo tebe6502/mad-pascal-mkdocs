@@ -23,5 +23,23 @@
 
 * autor: bocianu
 * platforma: A8
-* [strona domowa](http://bocianu.atari.pl/blog/starydom)
+* [strona domowa](https://bocianu.atari.pl/blog/starydom)
 * [źródła](https://gitlab.com/bocianu/oldmansion)
+
+## Pac Mad
+
+![Flob](gfx/Pacmad.gif)
+
+* autor: bocianu
+* platforma: A8
+* [strona domowa](https://bocianu.atari.pl/blog/pacmad)
+* [źródła](https://gitlab.com/bocianu/PacMad)
+
+## Flob
+
+![Flob](gfx/Flob.gif)
+
+* autor: bocianu
+* platforma: A8
+* [strona domowa](https://bocianu.atari.pl/blog/flob)
+* [źródła](https://gitlab.com/bocianu/flob)

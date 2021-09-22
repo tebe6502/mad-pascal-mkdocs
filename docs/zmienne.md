@@ -59,7 +59,7 @@ var
 
 ## [REGISTER]()
 
-Modyfikator `REGISTER` ustala adres pamięci dla zmiennych `VAR` na stronie zerowej.
+Modyfikator `REGISTER` ustala adres pamięci dla zmiennych `VAR` na stronie zerowej (maksymalnie można przydzielić 16 bajtów).
 
 ```delphi
 var
@@ -67,11 +67,8 @@ var
    c: integer register;
 ```
 
-	!!! UWAGA !!!
-
-	Z tego samego obszaru 16 bajtów strony zerowej korzysta kompilator alokując tam swoje
-	programowe rejestry `EDX` `ECX` `EAX` dlatego użycie modyfikatora `REGISTER` nie jest
-	możliwe kiedy procedura lub funkcja też używa `REGISTER`.
+> **UWAGA:**  
+> _Z tego samego obszaru 16 bajtów strony zerowej korzysta kompilator alokując tam swoje programowe rejestry `EDX` `ECX` `EAX` dlatego użycie modyfikatora `REGISTER` nie jest możliwe kiedy procedura lub funkcja też używa `REGISTER`._
 
 
 ```delphi

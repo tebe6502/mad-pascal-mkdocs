@@ -285,14 +285,10 @@ Zyskujemy dostęp do pamięci *pod ROM-em*, `$C000..$CFFF`, `$D800..$FFFF`.
 
 Zestaw znaków z **ROM** `$E000..$E3FF` zostaje przepisany pod ten sam adres w **RAM**, zostaje zainstalowany handler przerwań `NMI`, `IRQ`. System operacyjny działa normalnie, można z poziomu **ASM** wywoływać procedury w nim zawarte poprzez makro `m@call`.
 
-    !!! UWAGA !!!
-
-    W przypadku umieszczenia programu ANTIC-a Display List pod ROM-em każde naciśnięcie
-    klawisza będzie powodować wywołanie przerwania IRQ obsługującego klawiaturę.
-
-    Program ANTIC-a będzie zakłócany poprzez przełączanie ROM - RAM, w przypadku gdy
-    korzystamy z przerwania Display Listy (DLI) może dojść do uszkodzenia stosu
-    i wyłożenia się systemu.
+> **UWAGA:**  
+> _W przypadku umieszczenia programu **ANTIC**-a **Display List** pod **ROM**-em każde naciśnięcie klawisza będzie powodować wywołanie przerwania **IRQ** obsługującego klawiaturę._
+>
+> _Program **ANTIC**-a będzie zakłócany poprzez przełączanie **ROM** - **RAM**, w przypadku gdy korzystamy z przerwania **Display List**-y (**DLI**) może dojść do uszkodzenia stosu i wyłożenia się systemu._
 
 ### [$R, $RESOURCE](https://www.freepascal.org/docs-html/prog/progsu67.html#x74-730001.2.67)
 
@@ -311,7 +307,7 @@ Plik zasobów jest plikiem tekstowym, każdy jego kolejny wiersz powinien skład
 
 Dowolny typ danych.
 
-#### 'EXTMEM'
+#### `EXTMEM`
 
 Dowolny typ danych ładowany do pamięci dodatkowej PORTB, adres ładowania ustalany jest na podstawie `RCLABEL`.
 
