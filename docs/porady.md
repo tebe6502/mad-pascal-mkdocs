@@ -81,7 +81,7 @@ można zastąpić
 
 Gdy assemblacja pliku *.a65 powoduje 'Infinite loop', plik OBX zostaje zapisany ale jest uszkodzony.
 
-Aby pozbyć się takiej sytuacja należy ustawic na sztywno `DATAORIGIN` (-data:ADDRESS)
+Aby pozbyć się takiej sytuacja należy ustawic na stały adres `DATAORIGIN` (-data:ADDRESS)
 
 ## [USES](../moduly/#uses)
 
