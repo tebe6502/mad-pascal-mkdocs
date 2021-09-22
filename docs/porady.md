@@ -50,7 +50,7 @@ Kefrens(ran(5)+3, ran(3)+5);
 ## STRINGI W PAMIĘCI
 
 ```delphi
- writeln('ala','ma',kota');
+ writeln('ala','ma','kota');
  writeln('ala','ma','psa');
 ```
 
