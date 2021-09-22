@@ -2,12 +2,12 @@
 
 ## ASM
 
-Bloki assemblera nie są przez kompilator weryfikowane pod względem składni, dokonuje tego dopiero **Mad Assembler**.
+Assembler blocks are not verified for syntax by the compiler, this is done only by **Mad Assembler**.
 
-> **UWAGA:**  
-> _Wymagane jest aby zachować stan rejestru `X` `CPU6502`, który używany jest do obsługi stosu programowego **MP**._
+> **WARNING:**  
+> _It is required to maintain the state of the `X` `CPU6502` register, which is used to operate the **MP** software stack._
 
-Kompilator dopuszcza dwie składnie bloku `ASM`, z klamrami { } jak dla komentarza i standardową bez klamer.
+The compiler allows two syntaxes for the `ASM` block, with { } brackets as for a comment and the standard one without brackets.
 
 ```delphi
 ASM
