@@ -1,9 +1,9 @@
 site_name: Mad-Pascal
 site_author: TeBe
-site_description: "Mad-Pascal Documentation"
+site_description: "Mad-Pascal Dokumentacja"
 site_keyword: "cross-compiler"
 
-repo_url: https://github.com/tebe6502/mad-pascal-en-mkdocs/
+repo_url: https://github.com/tebe6502/mad-pascal-mkdocs/
 
 theme:
     name: readthedocs
@@ -11,21 +11,21 @@ theme:
         - delphi
 
 nav:
-    - Introduction: introduction.md
-    - Memory map: map.md
-    - Usage: usage.md
-    - Syntax: syntax.md
-    - Constants: constants.md
-    - Variables: variables.md
-    - Types: types.md
-    - Instructions: instructions.md
-    - Macros: macros.md
-    - Assembly instructions: asm.md
-    - Resource files: resources.md
-    - Procedures, functions, modifiers: procedures-functions.md
-    - Interrupt handling: interrupts.md
-    - Units: units.md
-    - Essential Libraries: essential-libraries.md
-    - Tips and tricks: tips.md
-    - Examples: examples.md
-    - Projects: projects.md
+    - Wprowadzenie: wprowadzenie.md
+    - Mapa pamięci: mapa.md
+    - Sposób użycia: sposob-uzycia.md
+    - Składnia: skladnia.md
+    - Typy: typy.md
+    - Stałe: stale.md
+    - Zmienne: zmienne.md
+    - Instrukcje: instrukcje.md
+    - Makra: makra.md
+    - Wstawki assemblera: asm.md
+    - Pliki zasobów: zasoby.md
+    - Procedury, funkcje, modyfikatory: procedury-funkcje.md
+    - Obsługa przerwań: przerwania.md
+    - Moduły: moduly.md
+    - Biblioteki podstawowe: biblioteki-podstawowe.md
+    - Porady: porady.md
+    - Przykłady: przyklady.md
+    - Projekty: projekty.md

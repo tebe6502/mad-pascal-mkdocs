@@ -11,6 +11,26 @@ for i:=0 to 10 do;
 
 **FPC** po zakończeniu petli `i = 10`, **MP** `i = 11`
 
+## SHL
+
+**FPC** podaje inne wyniki dla SHL które przekracza rozmiar danego typu, np.:
+
+```delphi
+i: byte;
+c: cardinal;
+
+i:=1;
+c:=i shl 33;
+```
+
+Dla w/w przykładu **FPC** zwróci wartość `c = 2`, **MP** zwróci `c = 0`.
+
+Natomiast dla:
+```delphi
+c:=1 shl 33;
+```
+
+**FPC** zwróci `c = 0`, tak samo jak **MP*.
 
 ## PARAMETRY FUNKCJI, PROCEDUR
 
@@ -81,7 +101,7 @@ można zastąpić
 
 Gdy assemblacja pliku *.a65 powoduje 'Infinite loop', plik OBX zostaje zapisany ale jest uszkodzony.
 
-Aby pozbyć się takiej sytuacja należy ustawic na stały adres `DATAORIGIN` (-data:ADDRESS)
+Aby pozbyć się takiej sytuacja należy ustawic stały adres dla `DATAORIGIN` (-data:ADDRESS)
 
 ## [USES](../moduly/#uses)
 

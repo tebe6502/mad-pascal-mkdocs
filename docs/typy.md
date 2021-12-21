@@ -2,25 +2,25 @@
 
 ## [Podstawowe](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
 
-|Type    |Range                    |Size in bytes|
-|:-------|:-----------------------:|:-----------:|
-|BYTE    |0 .. 255                 |1            |
-|SHORTINT|-128 .. 127              |1            |
-|WORD    |0 .. 65535               |2            |
-|SMALLINT|-32768 .. 32767          |2            |
-|CARDINAL|0 .. 4294967295          |4            |
-|LONGWORD|0 .. 4294967295          |4            |
-|DWORD   |0 .. 4294967295          |4            |
-|UINT32  |0 .. 4294967295          |4            |
-|INTEGER |-2147483648 .. 2147483647|4            |
-|LONGINT |-2147483648 .. 2147483647|4            |
+|Type               |Range                    |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|BYTE               |0 .. 255                 |1            |
+|SHORTINT           |-128 .. 127              |1            |
+|WORD               |0 .. 65535               |2            |
+|SMALLINT           |-32768 .. 32767          |2            |
+|CARDINAL           |0 .. 4294967295          |4            |
+|LONGWORD           |0 .. 4294967295          |4            |
+|DWORD              |0 .. 4294967295          |4            |
+|UINT32             |0 .. 4294967295          |4            |
+|INTEGER            |-2147483648 .. 2147483647|4            |
+|LONGINT            |-2147483648 .. 2147483647|4            |
 
 <br/>
 ## [Logiczne](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
 
-|Type    |Ord(True)                |Size in bytes|
-|:-------|:-----------------------:|:-----------:|
-|BYTE    |1                        |1            |
+|Type               |Ord(True)                |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|BOOLEAN            |1                        |1            |
 
 <br/>
 ## [Wyliczeniowe](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1)
@@ -57,23 +57,24 @@ Aktualnie kompilator **MP** nie sprawdzi poprawności typów wyliczeniowych dla 
 
 ## [Rzeczywiste](https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2)
 
-|Type             |Range                   |Size in bytes|
-|:----------------|:----------------------:|:-----------:|
-|SHORTREAL (Q8.8) |-128..127               |2            |
-|REAL (Q24.8)     |-8388607..8388608       |4            |
-|SINGLE (IEEE-754)|1.5E-45 .. 3.4E38       |4            |
-|FLOAT (IEEE-754) |1.5E-45 .. 3.4E38       |4            |
+|Type               |Range                    |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|SHORTREAL (Q8.8)   |-128..127                |2            |
+|REAL (Q24.8)       |-8388607..8388608        |4            |
+|SINGLE (IEEE-754)  |1.5E-45 .. 3.4E38        |4            |
+|FLOAT (IEEE-754)   |1.5E-45 .. 3.4E38        |4            |
+|FLOAT16 (IEEE-754) |65504 .. -65504          |2            |
 
 <br/>
 Konwersja typu `FLOAT`, `SINGLE` do liczby całkowitej dostępna jest tylko w zakresie `INTEGER`. Typ `INTEGER` nie pozwoli zaprezentować maksymalnej wartości `3.4E38` typu `FLOAT` `SINGLE`.
 
 ## [Znakowe](https://www.freepascal.org/docs-html/ref/refsu6.html#x29-320003.2.1)
 
-|Type    |Range                    |Size in bytes|
-|:-------|:-----------------------:|:-----------:|
-|CHAR    |ATASCII (0 .. 255)       |1            |
-|STRING  |1 .. 255                 |256          |
-|PCHAR   |0 .. 65535               |2            |
+|Type               |Range                    |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|CHAR               |ATASCII (0 .. 255)       |1            |
+|STRING             |1 .. 255                 |256          |
+|PCHAR              |0 .. 65535               |2            |
 
 <br/>
 Ciąg znaków `STRING` reprezentowany jest jako tablica o możliwym maksymalnym rozmiarze `[0..255]`. Pierwszym bajtem takiej tablicy `[0]` jest długość ciągu z zakresu `0..255`. Od bajtu `[1..]` zaczyna się właściwy ciąg znaków.
@@ -84,7 +85,7 @@ Dopuszczalne jest użycie dodatkowych znaków po końcowym apostrofie, takich ja
 
 Znak `*` oznacza ciąg w inwersie, tylda `~` ciąg w kodach **ANTIC-a**.
 
-Innym sposobem modyfikacji wyprowadzanych znaków jest użycie systemowej zmiennej `TextAttr`, każdy znak wyprowadzany na ekran jest zwiększany o wartość `TextAttr` (domyślnie = 0).
+Innym sposobem modyfikacji wyprowadzanych znaków jest użycie systemowej zmiennej `TextAttr`, każdy znak wyprowadzany na ekran jest poddawany operacji `ORA TextAttr` (domyślnie `TextAttr = 0).
 
 ```delphi
 a: string = 'Atari'*;         // ciąg znaków w inwersie
@@ -94,9 +95,9 @@ c: char = 'X'~*;              // znak w inwersie, kodach ANTIC-a
 
 ## [Wskaźnikowe](https://www.freepascal.org/docs-html/ref/refse15.html)
 
-|Type    |Range                    |Size in bytes|
-|:-------|:-----------------------:|:-----------:|
-|POINTER |0 .. 65535               |2            |
+|Type               |Range                    |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|POINTER            |0 .. 65535               |2            |
 
 <br/>
 Wskaźniki w **MP** mogą być typowane i bez określonego typu, np.:

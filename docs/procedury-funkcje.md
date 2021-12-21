@@ -157,7 +157,7 @@ end;             // rozkaz RTI zostanie wstawiony automatycznie
 ### `pascal`
 
 Użycie modyfikatora `PASCAL` spowoduje, że **procedura/funkcja** będzie traktowana jako rekurencyjna. Standardowo kompilator automatycznie wykrywa rekurencję, ale mogą zdarzyć się sytuacje dla których będzie to niemożliwe.
-Przykład [samples/math/evaluate.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/math/evaluate.pas)
+Przykład [samples/math/evaluate.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/a8/math/evaluate.pas)
 
 ### `stdcall`
 
