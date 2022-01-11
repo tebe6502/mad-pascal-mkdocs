@@ -115,6 +115,23 @@ Jeśli tego nie zrobimy to w przypadku uruchomienia takiego programu na **PC** s
 
 Zwiększanie wskaźnika przez `INC` zwiększy go o rozmiar typu na jaki wskazuje. Zmniejszenie wskaźnika przez `DEC` zmniejszy go o rozmiar typu na jaki wskazuje. Jeśli typ jest nieokreślony, wówczas domyślną wartością zwiększania/zmniejszanie będzie `1`.
 
+Dla wskaźników dopuszczalne są operacje relacji `=`, `<>`, `<`, `<=`, `>`, `>=`, oraz operacje arytmetyczne `+` oraz `-`.
+
+Przy pomocy wskaźnika możemy dokonać rzutowania zmiennej na inny typ:
+
+```delphi
+var
+   s: single;
+   d: cardinal;
+
+begin
+
+ s := 3.14;
+
+ d:=PCardinal(@s)^;	// d = $4048F5C3
+
+end;
+```
 
 ## [Tablice statyczne](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
 
@@ -190,8 +207,8 @@ W pamięci rekord reprezentowany jest przez wskaźnik `POINTER`.
     var px: TPoint;
 
 Domyślnie rekordy w **MP** są typu `PACKED`.
-Jeśli zależy nam na zachowania kompatybilności z **FPC** należy dodatkowo poprzedzić słowo `record` słowem `packed`.
-Bez tego rozmiar pamięci jaki zajmuje rekord będzie mógł się różnić, będzie mniej zajmował pamięci na **Atari XE/XL**, potencjalnie więcej o kilka bajtów na **PC**.
+Jeśli zależy nam na zachowania kompatybilności z **FPC** należy dodatkowo poprzedzić słowo `RECORD` słowem `PACKED`.
+Bez tego rozmiar pamięci jaki zajmuje rekord będzie mógł się różnić, będzie mniej zajmował pamięci na **6502**, potencjalnie więcej o kilka bajtów na **PC**.
 
 type
     TPoint = packed record x,y: byte end;
@@ -224,6 +241,67 @@ type
 ```
 
 W obiektach możliwe jest użycie procedur `CONSTRUCTOR` oraz `DESTRUCTOR`. Wywołanie takich procedur odbywa się tylko ręcznie.
+
+
+## [Proceduralne](https://www.freepascal.org/docs-html/ref/refse17.html)
+
+W pamięci zmienne typu proceduralnego reprezentowane są przez wskaźnik `POINTER`.
+
+```delphi
+type
+    tprc = procedure (a: byte; c: word);
+    tfun = function (a:smallint; x: single): byte;
+ 
+var
+    fn: function (a,b,c: byte): word;
+```
+
+Dla typu proceduralnego procedury/funkcje z argumentami wymagają użycia modyfikatora `STDCALL`, co wymusi użycie stosu programowego.
+
+```delphi
+var
+   fn: function (a,b: word): word;
+
+function test(a,b,c,d: word): word; stdcall;
+begin
+
+end;
+
+begin
+
+fn := @test;
+
+fn(1,2);
+
+end;
+```
+
+Dla procedur z argumentami zamiast modyfikatora `STDCALL` dopuszczalny jest modyfikator `REGISTER`, pod warunkiem że będą to maksymalnie trzy argumenty.
+
+```delphi
+var
+   prc: procedure (a,b: word);
+
+procedure test(a,b,c: cardinal); register;
+begin
+
+// a -> EDX
+// b -> ECX
+// c -> EAX
+ 
+end;
+
+begin
+
+prc := @test;
+
+prc(3,6);
+
+end;
+```
+
+W przypadku kiedy nie przekazujemy do procedury/funkcji argumentów użycie modyfikatora nie jest konieczne.
+
 
 ## [Plikowe binarne](https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4)
 

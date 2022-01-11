@@ -32,40 +32,6 @@ c:=1 shl 33;
 
 **FPC** zwróci `c = 0`, tak samo jak **MP*.
 
-## PARAMETRY FUNKCJI, PROCEDUR
-
-Dla poniższego przykładu **FPC** wygeneruje inny wynik niż **MP**
-
-```delphi
-var i: byte;
-
-function ran(a: smallint): byte;
-begin
-
- ran := i;
-
- inc(i, 3+a);
-
-end;
-
-procedure kefrens(a,b: byte);
-begin
-
- writeln(a);
- writeln(b);
-
-end;
-
-
-begin
-
-Kefrens(ran(5)+3, ran(3)+5);
-```
-
-**FPC**, **Delphi** oblicza parametry procedury/funkcji od prawej strony do lewej (wynik dla w/w przykładu `9`, `5`).
-
-**MP** oblicza parametry procedury/funkcji od lewej do prawej (wynik dla w/w przykładu `3`, `13`)
-
 
 ## STRINGI W PAMIĘCI
 
