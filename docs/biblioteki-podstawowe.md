@@ -127,19 +127,19 @@ Zmienna przechowująća aktualną wysokość ekranu. Domyślnie jest to wartoś�
 ### Procedures and functions
 
 ```delphi
-Abs                ArcTan              Assign             BinStr            Concat
-Blockread          Blockwrite          Chr                Cos               Close
-Dec                DeleteFile          DPeek              DPoke             Eof
-Exit               Exp                 FilePos            FileSize          FillChar
-Frac               GetIntVec           Halt               Hi                HexStr
-Inc                Ln                  Lo                 LowerCase         Move
-OctStr             Odd                 Ord                ParamCount        ParamStr
-Pause              Peek                Point              PointsEqual       Poke
-Pred               Random              ReadConfig         ReadSecto         Rect
-RenameFile         Reset               Rewrite            Round             Seek
-SetLength          SetIntVec           Sin                Succ              Space
-SizeOf             Str                 StringOfChar       Sqr               Sqrt
-Trunc              UpCase              Val                WriteSector
+Abs                Append              ArcTan             Assign            BinStr
+Concat             Blockread           Blockwrite         Chr               Cos
+Close              Dec                 DeleteFile         DPeek             DPoke
+Eof                Exit                Exp                FilePos           FileSize
+FillChar           Frac                GetIntVec          Halt              Hi
+HexStr             Inc                 Ln                 Lo                LowerCase
+Move               OctStr              Odd                Ord               ParamCount
+ParamStr           Pause               Peek               Point             PointsEqual
+Poke               Pred                Random             ReadConfig        ReadSecto
+Rect               RenameFile          Reset              Rewrite           Round
+Seek               SetLength           SetIntVec          Sin               Succ
+Space              SizeOf              Str                StringOfChar      Sqr
+Sqrt               Trunc               UpCase             Val               WriteSector
 ```
 
 #### `Abs`
@@ -150,6 +150,18 @@ Trunc              UpCase              Val                WriteSector
 ```
 
 Funkcja obliczająca wartość bezwzględną podanej liczby (ang. **Absolute value**). Wartość bezwzględna liczby nieujemnej to ta sama liczba, a liczby ujemnej - liczba do niej przeciwna. Funkcja w przypadku podania jej argumentu całkowitego zwraca wynik również typu całkowitego.
+
+---
+
+#### `Append`
+
+```delphi
+    Append(var F: text)
+```
+
+Otwiera istniejący zbiór tekstowy w trybie dopisywania (wskaźnik zbioru jest ustawiany na końcu zbioru).
+
+`F` jest tekstową zmienną plikową, która musi być skojarzona z istniejącym zbiorem dyskowym (przy użyciu procedury `Assign`).
 
 ---
 

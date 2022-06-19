@@ -22,7 +22,8 @@ nav:
     - Makra: makra.md
     - Wstawki assemblera: asm.md
     - Pliki zasobów: zasoby.md
-    - Procedury, funkcje, modyfikatory: procedury-funkcje.md
+    - Procedury i funkcje: procedury-funkcje.md
+    - Operacje na plikach: pliki.md
     - Obsługa przerwań: przerwania.md
     - Moduły: moduly.md
     - Biblioteki podstawowe: biblioteki-podstawowe.md

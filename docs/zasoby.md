@@ -13,17 +13,23 @@ Podstawowy element składni wygląda następująco:
 
 W treści pliku `RC` mogą się znaleźć komentarze, poprzedzone znakiem ';' lub '#'. Przykład pliku `RC`:
 
+```delphi
 	; to jest player MPT
 	mpt_player	MPTPLAY
 	
 	# to jest modul
 	mpt_modul	MPT	'porazka.mpt'
 
+	dane	RCDATA 'dane.xex' 6
+```
+
 Typ zasobu określa format włączanego pliku.
 
 | Typ zasobu | Opis                                                                                                   |
 |:----------:|--------------------------------------------------------------------------------------------------------|
-| RCDATA     | Dowolny typ danych.                                                                                    |
+| RCDATA     | Dowolny typ danych, np.:                                                                               |
+|            | label RCDATA 'filename'                                                                                |
+|            | label RCDATA 'filename' OFFSET                                                                         |
 | EXTMEM     | Dowolny typ danych ładowany do pamięci dodatkowej `PORTB`, adres ładowania ustalany jest na podstawie `RCLABEL`|
 | RCASM      | Plik w assemblerze, który zostanie dołączony i zasemblowany.                                           |
 | DOSFILE    | Plik z nagłówkiem **Atari DOS**, adres ładowania takiego pliku powinien być identyczny jak `RCLABEL`       |

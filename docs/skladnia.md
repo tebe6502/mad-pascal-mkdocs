@@ -305,7 +305,17 @@ Plik zasobów jest plikiem tekstowym, każdy jego kolejny wiersz powinien skład
 
 #### `RCDATA`
 
-Dowolny typ danych.
+Dowolny typ danych, np.:
+
+```delphi
+label RCDATA 'filename'
+```
+
+możliwe jest podanie dodatkowego parametru określającego liczbę bajtów które mają zostać pominięte, przydatne kiedy chcemy usunąć nagłówek pliku XEX 
+
+```delphi
+label RCDATA 'filename' OFFSET
+```
 
 #### `EXTMEM`
 
