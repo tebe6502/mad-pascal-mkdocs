@@ -60,7 +60,7 @@ Aktualnie kompilator **MP** nie sprawdzi poprawności typów wyliczeniowych dla 
 |Type               |Range                    |Size in bytes|
 |:------------------|:-----------------------:|:-----------:|
 |SHORTREAL (Q8.8)   |-128..127                |2            |
-|REAL (Q24.8)       |-8388607..8388608        |4            |
+|REAL (Q24.8)       |-8388608..8388607        |4            |
 |SINGLE (IEEE-754)  |1.5E-45 .. 3.4E38        |4            |
 |FLOAT (IEEE-754)   |1.5E-45 .. 3.4E38        |4            |
 |FLOAT16 (IEEE-754) |65504 .. -65504          |2            |
