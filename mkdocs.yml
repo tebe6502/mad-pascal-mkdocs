@@ -23,8 +23,9 @@ nav:
     - Wstawki assemblera: asm.md
     - Pliki zasobów: zasoby.md
     - Procedury i funkcje: procedury-funkcje.md
-    - Operacje na plikach: pliki.md
     - Obsługa przerwań: przerwania.md
+    - Operacje na plikach: pliki.md
+    - Alternatywa dla DOS-a: ados.md
     - Moduły: moduly.md
     - Biblioteki podstawowe: biblioteki-podstawowe.md
     - Porady: porady.md
