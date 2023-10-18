@@ -160,6 +160,20 @@ const
 ```
 Z poziomu assemblera dostęp do zdefiniowanych etykiet `$DEFINE` możliwy jest przez `MAIN.@DEFINES.label`
 
+### [$BIN2CSV](https://github.com/t-edson/P65Pas#bin2csv)
+
+Dołącza zawartość zewnętrznego pliku binarnego do kodu źródłowego, jak tekst CSV.
+
+Na przykład, jeśli plik binarny zawiera bajty `$1E, $1F, $20`, dyrektywa wygeneruje ciąg `30, 31, 32`.
+
+Głównym zastosowaniem tej dyrektywy jest [inicjalizacji tablic](../typy/#inicjalizacja-tablic).
+
+```
+  //Initialize with a binary content
+  AAA: array[3] of byte = ({$BIN2CSV data.bin});
+```
+
+
 ### [$CODEALIGN PROC = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
 
 Dyrektywa `$CODEALIGN PROC` pozwala wyrównać generowany kod wynikowy do `VALUE` bajtów strony pamięci. Przed każdym blokiem `PROCEDURE`, `FUNCTION` wstawiany jest kod `.ALIGN VALUE`. Aby wyłączyć wyrównywanie należy ustawić `{$CODEALIGN PROC = 0}`
