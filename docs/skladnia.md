@@ -26,16 +26,16 @@ inc(a); // to jest komentarz
 
 ```delphi
 absolute           and                 array              asm               assembler
-begin              case                const              div               do
-downto             else                end                exports           external
-file               for                 forward            function          if
-implementation     in                  interrupt          interface         library
-main               mod                 not                object            of
-or                 overload            pascal             procedure         program
-record             register            repeat             shl               shr
-string             text                textfile           then              to
-type               unit                until              uses              var
-while              xor
+begin              case                const              constructor       div
+do                 downto              else               end               exports
+external           file                for                forward           function
+if                 implementation      in                 interrupt         interface
+library            main                mod                not               object
+of                 or                  overload           pascal            procedure
+program            record              register           repeat            shl
+shr                string              text               textfile          then
+to                 type                unit               until             uses
+var                while               xor
 ```
 
 ### stałe
@@ -158,7 +158,6 @@ const
   a=2;
   {$endif}
 ```
-
 Z poziomu assemblera dostęp do zdefiniowanych etykiet `$DEFINE` możliwy jest przez `MAIN.@DEFINES.label`
 
 ### [$CODEALIGN PROC = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
@@ -169,14 +168,53 @@ Dyrektywa `$CODEALIGN PROC` pozwala wyrównać generowany kod wynikowy do `VALUE
 
 Dyrektywa `$CODEALIGN LOOP` pozwala wyrównać generowany kod wynikowy do `VALUE` bajtów strony pamięci. Przed każdą instrukcją iteracyjną `FOR`, `WHILE`, `REPEAT` wstawiany jest kod `.ALIGN VALUE`. Aby wyłączyć wyrównywanie należy ustawić `{$CODEALIGN LOOP = 0}`
 
+
+### [$DEFINE](https://www.freepascal.org/docs-html/prog/progsu11.html#x18-170001.2.11)
+
+#### `BASICOFF`
+```delphi
+{$DEFINE BASICOFF}
+```
+Powoduje utworzenie dodatkowego bloku programu, realizującego wyłączenie BASIC-a.
+
+#### `ROMOFF`
+```delphi
+{$DEFINE ROMOFF}
+```
+Zyskujemy dostęp do pamięci *pod ROM-em*, `$C000..$CFFF`, `$D800..$FFFF`.
+
+Zestaw znaków z **ROM** `$E000..$E3FF` zostaje przepisany pod ten sam adres w **RAM**, zostaje zainstalowany handler przerwań `NMI`, `IRQ`. System operacyjny działa normalnie, można z poziomu **ASM** wywoływać procedury w nim zawarte poprzez makro `m@call`.
+
+> **UWAGA:**  
+> _W przypadku umieszczenia programu **ANTIC**-a **Display List** pod **ROM**-em każde naciśnięcie klawisza będzie powodować wywołanie przerwania **IRQ** obsługującego klawiaturę._
+>
+> _Program **ANTIC**-a będzie zakłócany poprzez przełączanie **ROM** - **RAM**, w przypadku gdy korzystamy z przerwania **Display List**-y (**DLI**) może dojść do uszkodzenia stosu i wyłożenia się systemu._
+>
+> Umieszczenie zestawu znaków lub pamięci obrazu pod **ROM** będzie skutkować 'glitchami' w momencie naciskania klawiszy.
+
+#### `NOROMFONT`
+```
+{$DEFINE NOROMFONT}
+```
+Uzupełnienie dla `{$DEFINE ROMOFF}`, zapobiega przepisaniu zestawu znakowego z ROM do RAM
+
+
+### [$ERROR](https://www.freepascal.org/docs-html/prog/progsu17.html#x24-230001.2.17)
+
+```delphi
+{$ERROR user_defined}
+```
+Wygenerowanie komunikatu z błędem `ERROR`.
+
+
 ### [$F, $FASTMUL](https://codebase64.org/doku.php?id=base:seriously_fast_multiplication)
 
 ```delphi
 {$fastmul page}   // fastmul at page*256
 {$f $70}          // fastmul at $7000
 ```
-
 Alternatywne procedury szybkiego mnożenia dla typu `BYTE` `SHORTINT` `WORD` `SMALLINT` `SHORTREAL`. Procedury zajmują **2KB** i są umieszczane od adresu __PAGE*256__.
+
 
 ### [$I+, $I-, IOCHECK](https://www.freepascal.org/docs-html/prog/progsu38.html#x45-440001.2.38)
 
@@ -236,15 +274,7 @@ Parametr `%TIME%` pozwala dołączyć tekst z aktualnym czasem kompilacji.
 {$I filename}
 ```
 
-Parametr `FILENAME` pozwala dołączyć tekst zawarty w pliku.
-
-### [$LIBRARYPATH](https://www.freepascal.org/docs-html/prog/progsu99.html)
-
-```delphi
-{$LIBRARYPATH path1;path2;...}
-```
-
-Dyrektywa `$LIBRARYPATH` pozwala wskazać dodatkowe ścieżki poszukiwań dla bibliotek `unit`.
+Parametr `FILENAME` pozwala dołączyć plik tekstowy.
 
 ### [$INFO](https://www.freepascal.org/docs-html/prog/progsu35.html#x42-410001.2.35)
 
@@ -253,42 +283,48 @@ Dyrektywa `$LIBRARYPATH` pozwala wskazać dodatkowe ścieżki poszukiwań dla bi
 ```
 Wygenerowanie komunikatu z informacją `INFO`.
 
-### [$WARNING](https://www.freepascal.org/docs-html/prog/progsu81.html#x88-870001.2.81)
+### [$LIBRARYPATH](https://www.freepascal.org/docs-html/prog/progsu99.html)
 
 ```delphi
-{$WARNING user_defined}
+{$LIBRARYPATH path1;path2;...}
 ```
-Wygenerowanie komunikatu z ostrzeżeniem `WARNING`.
+Dyrektywa `$LIBRARYPATH` pozwala wskazać dodatkowe ścieżki poszukiwań dla bibliotek `unit`.
 
-### [$ERROR](https://www.freepascal.org/docs-html/prog/progsu17.html#x24-230001.2.17)
+
+### [$MACRO](https://www.freepascal.org/docs-html/prog/progse5.html)
 
 ```delphi
-{$ERROR user_defined}
+{$MACRO ON}
+{$MACRO OFF}
+{$MACRO+}
+{$MACRO-}
 ```
-Wygenerowanie komunikatu z błędem `ERROR`.
+Dyrektywa `{$macro }` włącza/wyłącza możliwość [definiowania makr](../makra/#definiowanie-makra), jest wymagana przez **FPC**, w **MP** jest zachowana tylko w celu zgodności.
 
-### [$DEFINE](https://www.freepascal.org/docs-html/prog/progsu11.html#x18-170001.2.11)
 
-#### `BASICOFF`
+### [$OPTIMIZATION](https://www.freepascal.org/docs-html/prog/progsu58.html)
+
+#### `LOOPUNROLL`
 
 ```delphi
-{$DEFINE BASICOFF}
+{$OPTIMIZATION loopunroll}
 ```
-Powoduje utworzenie dodatkowego bloku programu, realizującego wyłączenie BASIC-a.
+Dyrektywa `$OPTIMIZATION` z parametrem `LOOPUNROLL` pozwala rozpętlać pętle `FOR` (parametry takiej pętli muszą być stałymi):
+```
+{$OPTIMIZATION loopunroll}
 
-#### `ROMOFF`
+ for i:=0 to 11 do tab[i]:=i*2;
+ 
+{$OPTIMIZATION noloopunroll}
+```
+
+#### `NOLOOPUNROLL`
 
 ```delphi
-{$DEFINE ROMOFF}
+{$OPTIMIZATION noloopunroll}
 ```
-Zyskujemy dostęp do pamięci *pod ROM-em*, `$C000..$CFFF`, `$D800..$FFFF`.
+Parametr `NOLOOPUNROLL` wyłącza rozpętlanie pętli `FOR`.
 
-Zestaw znaków z **ROM** `$E000..$E3FF` zostaje przepisany pod ten sam adres w **RAM**, zostaje zainstalowany handler przerwań `NMI`, `IRQ`. System operacyjny działa normalnie, można z poziomu **ASM** wywoływać procedury w nim zawarte poprzez makro `m@call`.
-
-> **UWAGA:**  
-> _W przypadku umieszczenia programu **ANTIC**-a **Display List** pod **ROM**-em każde naciśnięcie klawisza będzie powodować wywołanie przerwania **IRQ** obsługującego klawiaturę._
->
-> _Program **ANTIC**-a będzie zakłócany poprzez przełączanie **ROM** - **RAM**, w przypadku gdy korzystamy z przerwania **Display List**-y (**DLI**) może dojść do uszkodzenia stosu i wyłożenia się systemu._
 
 ### [$R, $RESOURCE](https://www.freepascal.org/docs-html/prog/progsu67.html#x74-730001.2.67)
 
@@ -376,3 +412,11 @@ msx   MPT      'porazka.mpt'
 play  RMTPLAY  'modul.feat' 1
 bmp   XBMP     'pic.bmp' 80
 ```
+
+### [$WARNING](https://www.freepascal.org/docs-html/prog/progsu81.html#x88-870001.2.81)
+
+```delphi
+{$WARNING user_defined}
+```
+Wygenerowanie komunikatu z ostrzeżeniem `WARNING`.
+

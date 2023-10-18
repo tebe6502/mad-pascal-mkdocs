@@ -1,12 +1,12 @@
 # Operacje na plikach
 
-## [FILE](http://localhost:8000/typy/#plikowe-binarne)
+## [FILE](../typy/#plikowe-binarne)
 
 ```delphi
 var f: file;
 ```
 
-## [TEXT](http://localhost:8000/typy/#plikowe-tekstowe)
+## [TEXT](../typy/#plikowe-tekstowe)
 
 ```delphi
 var f: text;            // zamiennie TEXT
@@ -14,7 +14,7 @@ var f: text;            // zamiennie TEXT
 ```
 
 
-## [ASSIGN](http://localhost:8000/biblioteki-podstawowe/#assign)
+## [ASSIGN](../biblioteki-podstawowe/#assign)
 
 
 Przykład otwarcia kanału dla urządzenia **S:** (ekran) w celu wyprowadzania znaków w trybie `GRAPHICS 1`, `GRAPHICS 2`
@@ -38,7 +38,7 @@ begin
 end.
 ```
 
-## [RESET](http://localhost:8000/biblioteki-podstawowe/#reset)
+## [RESET](../biblioteki-podstawowe/#reset)
 
 ```delphi
 var t: text;
@@ -54,7 +54,7 @@ var f: file;
 
 W przypadku braku podania długości rekordu dla pliku binarnego `FILE` zostanie przyjęta wartość domyślna =128
 
-## [REWRITE](http://localhost:8000/biblioteki-podstawowe/#rewrite)
+## [REWRITE](../biblioteki-podstawowe/#rewrite)
 
 ```delphi
 var t: text;
@@ -71,7 +71,7 @@ var f: file;
 W przypadku braku podania długości rekordu dla pliku binarnego `FILE` zostanie przyjęta wartość domyślna =128
 
 
-## [APPEND](http://localhost:8000/biblioteki-podstawowe/#append)
+## [APPEND](../biblioteki-podstawowe/#append)
 
 ```delphi
 var
@@ -92,7 +92,7 @@ begin
 ```
 
 
-## [BLOCKREAD](http://localhost:8000/biblioteki-podstawowe/#blockread)
+## [BLOCKREAD](../biblioteki-podstawowe/#blockread)
 
 ```delphi
 var f: file;
@@ -128,7 +128,7 @@ begin
 end.
 ```
 
-## [BLOCKWRITE](http://localhost:8000/biblioteki-podstawowe/#blockwrite)
+## [BLOCKWRITE](../biblioteki-podstawowe/#blockwrite)
 
 ```delphi
 var f: file;
@@ -140,6 +140,19 @@ begin
  rewrite(f, 1);
  
  blockwrite(f, buf, 40*24);
+ close(f);
+
+end.
+```
+
+## [CLOSE](../biblioteki-podstawowe/#close)
+
+```delphi
+begin
+
+ assign(f, 'D:FILENAME');
+ reset(f, 1);
+ 
  close(f);
 
 end.

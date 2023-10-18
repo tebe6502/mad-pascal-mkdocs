@@ -104,6 +104,8 @@ Definicja krótkiego ciągu znakowego wykorzystywanego do przekazywania nazw pli
 
 Zmienna przechowuje ostatni błąd operacji `I/O`. [Kody błędów I/O](http://atariki.krap.pl/index.php/Kody_statusowe_Atari_OS).
 
+Dla **PC** brak błędów `I/O` oznacza `IORresult = 0`, dla **Atari XE/XL** `IOResult = 1`.
+
 ---
 
 #### `ScreenWidth`

@@ -42,6 +42,13 @@ c:=1 shl 33;
 
 Kompilator tylko raz odłoży w pamięci ciągi znakowe `ala`, `ma`. Dzięki rozbiciu dłuższego stringa na mniejsze elementy możemy oszczędzić pamięć.
 
+Jeśli zamienimy ciąg znaków na ich kody, wówczas kompilator nie będzie ich przechowywał w obszarze stałych.
+
+```delphi
+ writeln('Atari');
+ writeln(#.#.#.#.#.#.#.#.);
+```
+
 
 ## ZNAKI W PAMIĘCI
 
@@ -49,6 +56,66 @@ Kompilator tylko raz odłoży w pamięci ciągi znakowe `ala`, `ma`. Dzięki roz
 writeln(#69,#82,#82,#32, a);
 ```
 Kody znaków oddzielone przecinkiem nie zostaną potraktowane jako ciągi znakowe które kompilator zapisuje do stałych.
+
+
+## OPTYMALIZACJA WYRAŻEŃ
+
+Należy unikać łączenia wyrażeń z funkcjami, w takich przypadkach nie zadziała optymalizacja kodu wynikowego, albo będzie ona tylko częściowa, np:
+
+```delphi
+function add(a,b: byte): byte;
+begin
+ Result := a + b;
+end;
+
+function mul(a,b: byte): byte;
+begin
+ Result := a * b;
+end;
+
+var x: byte;
+
+x := add(7,9) + mul(8,5);
+```
+
+Najlepiej zastosować dodatkowe zmienne, w których zostanie zapisana wartość funkcji, np:
+
+```delphi
+var hlp1, hlp2: byte;
+
+hlp1 := add(7,9);
+hlp2 := mul(8,5);
+
+x := hlp1 + hlp2;
+```
+
+## WARUNKI
+
+```delphi
+ var i: byte;
+ var k: byte;
+ var bol: Boolean;
+ 
+ i:=0;
+ k:=6;
+
+ bol := i > 15 - (k * 3);
+```
+
+Dla w/w warunku wyrażenie po prawej stronie zostanie przekształcone do typu ze znakiem, następnie lewa strona wyrażenia zostanie sprowadzona do odpowiedniego typu ze znakiem.
+
+Wynikiem porównania będzie `TRUE` ( `0 > -3` ).
+
+Jeśli zależy nam aby wartościowanie wyrażenia było przeprowadzone na typie `BYTE` musimy wymusić to rzutowaniem, np:
+
+```delphi
+ i:=0;
+ k:=6;
+ 
+ bol := i > byte(15 - (k * 3));
+```
+
+Teraz wynikiem będzie `FALSE` ( `0 > 253` ).
 
 
 ## KRÓTSZE WARUNKI BOOLEAN
@@ -69,6 +136,13 @@ Gdy assemblacja pliku *.a65 powoduje 'Infinite loop', plik OBX zostaje zapisany 
 
 Aby pozbyć się takiej sytuacja należy ustawic stały adres dla `DATAORIGIN` (-data:ADDRESS)
 
+
 ## [USES](../moduly/#uses)
 
 Kolejność modułów na liście `USES` może mieć znaczenie.
+
+
+## DISPLAY LIST
+
+jako CONST, bo wtedy jest najbardziej na początku pamięci programu (~$2000)
+

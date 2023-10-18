@@ -442,6 +442,9 @@ W przypadku funkcji, zmienna RESULT przechowująca wartość funkcji alokowana j
     // c = eax
     // Result = :STACKORIGIN-4 (:TMP)
 
+Jeśli w ciele procedury/funkcji występują operacje mnożenia/dzielenia, albo operacje na tablicach dwu-wymiarowych wówczas rejestry `EDX`, `ECX`, `EAX` mogą ulec zniszczeniu co spowoduje "niespodziewane" rezultaty.
+
+
 ### `interrupt`
 
 **Procedury/Funkcje** oznaczone przez `INTERRUPT` kompilator będzie kończył rozkazem `RTI` (standardowo `RTS`).

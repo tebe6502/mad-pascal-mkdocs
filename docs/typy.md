@@ -77,7 +77,24 @@ Konwersja typu `FLOAT`, `SINGLE` do liczby całkowitej dostępna jest tylko w za
 |PCHAR              |0 .. 65535               |2            |
 
 <br/>
-Ciąg znaków `STRING` reprezentowany jest jako tablica o możliwym maksymalnym rozmiarze `[0..255]`. Pierwszym bajtem takiej tablicy `[0]` jest długość ciągu z zakresu `0..255`. Od bajtu `[1..]` zaczyna się właściwy ciąg znaków.
+Ciąg znaków `STRING` reprezentowany jest jako tablica o możliwym maksymalnym rozmiarze `[0..255]` (w **FPC** ten typ to `SHORTSTRING`). Pierwszym bajtem takiej tablicy `[0]` jest długość ciągu z zakresu `0..255`. Od bajtu `[1..]` zaczyna się właściwy ciąg znaków.
+
+W **FPC** `STRING` nie jest równoznaczny z `SHORTSTRING`, inaczej ustalamy adresy dla **FPC** `STRING`, inaczej dla `SHORTSTRING`.
+```delphi
+    var P: PChar;
+        s: string;
+    
+    P:=pointer(s);
+    P:=pointer(@s);
+```
+
+```delphi
+    var P: PChar;
+        s: string[255];   // shortstring
+
+    P:=pointer(@s);       // s[0]
+    P:=pointer(@s[1]);
+```
 
 Ciąg znaków `PCHAR` reprezentowany jest przez wskaźnik do typu `CHAR`. Znakiem końca ciągu `PCHAR` jest znak `#0`.
 
@@ -85,7 +102,7 @@ Dopuszczalne jest użycie dodatkowych znaków po końcowym apostrofie, takich ja
 
 Znak `*` oznacza ciąg w inwersie, tylda `~` ciąg w kodach **ANTIC-a**.
 
-Innym sposobem modyfikacji wyprowadzanych znaków jest użycie systemowej zmiennej `TextAttr`, każdy znak wyprowadzany na ekran jest poddawany operacji `ORA TextAttr` (domyślnie `TextAttr = 0).
+Innym sposobem modyfikacji wyprowadzanych znaków jest użycie systemowej zmiennej `TextAttr`, każdy znak wyprowadzany na ekran jest poddawany operacji `ORA TextAttr` (domyślnie `TextAttr = 0`).
 
 ```delphi
 a: string = 'Atari'*;         // ciąg znaków w inwersie
@@ -140,6 +157,8 @@ Tablice w **MP** są tylko statyczne, jednowymiarowe lub dwuwymiarowe z początk
 ```delphi
 var tb: array [0..100] of word;
 var tb2: array [0..15, 0..31] of Boolean;
+var tab: array [0..7] of array [0..31] of byte;
+var tab256: array [byte] of word;
 ```
 
 W przypadku początkowego indeksu innego niż zero zostanie wygenerowany błąd **Error: Array lower bound is not zero**.
@@ -155,9 +174,9 @@ Kompilator generuje kod dla tablic zależnie od ich deklaracji:
 
 * gdy nie przekracza 256 bajtów
 ```delphi
-array [0..255] of byte
-array [0..127] of word
-array [0..63] of cardinal
+array [0..255] of byte;
+array [0..127] of word;
+array [0..63] of cardinal;
 ```
 
 Gdy liczba bajtów zajmowanych przez tablicę nie przekracza 256 bajtów generowany jest najszybszy kod odwołujący się bezpośrednio do adresu tablicy (przedrostek `ADR.`) z pominięciem wskaźnika. Dla takiej tablicy nie ma możliwości zmiany adresu.
@@ -167,7 +186,7 @@ Gdy liczba bajtów zajmowanych przez tablicę nie przekracza 256 bajtów generow
 
 * gdy liczba elementów tablicy wynosi `1`
 ```delphi
-array [0..0] of type
+array [0..0] of type;
 ```
 
 Gdy liczba elementów tablicy wynosi `1` jest ona traktowana specjalnie. Generowany kod odwołuje się do tablicy poprzez wzkaźnik. Istnieje możliwość ustalenia nowego adresu takiej tablicy.
@@ -182,9 +201,9 @@ Gdy liczba elementów tablicy wynosi `1` jest ona traktowana specjalnie. Generow
 
 * gdy przekracza 256 bajtów
 ```delphi
-array [0..255+1] of byte
-array [0..127+1] of word
-array [0..63+1] of cardinal
+array [0..255+1] of byte;
+array [0..127+1] of word;
+array [0..63+1] of cardinal;
 ```
 
 Gdy liczba bajtów zajmowanych przez tablicę przekracza 256 bajtów generowany kod odwołuje się do tablicy poprzez wskaźnik. Istnieje możliwość ustalenia nowego adresu takiej tablicy.
@@ -196,6 +215,41 @@ Gdy liczba bajtów zajmowanych przez tablicę przekracza 256 bajtów generowany 
     adc #$00
     sta bp+1
     lda (bp),y
+    
+    
+### Inicjalizacja tablic
+
+Inicjalizacja tablicy `CONST` lub `VAR` przebiega w ten sam sposób. Po słowie określającym typ danych tablicy umieszczamy znak `=` i kolejne elementy tablicy między nawiasami okrągłymi `( val0, val1, ... )` :
+```
+const
+   PBox : array [0..1] of word = (12,10);
+
+var
+   PBox : array [0..1] of word = (12,10);
+```
+W przypadku tablicy dwuwymiarowej:
+```
+   PBox : array [0..1, 0..1] of word = ( (12,10) , (1,6) );
+```
+Tablicę typu `CHAR` możemy zaincjować przez `STRING`:
+```
+   PBox : array [0..4] of char = 'Hello';
+```
+Możliwa jest inicjalizacja tablicy bez podawania jej rozmiaru, korzystamy wtedy z nawiasów kwadratowych `[ ]` :
+```
+   PBox : array of char = ['H', 'e', 'l', 'l', 'o'];
+
+   PBox : array of word = [1,2,3,4,5];
+	
+   PBox : array of char = 'Hello';        // bez nawiasów [ ]
+```
+Możliwe jest zaincjowanie tablicy typu `BYTE` plikiem binarnym, używamy wtedy dyrektywy kompilatora `{$bin2csv filename}` :
+```
+   tb: array of byte = [ {$bin2csv filename} ];
+
+   tb: array [0..11] of byte = ( 1,2,3, {$bin2csv filename} );
+```
+
 
 
 ## [Rekordy](https://www.freepascal.org/docs-html/ref/refsu15.html#x39-550003.3.2)

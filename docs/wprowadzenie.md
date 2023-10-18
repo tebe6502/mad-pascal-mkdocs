@@ -18,11 +18,12 @@ Dostępne są:
 * Static local variables
 * Primitive data types, all types except the `ShortReal`/`Real` type are compatible. Pointers are dereferenced as pointers to `Word`:
     * `Cardinal` `Word` `Byte` `Boolean`
-    * `Char` `String` `PChar`
+    * `String` `PChar` `Char`
     * `Integer` `SmallInt` `ShortInt`
-    * `Pointer` `File`
-    * `ShortReal` `Real` (fixed-point)
-    * `Single` (IEEE-754) [Float]
+    * `Pointer` `File` `Text`
+    * `ShortReal` `Real` [`fixed-point`](https://en.wikipedia.org/wiki/Fixed-point_arithmetic)
+    * `Float` [`Single`](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)
+    * [`Float16`](https://en.wikipedia.org/wiki/Half-precision_floating-point_format)
 * One-dimensional and Two-dimensional arrays (with zero lower bound) of any primitive type. Arrays are treated as pointers to their origins (like in C) and can be passed to subroutines as parameters
 * Predefined type string `[N]` which is equivalent to `array [0..N] of Char`
 * `Type` aliases.
@@ -49,11 +50,14 @@ Uruchamiamy instalator, wybieramy katalog w którym zostanie zainstalowany FP. W
 
 * [LIB](http://mads.atari8.info/library/doc/index.html)
 * [BLIBS](https://bocianu.atari.pl/blog/blibs)
+* [WLIBS](https://github.com/Ripjetski6502/A8MadPascalLibrary)
 
 ## Linki
 
 1. [Free Pascal Reference Guide](http://www.freepascal.org/docs-html/ref/ref.html#refch14.html)
-2. [MadPascal AtariArea forum (PL)](http://www.atari.org.pl/forum/viewtopic.php?id=13373)
-3. [MadPascal AtariAge forum (ENG)](http://atariage.com/forums/topic/240919-mad-pascal/)
-4. [MadPascal examples](http://atariage.com/forums/topic/243658-mad-pascal-examples/)
-5. [Atari XE/XL Pascal Compilers](https://atariwiki.org/wiki/Wiki.jsp?page=Pascal)
+2. [Mad Pascal - AtariArea (PL)](http://www.atari.org.pl/forum/viewtopic.php?id=13373)
+3. [Mad Pascal - AtariOnline (PL)](https://atarionline.pl/forum/search.php?PostBackAction=Search&Keywords=mad+pascal&Type=Topics&btnSubmit=Szukaj)
+4. [Mad Pascal - AtariAge (ENG)](http://atariage.com/forums/topic/240919-mad-pascal/)
+5. [Mad Pascal examples - AtariAge (ENG)](http://atariage.com/forums/topic/243658-mad-pascal-examples/)
+6. [Games in Mad Pascal - AtariAge (ENG)](https://forums.atariage.com/topic/249968-games-in-mad-pascal/)
+7. [Atari XE/XL Pascal Compilers](https://atariwiki.org/wiki/Wiki.jsp?page=Pascal)s

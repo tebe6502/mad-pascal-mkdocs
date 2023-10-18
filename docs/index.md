@@ -6,6 +6,64 @@
 
 # Historia
 
+
+## [1.6.9](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.9)
+- poprawiona alokacja pamięci dla tablic [0..0], wymuszany jest wstępnie 'ABSOLUTE $0000', oszczędzamy 1 bajt pamięci
+- dodana możliwość deklaracji tablic bez podania ich rozmiaru, np.:
+```
+var tab: array of byte = [1,3,4,3,1];
+var tb: array of char = 'abcdefghij';
+```
+- nowa dyrektywa kompilatora `{$bin2csv filename}` pozwala inicjować tablice np.:
+```
+var tb: array of byte = [ {$bin2csv filename} ];
+```
+- nowa dyrektywa kompilatora `{$optimization loopunroll}`, `{$optimization noloopunroll}`, dokonuje rozpętlenia pętli `FOR` przy stałych parametrach
+- nowy moduł BLOWFISH pozwalający szyfrować, deszyfrować ciągi znakowe wg podanego klucza
+- nowy przykład a8\AES-Rijndeal
+
+## [1.6.7-1.6.8](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.7-1.6.8)
+- rezygnacja z rozszerzania typu dla wyrażeń z SHR
+- nowy typ zasobu SAPR, SAPRPLAY
+- dla RMTPLAY jako drugi parametr można podać adres dla zmiennych na stronie zerowej
+- SizeOfResource(variable, name)
+- unit SAPLZSS
+- unit SHANTI
+- unit SHA1
+- unit xSFX
+- unit SYSTEM: NtoBE, RorByte, RorWord, RorDWord, RolByte, RolWord, RolDWord, SarShortint, SarSmallint, SarLongint
+- możliwość zaincjowania tablicy typu CHAR przez STRING (jeśli string jest krótszy zostaną wstawione spacje), np.:
+```
+    tab: array [0..15] of char = '0123456789ABCDEF';
+```
+- naprawione przekazywanie wartości funkcji przez tablice
+- dodana obsluga przerwania VBLKI (natychmiastowe) przez SetIntVec, GetIntVec (https://mads.atari8.info/doc/pl/przerwania/)
+- przepisany kod kompilatora na moddzielne moduły
+- przepisany kod obsługi tablic ze wskaźnikami do rekordów `tab: array [0..x] of record^`
+- dodana optymalizacja 'Common head/tail Sequence coalescing'
+
+## [1.6.6](https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.6)
+- poprawiona implementacja EXIT
+- dodano możliwość generowania kodu dla RAW (-target)
+- dodano obsługę modyfikatora INLINE dla procedur i funkcji
+- dodano możliwość zadeklarowania zmiennej na stronie zerowej poprzez użycie modyfikatora REGISTER
+- dodana obsługa typu TEXTFILE (TEXT)
+- unit INIFILES
+- unit ZX2
+- unit SYSUTILS: CompareMem, TryStrToInt
+- unit SYSTEM: CompareByte, Pos, Delete
+- poprawiono przekazywanie parametrów do obiektów (OBJECT) bez udziału stosu programu :STACKORIGIN (w większości przypadków)
+- dodano możliwość oznaczenia zmiennej jako ulotnej [volatile]
+```delphi
+    [volatile] vcount: byte absolute $d40b;
+```
+- dla OBJECT dodano metody CONSTRUCTOR, DESTRUCTOR
+- dodano obsługę makr {$define label (parametry) := wyrażenie}
+- dodana konstrukcja 'FOR element IN array' dla tablic nie przekraczających 256 bajtów
+- więcej wolnej pamięci na stronie zerowej, wskaźniki FXPTR, PSPTR są teraz alokowane w zależności od tego czy są używane
+- dodana obsługa typu FLOAT16
+- dodana obsługa typu proceduralnego
+
 ## [1.6.5](https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.5)
 - przepisana obsługa CASE OF
 - przepisany kod optymalizacji dla tablic nie przekraczających 256 bajtów
@@ -24,7 +82,6 @@
 - dodana nowa dyrektywa {$codealign proc = wartość}, {$codealign loop = wartość} pozwalająca na wyrównanie wygenerowanego kodu
 
 ## [1.6.4](https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.4)
-
 - procedury mnożenie u8x8, u16x16 zastąpione kodem z CC65
 - dodanie kodu resetujacego POKEY-a na początku uruchomienia programu
 - optymalizacje wyrażeń warunkowych IF () and () and ... ; IF () or () or ...
@@ -51,7 +108,6 @@
 - dodana możliwość generowania kodu dla C64 (-t c64)
 
 ## [1.6.3](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.3)
-
 - poprawki, optymalizacje
 - SYSUTILS: Trim
 - SYSTEM: PByte, PByteArray, PWord
@@ -60,7 +116,6 @@
 - LIB: unit GR4PP
 
 ## 1.6.0 - 1.6.2
-
 - nowy unit EFAST dla przyspieszenia wyprowadzania znaków na urządzenie E:
 - SYSTEM: function Copy(var S: String; Index: Byte; Count: Byte): String;
 - SYSTEM: Palette, HPalette
@@ -72,7 +127,6 @@
 - dodany nowy przełącznik -ipath:includepath
 
 ## 1.5.9 - 1.6.0
-
 - SYSTEM: TDateTime
 - GRAPH, FASTGRAPH: Arc, PieSlice, TLastArcCoords, LastArcCoords
 - SYSUTILS: Now, Date, DateToStr, DecodeDate, DecodeDateTime, DecodeTime, EncodeDate, EncodeDateTime, EncodeTime, IsLeapYear, BoolToStr, StrToBool
@@ -81,7 +135,6 @@
 - przełączniki -CODE:, -DATA:, -STACK:, -ZPAGE: domyślnie wymagają podania wartości HEX bez znaku początkowego '$'
 
 ## 1.5.8
-
 - GRAPHICS: Font, FontInitialize, FillRect, TextOut, TextWidth, MoveTo, LineTo
 - SYSTEM: FileMode (RESET), [fmOpenRead, fmOpenWrite, fmOpenAppend, fmOpenReadWrite]
 - dodana obsługa dyrektyw {$info user_defined}, {$warning user_defined}, {$error user_defined}, {$include filename}, {$resource filename}
@@ -95,7 +148,6 @@
 - dodana obsługa inicjalizacji tablic dwuwymiarowych stałych i zmiennych
 
 ## 1.5.6 - 1.5.7
-
 - SYSUTILS: Click
 - SYSTEM: Sqrt(Integer): Single
 - MATH: Sign
@@ -106,7 +158,6 @@
 - nowa dokumentacja dla LIB, BLIBS wygenerowana przez [PASDOC](https://gitlab.com/bocianu/pasdoc)
 
 ## 1.5.3 - 1.5.5
-
 - CRT: TextMode
 - SYSUTILS: ExtractFilePath
 - SYSTEM: EoLn
@@ -116,7 +167,6 @@
 - dodana automatyczna konwersja wyrażeń typu INTEGER na REAL
 
 ## 1.5.2
-
 - nowy typ FLOAT jako odpowiednik typu SINGLE
 - SYSTEM unti: FileSize (SDX)
 - SYSTEM unit: EXP:Single, LN:Single, LN:Real, EXP:Real (wysoka precyzja obliczeń)
@@ -127,7 +177,6 @@
 - GRAPH, FASTGRAPH unit: SetClipRect, ClipLine, FillRect(TRect), Rectangle(TRect)
 
 ## 1.5.1
-
 - dodane nowe przełączniki -CODE:$address, -DATA:$address -STACK:$address, -ZPAGE:$address
 - SYSTEM unit: RandomF (Result as Single), VAL (Integer, Single)
 - GRAPH, FASTGRAPH unit: Bar, Bar3D, GetX, GetY, MoveRel, FloodFill
@@ -144,7 +193,6 @@ txt1: string = 'Spectrum'*~;  // ciąg w inwersie w kodach ANTIC-a
 ```
 
 ## 1.5.0
-
 - poprawiona i uzupełniona inicjalizacja tablic typu POINTER
 - poprawiona i uzupełniona inicjalizacja zmiennych typu wyliczeniowego
 - wprowadzony typ LONGWORD, DWORD, UINT32 jako odpowiednik CARDINAL
@@ -156,12 +204,10 @@ txt1: string = 'Spectrum'*~;  // ciąg w inwersie w kodach ANTIC-a
 - dla WRITE/WRITELN akceptowane i ingorowane jest formatowanie wyniku, np.: writeln(f:8:8)
 
 ## 1.4.8 / 1.4.9
-
 - zmniejszenie wskaźnika stosu programowego w przypadku wywołania funkcji bez odebrania jej wartości
 - lepsza ocena możliwości ustalenia adresu stałej/zmiennej, dodany komunikat "Can't take the address of constant expressions"
 
 ## 1.4.7
-
 - optymalizacja dla imulBYTE, imulWORD, imulCARD, mulSHORTINT, mulSMALLINT, mulINTEGER
 - dodana obsługa wskaźnika rekordu, np.:
 
@@ -197,7 +243,6 @@ type
 - poprawione biblioteki CMC, MPT, RMT
 
 ## 1.4.6
-
 - dodana obsługa dyrektyw warunkowych $IFDEF, $IFNDEF, $ELSE, $ENDIF, $DEFINE, $UNDEF przez DMSC
 
 ```delphi
@@ -216,14 +261,12 @@ const
 - dodana obsługa tablic dwuwymiarowych
 
 ##  1.4.4/1.4.5
-
 - poprawione porównanie typów tego samego rozmiaru ale o przeciwnych znakach
 - dodana możliwość użycia klauzuli USES w blokach modułów UNIT
 - dodany wymóg deklaracji funkcji/procedur w sekcji INTERFACE modułów UNIT
 - poprawione zauważone błędy optymalizatora
 
 ## 1.4.3
-
 - dodana możliwość zwrócenia wartości funkcji przez RECORD, np:
 
 ```delphi
@@ -240,14 +283,12 @@ const
 - dodana obsługa GOTO label
 
 ##  1.4.1 / 1.4.2
-
 - optymalizacja kodu wynikowego 6502 generowanego dla pętli FOR
 - poprawiony odczyt plików include i resource
 - MISC: DetectCPUSpeed
 - dodatkowy typ danych rzeczywistych SINGLE <-128..127>
 
 ## 1.4.0
-
 - w parametrach formalnych procedur i funkcji dodana możliwość podania typu UNTYPED (tylko przez VAR), np.
 
 ```delphi
@@ -279,7 +320,6 @@ f:=real(i);
 - poprawki dla {$i filename}, poprawne liczenie linii kompilowanego programu
 
 ## 1.3.8
-
 - SYSTEM: RANDOM(RANGE: BYTE): BYTE; RANDOM(RANGE: INTEGER): SMALLINT;
 - CRT: WHEREX, WHEREY
 - SYSUTILS: BEEP
@@ -288,11 +328,9 @@ f:=real(i);
  `writeln('inwers'*'bez inwersu');`
 
 ## 1.3.7
-
 - dodana możliwość ładowania bloku resource {$R} pod adres tablicy
 
 ## 1.3.6
-
 - dodane rozkazy GetIntVec, SetIntVec w zastępstwie rozkazu Intr
 - umożliwione zwracanie wartości RESULT dla funkcji poprzez tablice
 - poprawki dla MOVE (downwards, upwards)
@@ -312,14 +350,12 @@ intr(rDLI, label);
 ```
 
 ## 1.3.4
-
 - dodana dodatkowa informacja o zajmowanej pamięci przez kolejne kompilowane moduły
 - dodany nowy moduł VBXE (tryb OVERLAY, BLITTER)
 - dodana obsługa błędów dla operacji I/O {I+} {I-} IOCHECK ON/OFF
 - dwie dodatkowe poprawki Greblusa dla $I, $R z myślą o działaniu w środowisku Linuxa
 
 ## 1.3.3
-
 - Greblus dodał poprawki umożliwiające działanie kompilatora z Linux-em
 - dodana możliwość zaincjowania wskaźnika
 
@@ -341,7 +377,6 @@ k:=w;
 - VBXE: GetXDL, SetXDL, RunBlit, ClrVideoBank
 
 ## 1.3.2
-
 - DOS: GetTime, SetTime
 - MATH: Ceil
 - SYSUTILS: GetTickCount
@@ -349,7 +384,6 @@ k:=w;
 - wbudowanie funkcji w kompilator: INT, FRAC, TRUNC, ROUND, ODD
 
 ## 1.3.1
-
 - dodana obsługa rekordów RECORD
 - {$i filename}
 - {$r filename}, Resource Type: RCDATA, DOSFILE, RELOC, RMT, MPT, CMC

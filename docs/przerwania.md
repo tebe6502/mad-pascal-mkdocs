@@ -2,11 +2,12 @@
 
 ## VBL, DLI
 
-Do obsługi przerwań **VBL**, **DLI** dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
+Do obsługi przerwań [**VBLD**](https://atariwiki.org/wiki/Wiki.jsp?page=VVBLKD), [**VBLI**](https://atariwiki.org/wiki/Wiki.jsp?page=VVBLKI), [**DLI**](https://atariwiki.org/wiki/Wiki.jsp?page=VDSLST) dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
 
 ### GetIntVec
 
-    GetIntVec(iVBL, pointer);	// pobranie adresu programu obsługi przerwań VBL ($0224)
+    GetIntVec(iVBLI, pointer);	// pobranie adresu programu obsługi przerwań VBLI ($0222)
+    GetIntVec(iVBLD, pointer);	// pobranie adresu programu obsługi przerwań VBLD ($0224)
     GetIntVec(iDLI, pointer);	// pobranie adresu programu obsługi przerwań DLI ($0200)
 
 ```delphi
@@ -21,7 +22,8 @@ end.
 
 ### SetIntVec
 
-    SetIntVec(iVBL, pointer);	// ustanowienie adresu programu obsługi przerwań VBL ($0224)
+    SetIntVec(iVBLI, pointer);	// ustanowienie adresu programu obsługi przerwań VBLI ($0224)
+    SetIntVec(iVBLD, pointer);	// ustanowienie adresu programu obsługi przerwań VBLD ($0224)
     SetIntVec(iDLI, pointer);	// ustanowienie adresu programu obsługi przerwań DLI ($0200)
 
 ```delphi
@@ -40,7 +42,26 @@ SetIntVec(iVBL, @newVBL);
 end.
 ```
 
-Przerwanie **VBL** kończymy skokiem pod adres `XITVBV` ($E462) co spowoduje przywrócenie wartości rejestrów `A` `X` `Y` **CPU6502**.
+Przerwanie **VBLD** (VBL opóźnione) kończymy skokiem pod adres `XITVBV` ($E462) co spowoduje przywrócenie wartości rejestrów `A` `X` `Y` **CPU6502**.
+
+
+```delphi
+procedure newVBL; interrupt; assembler;
+asm
+
+ jmp sysvbv
+
+end;
+
+
+begin
+
+SetIntVec(iVBLI, @newVBL);
+
+end.
+```
+
+Przerwanie **VBLDI** (VBL natychmiastowe) kończymy skokiem pod adres `SYSVBV` ($E45F) co spowoduje kontynuację obsługi przerwania VBL.
 
 
 ## IRQ - TIMER1, TIMER2, TIMER4
