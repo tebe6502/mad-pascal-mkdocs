@@ -250,8 +250,6 @@ Możliwe jest zaincjowanie tablicy typu `BYTE` plikiem binarnym, używamy wtedy 
    tb: array [0..11] of byte = ( 1,2,3, {$bin2csv filename} );
 ```
 
-
-
 ## [Rekordy](https://www.freepascal.org/docs-html/ref/refsu15.html#x39-550003.3.2)
 
 W pamięci rekord reprezentowany jest przez wskaźnik `POINTER`.
@@ -260,7 +258,7 @@ W pamięci rekord reprezentowany jest przez wskaźnik `POINTER`.
         TPoint = record x,y: byte end;
     var px: TPoint;
 
-Domyślnie rekordy w **MP** są typu `PACKED`.
+Domyślnie rekordy w **MP** są typu `PACKED`. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
 Jeśli zależy nam na zachowania kompatybilności z **FPC** należy dodatkowo poprzedzić słowo `RECORD` słowem `PACKED`.
 Bez tego rozmiar pamięci jaki zajmuje rekord będzie mógł się różnić, będzie mniej zajmował pamięci na **6502**, potencjalnie więcej o kilka bajtów na **PC**.
 
@@ -418,3 +416,41 @@ Do procedur, funkcji typ `TEXT` może być przekazywany tylko jako zmienna.
 
 Typy, procedury i funkcje związane z plikami tekstowymi:
 `Assign` - `Close` - `Reset` - `Rewrite` - `Append` - `Readln` - `Writeln` - `FileExists` - `IOResult`
+
+## [Nieoznaczone](https://www.freepascal.org/docs-html/ref/refsu70.html)
+
+```Delphi
+ procedure Something (var Data);
+ procedure Something (const Data);
+```
+
+Brak podania typu parametru oznacza że do procedury/funkcji zostanie przekazany tylko adres parametru bez oznaczenia typu.
+
+Jest to odpowiednikiem następującej deklaracji C/C++:
+
+```Delphi
+ void Something(void* Data);
+```
+
+Wewnątrz procedury/funkcji z nieoznaczonym parametrem, jeśli nieoznaczony parametr jest używany w wyrażeniu lub wartość musi być do niego przypisana, zawsze należy użyć rzutowania typu.
+
+
+    var x: word;
+ 
+    procedure test(var a);
+    begin
+ 
+      writeln(PWord(@a)^);  // = 95
+
+      PWord(@a)^ := 11;
+ 
+    end;
+ 
+    begin
+    
+      x:=95;
+ 
+      test(x);              // = 11
+ 
+    end.
+ 

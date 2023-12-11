@@ -4,6 +4,33 @@
 
 Moduły `UNIT` w **MP** składają się z sekcji `INTERFACE` **wymagana**, `IMPLEMENTATION` **wymagana**, `INITIALIZATION` *opcjonalna*.
 
+
+```Delphi
+{
+  Example UNIT
+}
+unit Unit1;
+
+interface
+
+uses // List of unit dependencies goes here...
+     
+// Interface section goes here
+
+implementation
+
+uses // List of unit dependencies goes here...
+
+// Implementation of procedures, and functions goes here...
+
+initialization
+
+// Unit initialization code goes here...
+
+end.
+```
+
+Przykład:
 ```delphi
 unit test;
 
@@ -63,3 +90,19 @@ Możemy też bezpośrednio wywołać procedurę/funkcję z konkretnego modułu, 
     graph.Line
     vbxe.SetColor
     graph.SetColor
+
+
+## [$LIBRARYPATH](https://www.freepascal.org/docs-html/prog/progsu99.html)
+
+```delphi
+{$LIBRARYPATH path1; path2; ...}
+```
+Dyrektywa `$LIBRARYPATH` pozwala wskazać dodatkowe ścieżki poszukiwań modułów `UNIT` zadeklarowanych przez `USES`.
+
+
+## [$UNITPATH](https://www.freepascal.org/docs-html/prog/progsu119.html)
+
+```delphi
+{$UNITPATH path1; path2; ...}
+```
+Dyrektywa `$UNITPATH` pozwala wskazać dodatkowe ścieżki poszukiwań modułów `UNIT` zadeklarowanych przez `USES`.

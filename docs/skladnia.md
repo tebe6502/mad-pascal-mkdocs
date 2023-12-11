@@ -300,9 +300,17 @@ Wygenerowanie komunikatu z informacją `INFO`.
 ### [$LIBRARYPATH](https://www.freepascal.org/docs-html/prog/progsu99.html)
 
 ```delphi
-{$LIBRARYPATH path1;path2;...}
+{$LIBRARYPATH path1; path2; ...}
 ```
-Dyrektywa `$LIBRARYPATH` pozwala wskazać dodatkowe ścieżki poszukiwań dla bibliotek `unit`.
+Dyrektywa `$LIBRARYPATH` pozwala wskazać dodatkowe ścieżki poszukiwań modułów `UNIT` zadeklarowanych przez `USES`.
+
+### [$LINK](https://www.freepascal.org/docs-html/prog/progsu43.html)
+
+```delphi
+{$LINK filename}
+```
+Dyrektywa `{$link filename}` pozwala dołączyć i zintegrować z programem **Mad Pascal**-a kod i procedury zasemblowane w **Mad Assembler**-rze. 
+Więcej na temat łączenia assemblera z **Mad Pascal**-em w rozdziale [Wstawki assemblera](../asm)
 
 
 ### [$MACRO](https://www.freepascal.org/docs-html/prog/progse5.html)
@@ -426,6 +434,14 @@ msx   MPT      'porazka.mpt'
 play  RMTPLAY  'modul.feat' 1
 bmp   XBMP     'pic.bmp' 80
 ```
+
+### [$UNITPATH](https://www.freepascal.org/docs-html/prog/progsu119.html)
+
+```delphi
+{$UNITPATH path1; path2; ...}
+```
+Dyrektywa `$UNITPATH` pozwala wskazać dodatkowe ścieżki poszukiwań modułów `UNIT` zadeklarowanych przez `USES`.
+
 
 ### [$WARNING](https://www.freepascal.org/docs-html/prog/progsu81.html#x88-870001.2.81)
 
