@@ -259,7 +259,7 @@ W pamięci rekord reprezentowany jest przez wskaźnik `POINTER`.
     var px: TPoint;
 
 Domyślnie rekordy w **MP** są typu `PACKED`. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
-Jeśli zależy nam na zachowania kompatybilności z **FPC** należy dodatkowo poprzedzić słowo `RECORD` słowem `PACKED`.
+Jeśli zależy nam na zachowaniu kompatybilności z **FPC** należy dodatkowo poprzedzić słowo `RECORD` słowem `PACKED`.
 Bez tego rozmiar pamięci jaki zajmuje rekord będzie mógł się różnić, będzie mniej zajmował pamięci na **6502**, potencjalnie więcej o kilka bajtów na **PC**.
 
 type
@@ -272,6 +272,48 @@ Dostęp do pól rekordu z poziomu asm:
     mwa px bp2
     ldy #px.x-DATAORIGIN
     lda (bp2),y
+
+
+### Tablica z rekordami
+
+**MP** obsługuje tylko tablice wskaźników rekordów.
+
+```Delphi
+    type
+        TPoint = record x,y: byte end;    
+
+    var 
+        tab: array [0..3] of ^TPoint;
+```
+
+Taka tablica musi zostać zaincjowana odpowiednimi adresami rekordów, domyślnie na początku wszystkie pola takiej tablicy są wyzerowane.
+
+Pierwszy sposób zaincjowania tablicy wskaźników rekordów:
+```Delphi
+    var
+       a1,a2,a3,a4: TPoint;       
+
+    begin
+     tab[0] := @a1;
+     tab[1] := @a2;
+     tab[2] := @a3;
+     tab[3] := @a4;   
+    end.
+```
+Drugi sposób:
+```Delphi
+    begin
+     GetMem(tab[0], sizeof(TPoint));
+     GetMem(tab[1], sizeof(TPoint));
+     GetMem(tab[2], sizeof(TPoint));
+     GetMem(tab[3], sizeof(TPoint));
+    end.
+```
+Dostęp do pól rekordu z takiej tablicy:
+```Delphi
+  writeln(tab[1].x);
+  writeln(tab[1].y);
+```
 
 
 ## [Obiektowe](https://www.freepascal.org/docs-html/ref/refse28.html#x60-780005.1)

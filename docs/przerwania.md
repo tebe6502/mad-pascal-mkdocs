@@ -22,7 +22,7 @@ end.
 
 ### SetIntVec
 
-    SetIntVec(iVBLI, pointer);	// ustanowienie adresu programu obsługi przerwań VBLI ($0224)
+    SetIntVec(iVBLI, pointer);	// ustanowienie adresu programu obsługi przerwań VBLI ($0222)
     SetIntVec(iVBLD, pointer);	// ustanowienie adresu programu obsługi przerwań VBLD ($0224)
     SetIntVec(iDLI, pointer);	// ustanowienie adresu programu obsługi przerwań DLI ($0200)
 
@@ -44,6 +44,23 @@ end.
 
 Przerwanie **VBLD** (VBL opóźnione) kończymy skokiem pod adres `XITVBV` ($E462) co spowoduje przywrócenie wartości rejestrów `A` `X` `Y` **CPU6502**.
 
+Jeśli wyłączyliśmy `ROM` przez `{$define romoff}` i korzystamy z procedur umieszczonych w pamięci `$C000..$FFFF` musimy zadbać o odpowiednie ustawienie `PORTB`.
+
+```delphi
+procedure newVBL; interrupt; assembler;
+asm
+
+ dec portb
+ 
+ jsr user_proc_c000_ffff
+ 
+ inc portb
+
+ jmp xitvbv
+
+end;
+
+
 
 ```delphi
 procedure newVBL; interrupt; assembler;
@@ -62,6 +79,22 @@ end.
 ```
 
 Przerwanie **VBLDI** (VBL natychmiastowe) kończymy skokiem pod adres `SYSVBV` ($E45F) co spowoduje kontynuację obsługi przerwania VBL.
+
+Jeśli wyłączyliśmy `ROM` przez `{$define romoff}` i korzystamy z procedur umieszczonych w pamięci `$C000..$FFFF` musimy zadbać o odpowiednie ustawienie `PORTB`.
+
+```delphi
+procedure newVBL; interrupt; assembler;
+asm
+
+ dec portb
+ 
+ jsr user_proc_c000_ffff
+ 
+ inc portb
+
+ jmp sysvbv
+
+end;
 
 
 ## IRQ - TIMER1, TIMER2, TIMER4

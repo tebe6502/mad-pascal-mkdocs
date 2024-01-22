@@ -452,6 +452,7 @@ Jeśli w ciele procedury/funkcji występują operacje mnożenia/dzielenia, albo 
 Niezależnie czy w programie wystąpi wywołanie takiej **procedury/funkcji** kompilator zawsze wygeneruje dla niej kod.
 
 Na wejściu **procedury/funkcji** oznaczonej przez `INTERRUPT` programista musi zadbać o zachowanie rejestrów **CPU** `A` `X` `Y`, na wyjściu o przywrócenie stanu takich rejestrów, kompilator ogranicza się tylko do wstawienia końcowego rozkazu `RTI`.
+
 Kompilator zgłosi błąd jeśli w takiej procedurze/funkcji wystąpią rozkazy assemblera odwołujące się do zmiennych `:BP`, `:BP2` lub `:STACKORIGIN`.
 
 ```delphi

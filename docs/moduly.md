@@ -5,7 +5,7 @@
 Moduły `UNIT` w **MP** składają się z sekcji `INTERFACE` **wymagana**, `IMPLEMENTATION` **wymagana**, `INITIALIZATION` *opcjonalna*.
 
 
-```Delphi
+```delphi
 {
   Example UNIT
 }
@@ -67,6 +67,8 @@ end.
 ## [USES](https://wiki.freepascal.org/Uses)
 
 Do deklaracji wybranego modułu służy instrukcja `USES` np.:
+
+    uses atari in 'd:\units\atari.pas';
 
     uses crt, sysutils, atari;
 
