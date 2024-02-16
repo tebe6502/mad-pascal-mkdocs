@@ -50,6 +50,23 @@ Typ zasobu określa format włączanego pliku.
 | XBMP       | Plik **Windows Bitmap** (8 BitsPerPixel) ładowany do pamięci **VBXE** pod wskazany <br> adres `RCLABEL` od indeksu koloru `PAR0` w palecie kolorów **VBXE** nr 1|
 
 &nbsp;
+### Możliwość ładowania zasobów pod ROM
+
+        CMC             RAM / ROM
+        CMCPLAY         RAM / ROM
+        DOSFILE         RAM / ROM
+        EXTMEM
+        MPT             RAM / ROM
+        MPTPLAY         RAM / ROM
+        RCASM           RAM / ROM
+        RCDATA          RAM / ROM
+        RELOC           RAM
+        RMT             RAM / ROM
+        RMTPLAY         RAM
+        XBMP
+        SAPR            RAM / ROM
+        SAPRPLAY        RAM / ROM
+
 ### Włączenie do aplikacji pliku RC
 
 W kodzie źródłowym programu należy wpisać dyrektywę kompilatora (np. na początku sekcji implementacji):
@@ -67,6 +84,9 @@ const
 ```
 
 Włączenie pliku `RC` następuje w momencie kompilacji programu.
+
+Jeśli adres zasobu wskazuje adres pod ``ROM`` (``$C000..$FFFF``) wówczas wyłączany jest ``ANTIC``. Przy uruchomieniu programu należy wpisać odpowiednią wartość do rejestru ``DMACTL``
+aby włączyć obraz z powrotem.
 
 
 ### Dostęp do zasobów.

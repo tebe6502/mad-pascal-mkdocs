@@ -32,6 +32,40 @@ Dostępne są:
 * Separate program modules
 * Recursion
 
+## Układ katalogów
+
+W katalogu z **MP** wymagana jest obecność odpowiednich plików i podkatalogów:
+
+```
+  mp\
+  mp.exe
+     base\
+     rtl_default.asm
+     rtl6502_a8.asm
+     rtl6502_c4p.asm
+     rtl6502_c64.asm
+     rtl6502_neo.asm
+     rtl6502_raw.asm
+          atari\
+	  c4p\
+	  c64\
+	  common\
+	  neo\
+	  raw\
+	  runtime\
+     lib\
+     aplib.pas
+     atari.pas
+     blowfish.pas
+     c64.pas
+     ...
+     src\
+         targets\
+         crt.inc
+         graph.inc
+         system.inc
+```
+
 ## Kompilacja
 
 Aby skompilować źródło **Mad-Pascala**, można użyć kompilatora z **Delphi**, jeśli ktoś ma akurat zainstalowane środowisko **Delphi 7.0** lub nowsze.

@@ -7,13 +7,16 @@
 * obsługuje standardowy system plików DOS 2
 * obsługiwany rozmiar sektora (128 lub 256 bajtów) jest ustalany na etapie kompilacji foxDOS-a
 * foxDOS umożliwia odczyt pliku przez D:
-* jednocześnie można czytać tylko jeden plik, ale może on być dowolnej długości
-* foxDOS umożliwia nadpisanie istniejącego pliku mieszczącego się w tylko jednym sektorze
-* inne operacje, jak odczyt katalogu, kasowanie, zmiana nazwy itd. nie są obsługiwane
 * obsługuje funkcję BINARY LOAD, np. XIO 40,#1,0,0,”D:FILE.EXE”
 * foxDOS mieści się w całości w sektorach odczytu wstępnego (boot sectors)
 * foxDOS nie ustawia MEMLO, ale zajmuje tylko obszar pamięci $0700..$097F
 * foxDOS nie wyłącza ROM-u podczas transmisji
+
+ograniczenia:
+
+* jednocześnie można czytać tylko jeden plik, ale może on być dowolnej długości
+* umożliwia nadpisanie istniejącego pliku mieszczącego się w tylko jednym sektorze
+* inne operacje, jak odczyt katalogu, kasowanie, zmiana nazwy itd. nie są obsługiwane
 
 ```
 copy filename.obx disk\autorun.
@@ -21,9 +24,7 @@ copy filename.obx disk\autorun.
 dir2atr.exe -md -B foxdos.obx disk.atr disk\ 
 ```
 
-
 ## [xBootDOS](https://xxl.atari.pl/xbootdos/)
-
 
 * MEMLO = $980, nie używa strony $04xx,$05xx ani $06x
 * po wczytaniu automatycznie uruchamia program zapisany pod nazwą „AUTO”
@@ -35,8 +36,8 @@ dir2atr.exe -md -B foxdos.obx disk.atr disk\
 
 ograniczenia:
 
-* jednocześnie może być otwarty tylko jeden plik,
-* nie obsługuje odczytu katalogu, zmiany katalogu, zmiany nazwy, kasowania, tworzenia plików.
+* jednocześnie można czytać tylko jeden plik, ale może on być dowolnej długości
+* inne operacje, jak odczyt katalogu, kasowanie, zmiana nazwy itd. nie są obsługiwane
 
 ```
 copy filename.obx disk\autorun.
@@ -47,4 +48,3 @@ dir2atr.exe -md -B xBootDOS.obx disk.atr disk\
 ## [dir2atr](https://www.horus.com/~hias/atari/)
 
 Program dla Windows przy pomocy którego można tworzyć obrazy dyskietek **Atari XE/XL** `ATR`
-
