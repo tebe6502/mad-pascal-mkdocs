@@ -17,7 +17,7 @@ Syntax: mp source [switches]
 
 Użycie przełącznika `-diag` powoduje wygenerowanie dodatkowego pliku z informacją o wszystkich użytych zmiennych, procedurach, funkcjach.
 
-Domyślnym rozszerzeniem pliku wynikowego jest `*.A65`, plik taki assemblujemy z użyciem [Mad-Assemblera](https://github.com/tebe6502/Mad-Assembler), dodatkowo ustawiamy `-i:base`, `base` znajduje się w katalogu głównym **MP**), np.:
+Domyślnym rozszerzeniem pliku wynikowego jest `*.A65`, plik taki assemblujemy z użyciem [Mad-Assemblera](https://github.com/tebe6502/Mad-Assembler), dodatkowo ustawiamy `-i:base`, `base` znajduje się w katalogu głównym **Mad-Pascal**), np.:
 
     mads source.a65 -x -i:base
 

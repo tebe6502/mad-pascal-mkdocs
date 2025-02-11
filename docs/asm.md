@@ -5,7 +5,7 @@
 Bloki assemblera `ASM` nie są przez kompilator weryfikowane pod względem składni, dokonuje tego dopiero **Mad Assembler**.
 
 > **UWAGA:**  
-> _Wymagane jest aby zachować stan rejestru `X` `CPU6502`, który używany jest do obsługi stosu programowego **MP**._
+> _Wymagane jest aby zachować stan rejestru `X` `CPU6502`, który używany jest do obsługi stosu programowego **Mad-Pascal**._
 
 Kompilator dopuszcza dwie składnie bloku `ASM`, z klamrami { } jak dla komentarza i standardową bez klamer.
 
@@ -47,7 +47,7 @@ end;
 {$link filename}
 ```
 
-Dyrektywa kompilatora `{$link filename}` pozwala dołączyć plik relokowalny z **Mad Assembler**-a do kompilowanego programu **MP**.
+Dyrektywa kompilatora `{$link filename}` pozwala dołączyć plik relokowalny z **Mad Assembler**-a do kompilowanego programu **Mad-Pascal**.
 
 ```Delphi
 	.reloc
@@ -72,7 +72,7 @@ Dyrektywa kompilatora `{$link filename}` pozwala dołączyć plik relokowalny z 
 .endp
 ```
 
-W powyższym przykładzie korzystamy z procedury `PRINT`, która jest zdefiniowana w **MP**.
+W powyższym przykładzie korzystamy z procedury `PRINT`, która jest zdefiniowana w **Mad-Pascal**.
 
 ```Delphi
 uses crt;
@@ -101,11 +101,11 @@ begin
 end.
 ```
 
-Z poziomu assemblera mamy dostęp do procedur **MP** ale tylko oznaczonych modyfikatorem `REGISTER`, czyli takich których parametry przekazywane są przez programowe rejestry `EDX`, `ECX`, `EAX` (jesteśmy ograniczeni do maksymalnie trzech parametrów).
+Z poziomu assemblera mamy dostęp do procedur **Mad-Pascal** ale tylko oznaczonych modyfikatorem `REGISTER`, czyli takich których parametry przekazywane są przez programowe rejestry `EDX`, `ECX`, `EAX` (jesteśmy ograniczeni do maksymalnie trzech parametrów).
 
 Modyfikator `KEEP` wymusza pozostawienie procedury w kompilowanym kodzie niezależnie od tego czy wystąpiło jej użycie czy nie (normalnie procedury/funkcje które nie są używane są eliminowane).
 
-**MP** natomiast ma dostęp do procedur z linkowanego pliku assemblera, których parametry przekazywane są przez zmienne, modyfikator `.VAR`.
+**Mad-Pascal** natomiast ma dostęp do procedur z linkowanego pliku assemblera, których parametry przekazywane są przez zmienne, modyfikator `.VAR`.
 
 ```Delphi
 .proc	prc (.dword a .dword b .dword c) .var
@@ -117,7 +117,7 @@ W programie relokowalnym **Mad Assembler**-a potrzebujemy dodatkowej deklaracji 
 .extrn edx, ecx, eax .dword
 ```
 
-Sama procedura **MP** do której chcemy mieć dostęp z poziomu assemblera jest deklarowana jako procedura zewnętrzna z parametrami oznaczającymi rejestry programowe `EDX`, `ECX`, `EAX`.
+Sama procedura **Mad-Pascal** do której chcemy mieć dostęp z poziomu assemblera jest deklarowana jako procedura zewnętrzna z parametrami oznaczającymi rejestry programowe `EDX`, `ECX`, `EAX`.
 
 Więcej informacji na temat modyfikatora `REGISTER` i kolejności alokacji parametrów w rejestrach programowych w rozdziale [Procedury i funkcje](../procedury-funkcje/#register).
 
@@ -125,13 +125,13 @@ Więcej informacji na temat modyfikatora `REGISTER` i kolejności alokacji param
 .extrn	print .proc (.dword edx) .var
 ```
 
-Dostęp do procedury `PRC` z poziomu **MP** zapewni nam jej upublicznienie przez dyrektywę assemblera `.PUBLIC`.
+Dostęp do procedury `PRC` z poziomu **Mad-Pascal** zapewni nam jej upublicznienie przez dyrektywę assemblera `.PUBLIC`.
 
 ```Delphi
 .public	prc
 ```
 
-Po assemblacji naszego przykładowego relokowalnego programu assemblera `TEST.ASM` otrzymujemy plik `TEST.OBX`, który możemy połączyć z programem **MP** dyrektywą `{$LINK}`.
+Po assemblacji naszego przykładowego relokowalnego programu assemblera `TEST.ASM` otrzymujemy plik `TEST.OBX`, który możemy połączyć z programem **Mad-PAscal** dyrektywą `{$LINK}`.
 
 ```Delphi
 {$link test.obx}

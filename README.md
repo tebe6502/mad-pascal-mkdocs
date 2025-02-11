@@ -5,4 +5,6 @@ mkdocs serve
 mkdocs build
 ```
 
-Wersja wygenerowana przez **MkDocs** znajduje się pod adresem [mads.atari8.info](https://mads.atari8.info/doc/pl/index.html)
+Wersja wygenerowana (rekomendowana) przez **MkDocs** znajduje się pod adresem [zbyti.great-site/mp-docs](http://zbyti.great-site.net/mp-docs/)
+
+Dokumentacja (uproszczone menu) jest także dostępna na serwerach [readthedocs.io](https://mad-pascal.readthedocs.io/).

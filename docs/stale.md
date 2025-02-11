@@ -30,3 +30,17 @@ const
   x: word = 5;         { wymuszenie typu stałej }
   b: byte = -11;
 ```
+
+Dodatkowo kompilator ma predefiniowane stałe:
+
+  - NIL
+  - EOL
+  - __BUFFER
+  - TRUE
+  - FALSE
+  - MAXINT
+  - MAXSMALLINT
+  - PI
+  - NAN
+  - INFINITY
+  - NEGINFINITY

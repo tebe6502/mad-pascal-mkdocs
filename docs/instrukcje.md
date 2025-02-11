@@ -27,7 +27,7 @@ Instrukcje warunkowe `IF` mogą być zagnieżdżane. Wykorzystywane jest to przy
     FOR zmienna := { wartość końcowa } DOWNTO { wartość początkowa } DO { instrukcje do wykonania }
 ```
 
-Instrukcja `FOR` służy do organizacji obliczeń, które będą wykonywane z góry określoną liczbą razy. Zmienna sterująca musi być identyfikatorem typu porządkowego, a oba wyrażenia powinny być zgodne w sensie przypisania z typem zmiennej sterującej. W czasie realizacji pętli `TO` zmiennej sterującej przypisywana jest następna wartość w danym typie, w pętli `DOWNTO` poprzednia. Zabroniona jest *ręczna* zmiana wartości zmiennej sterującej. W przypadku takiej próby **MP** zasygnalizuje błąd
+Instrukcja `FOR` służy do organizacji obliczeń, które będą wykonywane z góry określoną liczbą razy. Zmienna sterująca musi być identyfikatorem typu porządkowego, a oba wyrażenia powinny być zgodne w sensie przypisania z typem zmiennej sterującej. W czasie realizacji pętli `TO` zmiennej sterującej przypisywana jest następna wartość w danym typie, w pętli `DOWNTO` poprzednia. Zabroniona jest *ręczna* zmiana wartości zmiennej sterującej. W przypadku takiej próby **Mad-Pascal** zasygnalizuje błąd
 **Illegal assignment to for-loop variable**.
 
 Kompilator dba o to aby nie wystąpiła pętla bez końca, dlatego można bez obaw stosować taką pętlę:

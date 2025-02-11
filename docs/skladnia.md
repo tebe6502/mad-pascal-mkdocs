@@ -1,25 +1,5 @@
 #
 
-## [Komentarze](http://www.freepascal.org/docs-html/ref/refse2.html)
-
-W **MP** do oznaczenia komentarza jednoliniowego służą znaki `//`, dla wieloliniowego klamry `{ }`, lub `(* *)`.
-
-```delphi
-// to jest komentarz
-inc(a); // to jest komentarz
-
-(* komentarz *)
-
-(*
-  komentarz
-*)
-
-{ to
-  jest
-  komentarz
-}
-```
-
 ## Zarezerwowane słowa
 
 ### rozkazy
@@ -49,6 +29,26 @@ eol
 nan
 infinity
 neginfinity
+```
+
+## [Komentarze](http://www.freepascal.org/docs-html/ref/refse2.html)
+
+W **Mad-Pascal** do oznaczenia komentarza jednoliniowego służą znaki `//`, dla wieloliniowego klamry `{ }`, lub `(* *)`.
+
+```delphi
+// to jest komentarz
+inc(a); // to jest komentarz
+
+(* komentarz *)
+
+(*
+  komentarz
+*)
+
+{ to
+  jest
+  komentarz
+}
 ```
 
 ## Wyrażenia
@@ -162,25 +162,43 @@ Z poziomu assemblera dostęp do zdefiniowanych etykiet `$DEFINE` możliwy jest p
 
 ### [$BIN2CSV](https://github.com/t-edson/P65Pas#bin2csv)
 
-Dołącza zawartość zewnętrznego pliku binarnego do kodu źródłowego, jak tekst CSV.
+Dołącza zawartość zewnętrznego pliku binarnego do kodu źródłowego, jako tekst CSV.
 
 Na przykład, jeśli plik binarny zawiera bajty `$1E, $1F, $20`, dyrektywa wygeneruje ciąg `30, 31, 32`.
 
 Głównym zastosowaniem tej dyrektywy jest [inicjalizacji tablic](../typy/#inicjalizacja-tablic).
 
-```
+```Delphi
   //Initialize with a binary content
-  AAA: array[3] of byte = ({$BIN2CSV data.bin});
+  AAA: array[3] of byte = ( {$BIN2CSV data.bin} );
+  
+  AAA: array of byte = [ {$BIN2CSV data.bin} ];
 ```
 
 
-### [$CODEALIGN PROC = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
+### [$CODEALIGN](https://www.freepascal.org/docs-html/prog/progsu9.html)
 
+
+#### `PROC`
+
+```Delphi
+  {$codealign proc = $100}
+```
 Dyrektywa `$CODEALIGN PROC` pozwala wyrównać generowany kod wynikowy do `VALUE` bajtów strony pamięci. Przed każdym blokiem `PROCEDURE`, `FUNCTION` wstawiany jest kod `.ALIGN VALUE`. Aby wyłączyć wyrównywanie należy ustawić `{$CODEALIGN PROC = 0}`
 
-### [$CODEALIGN LOOP = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
+#### `LOOP`
 
+```Delphi
+  {$codealign loop = $100}
+```
 Dyrektywa `$CODEALIGN LOOP` pozwala wyrównać generowany kod wynikowy do `VALUE` bajtów strony pamięci. Przed każdą instrukcją iteracyjną `FOR`, `WHILE`, `REPEAT` wstawiany jest kod `.ALIGN VALUE`. Aby wyłączyć wyrównywanie należy ustawić `{$CODEALIGN LOOP = 0}`
+
+#### `LINK`
+
+```Delphi
+  {$codealign link = $100}
+```
+Dyrektywa `$CODEALIGN LINK` pozwala wyrównać generowany kod wynikowy do `VALUE` bajtów strony pamięci. Przed każdą dyrektywą `{$LINK filename}` wstawiany jest kod `.ALIGN VALUE`. Aby wyłączyć wyrównywanie należy ustawić `{$CODEALIGN LINK = 0}`
 
 
 ### [$DEFINE](https://www.freepascal.org/docs-html/prog/progsu11.html#x18-170001.2.11)
@@ -220,6 +238,36 @@ Uzupełnienie dla `{$DEFINE ROMOFF}`, zapobiega przepisaniu zestawu znakowego z 
 ```
 Wygenerowanie komunikatu z błędem `ERROR`.
 
+
+### [$EVAL]()
+
+```delphi
+{$EVAL PAR1[,PAR2] ,"EXPRESSION"}
+```
+
+- Oblicza wartość wyrażenia EXPRESSION dla zakresu:
+      - `0..PAR1-1` (jeśli podano tylko `PAR1`)
+      - `0..PAR1-1 * 0..PAR2-1` (jeśli podano `PAR1` i `PAR2`)
+
+- Parametry w wyrażeniu oznaczamy jako `:1` (dla `PAR1`) i `:2` (dla `PAR2`).
+- W wyrażeniu można używać stałych występujących w programie.
+- Dozwolone operatory:
+  +, -, *, /, DIV, MOD, AND, SHL, SHR, OR, XOR, AND
+- Dostępne funkcje matematyczne:
+  PI, RND, SQRT, SQR, ARCTAN2, COS, SIN, TAN, EXP, LN, ABS, INT, POWER, ARCTAN
+
+Głównym zastosowaniem tej dyrektywy jest inicjalizacji tablic.
+
+```Delphi
+ mul_40: array of word = [ {$EVAL 192,":1*40"} ];
+  
+ sqr : array of byte = [ {$eval WIDTH,200,"255/(sqrt(power(:1-WIDTH/2.5,2)*4+power(:2-HEIGHT/2-20,2))+5)*32.0" } ];
+
+ sinx: array of byte = [ {$eval 256, "(sin(:1/256.0*PI*2.0)*48+63)"} ];
+ 
+ cnt: array [0..39] of byte = ( {$eval 40,":1 and 15"} );
+
+```
 
 ### [$F, $FASTMUL](https://codebase64.org/doku.php?id=base:seriously_fast_multiplication)
 
@@ -321,7 +369,7 @@ Więcej na temat łączenia assemblera z **Mad Pascal**-em w rozdziale [Wstawki 
 {$MACRO+}
 {$MACRO-}
 ```
-Dyrektywa `{$macro }` włącza/wyłącza możliwość [definiowania makr](../makra/#definiowanie-makra), jest wymagana przez **FPC**, w **MP** jest zachowana tylko w celu zgodności.
+Dyrektywa `{$macro }` włącza/wyłącza możliwość [definiowania makr](../makra/#definiowanie-makra), jest wymagana przez **FPC**, w **Mad-Pascal** jest zachowana tylko w celu zgodności.
 
 
 ### [$OPTIMIZATION](https://www.freepascal.org/docs-html/prog/progsu58.html)
@@ -356,55 +404,93 @@ Parametr `NOLOOPUNROLL` wyłącza rozpętlanie pętli `FOR`.
 
 RCLABEL RCTYPE RCFILE [PAR0 PAR1 PAR2 PAR3 PAR4 PAR5 PAR6 PAR7]
 ```
-
 Dyrektywa dołączenia pliku z zasobami.
 
-Plik zasobów jest plikiem tekstowym, każdy jego kolejny wiersz powinien składać się z trzech pól rozdzielonych "białym znakiem": etykieta `RCLABEL` (jej deklaracja musi znaleźć się także w programie), typ zasobów `RCTYPE`, lokalizacja pliku `RCFILE`. Aktualnie w pliku `BASE\RES6502.ASM` znajdują się makra do obsługi 12 typów zasobów `RCTYPE`:
+Plik zasobów jest plikiem tekstowym, każdy jego kolejny wiersz powinien składać się z trzech pól rozdzielonych "białym znakiem":
+
+   - etykieta `RCLABEL` (jej deklaracja musi znaleźć się także w programie)
+   - typ zasobów `RCTYPE`
+   - lokalizacja pliku `RCFILE`
+
+Aktualnie w pliku `BASE\RES6502.ASM` znajdują się makra do obsługi 12 typów zasobów `RCTYPE`:
 
 #### `RCDATA`
 
-Dowolny typ danych, np.:
-
 ```delphi
-label RCDATA 'filename'
-```
+rclabel RCDATA 'filename'
 
-możliwe jest podanie dodatkowego parametru określającego liczbę bajtów które mają zostać pominięte, przydatne kiedy chcemy usunąć nagłówek pliku XEX 
-
-```delphi
-label RCDATA 'filename' OFFSET
+rclabel RCDATA 'filename' OFFSET
 ```
+Dowolny typ danych, możliwe jest podanie dodatkowego parametru określającego liczbę bajtów które mają zostać pominięte, przydatne kiedy chcemy usunąć nagłówek pliku XEX.
 
 #### `EXTMEM`
 
+```delphi
+rclabel EXTMEM 'filename'
+```
 Dowolny typ danych ładowany do pamięci dodatkowej PORTB, adres ładowania ustalany jest na podstawie `RCLABEL`.
 
 #### `RCASM`
 
-Plik w assemblerze, który zostanie dołączony i zasemblowany.
+```delphi
+rclabel RCASM 'filename'
+```
+Plik w assemblerze, który zostanie dołączony i zasemblowany pod wskazany adres `RCLABEL`.
 
 #### `DOSFILE`
 
+```delphi
+rclabel DOSFILE 'filename'
+```
 Plik z nagłówkiem **Atari DOS**, adres ładowania takiego pliku powinien być identyczny jak `RCLABEL`.
 
 #### `RELOC`
 
-Plik relokowalny w formacie **MadAssemblera**, plik zostanie poddany relokacji pod wskazany adres `RCLABEL`.
+```delphi
+rclabel RELOC 'filename'
+```
+Plik relokowalny w formacie **Mad Assembler**-a, plik zostanie poddany relokacji pod wskazany adres `RCLABEL`.
+
+#### `PP`
+
+```delphi
+rclabel PP 'filename'
+```
+Plik spakowany **Power Packer**-em, który zostanie załadowany pod wskazany adres `RCLABEL`.
+
+#### `SAPR`
+
+```delphi
+rclabel SAPR 'filename'
+```
+Plik [**SAPR-LZSS**](https://forums.atariage.com/topic/315537-rmt2lzss-convert-rmt-tunes-to-lzss-for-fast-playback/), który zostanie załadowany pod wskazany adres `RCLABEL`.
 
 #### `RMT`
 
-Plik modułu Raster Music Tracker-a, plik zostanie poddany relokacji pod wskazany adres `RCLABEL`.
+```delphi
+rclabel RMT 'filename'
+```
+Plik modułu **Raster Music Tracker**-a, plik zostanie poddany relokacji pod wskazany adres `RCLABEL`.
 
 #### `MPT`
 
-Plik modułu Music ProTracker-a, plik zostanie poddany relokacji pod wskazany adres `RCLABEL`.
+```delphi
+rclabel MPT 'filename'
+```
+Plik modułu **Music ProTracker**-a, plik zostanie poddany relokacji pod wskazany adres `RCLABEL`.
 
 #### `CMC`
 
+```delphi
+rclabel CMC 'filename'
+```
 Plik modułu **Chaos Music Composer-a**, plik zostanie poddany relokacji pod wskazany adres `RCLABEL`.
 
 #### `RMTPLAY`
 
+```delphi
+rclabel RMTPLAY 'filename.feat' 0
+```
 Player dla modułu **RMT**, jako `RCFILE` podajemy plik `*.FEAT` oraz dodatkowo `PAR0` tryb playera `0..3`.
 
 ```none
@@ -414,16 +500,32 @@ Player dla modułu **RMT**, jako `RCFILE` podajemy plik `*.FEAT` oraz dodatkowo 
     3 => compile RMTplayer for 4 tracks stereo L1 L2 R3 R4
 ```
 
+#### `SAPRPLAY`
+
+```delphi
+rclabel SAPRPLAY
+```
+Player **SAPR-LZSS**, który wymaga $C00 bajtów pamięci ($300 player, $900 bufory).
+
 #### `MPTPLAY`
 
+```delphi
+rclabel MPTPLAY
+```
 Player dla modułu **MPT**.
 
 #### `CMCPLAY`
 
+```delphi
+rclabel CMCPLAY
+```
 Player dla modułu **CMC**.
 
 #### `XBMP`
 
+```delphi
+rclabel XBMP 'filename' 0
+```
 Plik **Windows Bitmap** (8 BitsPerPixel) ładowany do pamięci **VBXE** pod wskazany adres `RCLABEL` od indeksu koloru `PAR0` w palecie kolorów **VBXE nr 1**
 
 Przykład:

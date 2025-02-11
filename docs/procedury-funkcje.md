@@ -2,7 +2,7 @@
 
 ## [Procedury](https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014)
 
-**MP** pozwala na przekazanie do procedury maksymalnie **8** parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą `CONST` i referencję `VAR`.
+**Mad-Pascal** pozwala na przekazanie do procedury maksymalnie **8** parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą `CONST` i referencję `VAR`.
 
 Parametry procedur odczytywane są i wartościowane od prawej do lewej strony [tests\tests-medium\function_valuation_of_arguments.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas)
 
@@ -14,7 +14,7 @@ Jeśli jest to możliwe kompilator przekazuje parametry do procedury poprzez zmi
 
 ## [Funkcje](https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014)
 
-**MP** pozwala na przekazanie do funkcji maksymalnie **8** parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą `CONST` i referencję `VAR`. 
+**Mad-Pascal** pozwala na przekazanie do funkcji maksymalnie **8** parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą `CONST` i referencję `VAR`. 
 
 Wynik funkcji zwracamy przypisując go do nazwy funkcji lub korzystając z automatycznie deklarowanej zmiennej `RESULT`, np.:
 
@@ -314,7 +314,7 @@ Procedury i funkcje zagnieżdżone mogą okazać się przydatne, gdy do realizac
 **Procedury/Funkcje** oznaczona przez `ASSEMBLER` mogą składać się tylko z bloku **ASM**. Kompilator nie dokonuje analizy składni takich bloków, traktuje je jak komentarz, ewentualne błędy zostaną wychwycone dopiero podczas asemblacji.
 
 > **UWAGA:**  
-> _Wymagane jest aby zachować stan rejestru `X` `CPU6502`, który używany jest do obsługi stosu programowego **MP**._
+> _Wymagane jest aby zachować stan rejestru `X` `CPU6502`, który używany jest do obsługi stosu programowego **Mad-Pascal**._
 
 Kompilator dopuszcza dwie składnie bloku `ASM`, z klamrami { } jak dla komentarza i standardową bez klamer.
 

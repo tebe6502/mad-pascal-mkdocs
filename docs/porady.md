@@ -2,14 +2,14 @@
 
 ## FOR
 
-Wartość licznika po zakończeniu działania instrukcji iteracyjnej `FOR` w **FPC** będzie równa wartości jaka została określona dla maksymalnej wartości licznika. W przypadku **MP** wartość będzie większa o `+1`.
+Wartość licznika po zakończeniu działania instrukcji iteracyjnej `FOR` w **FPC** będzie równa wartości jaka została określona dla maksymalnej wartości licznika. W przypadku **Mad-Pascal** wartość będzie większa o `+1`.
 
 Przykład:
 ```delphi
 for i:=0 to 10 do;
 ```
 
-**FPC** po zakończeniu petli `i = 10`, **MP** `i = 11`
+**FPC** po zakończeniu petli `i = 10`, **Mad-Pascal** `i = 11`
 
 ## SHL
 
@@ -23,14 +23,14 @@ i:=1;
 c:=i shl 33;
 ```
 
-Dla w/w przykładu **FPC** zwróci wartość `c = 2`, **MP** zwróci `c = 0`.
+Dla w/w przykładu **FPC** zwróci wartość `c = 2`, **Mad-Pascal** zwróci `c = 0`.
 
 Natomiast dla:
 ```delphi
 c:=1 shl 33;
 ```
 
-**FPC** zwróci `c = 0`, tak samo jak **MP*.
+**FPC** zwróci `c = 0`, tak samo jak **Mad-Pascal*.
 
 
 ## STRINGI W PAMIĘCI

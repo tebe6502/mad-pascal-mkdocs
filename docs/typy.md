@@ -25,7 +25,7 @@
 <br/>
 ## [Wyliczeniowe](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1)
 
-Typ wyliczeniowy w **MP** został zaimplementowany w podstawowej postaci, tzn.:
+Typ wyliczeniowy w **Mad-Pascal** został zaimplementowany w podstawowej postaci, tzn.:
 
 ```delphi
 Type
@@ -34,7 +34,7 @@ Type
 
   Joy = (right_down = 5, right_up, right, left_down = 9, left_up, left, down = 13, up, none);
 ```
-Typ wyliczeniowy przechowywany jest tylko w pamięci kompilatora **MP**, do pliku wynikowego nie zostaną zapisane jakiekolwiek informacje dotyczące pól typu wyliczeniowego. Dopuszczalne jest użycie komendy `ORD`, `SIZEOF` oraz rzutowania dla typu wyliczeniowego.
+Typ wyliczeniowy przechowywany jest tylko w pamięci kompilatora **Mad-Pascal**, do pliku wynikowego nie zostaną zapisane jakiekolwiek informacje dotyczące pól typu wyliczeniowego. Dopuszczalne jest użycie komendy `ORD`, `SIZEOF` oraz rzutowania dla typu wyliczeniowego.
 
 ```delphi
 var
@@ -53,7 +53,7 @@ var
    end;
 ```
 
-Aktualnie kompilator **MP** nie sprawdzi poprawności typów wyliczeniowych dla operacji `IF ELSE`.
+Aktualnie kompilator **Mad-Pascal** nie sprawdzi poprawności typów wyliczeniowych dla operacji `IF ELSE`.
 
 ## [Rzeczywiste](https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2)
 
@@ -117,7 +117,7 @@ c: char = 'X'~*;              // znak w inwersie, kodach ANTIC-a
 |POINTER            |0 .. 65535               |2            |
 
 <br/>
-Wskaźniki w **MP** mogą być typowane i bez określonego typu, np.:
+Wskaźniki w **Mad-Pascal** mogą być typowane i bez określonego typu, np.:
 
 ```delphi
  a: ^word;         // wskaźnik typowany na słowo
@@ -152,13 +152,15 @@ end;
 
 ## [Tablice statyczne](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
 
-Tablice w **MP** są tylko statyczne, jednowymiarowe lub dwuwymiarowe z początkowym indeksem równym `0`, np.:
+Tablice w **Mad-Pascal** są tylko statyczne, jednowymiarowe lub dwuwymiarowe z początkowym indeksem równym `0`, np.:
 
 ```delphi
 var tb: array [0..100] of word;
 var tb2: array [0..15, 0..31] of Boolean;
 var tab: array [0..7] of array [0..31] of byte;
 var tab256: array [byte] of word;
+
+var [striped] tb: array [0..99] of cardinal;
 ```
 
 W przypadku początkowego indeksu innego niż zero zostanie wygenerowany błąd **Error: Array lower bound is not zero**.
@@ -215,7 +217,33 @@ Gdy liczba bajtów zajmowanych przez tablicę przekracza 256 bajtów generowany 
     adc #$00
     sta bp+1
     lda (bp),y
-    
+
+### [Tablice STRIPED](../zmienne/#striped)
+
+Dla poniższego przykłady kompilator musi pomnożyć indeks przez dwa, aby uzyskać dostęp do każdego elementu. 
+
+```delphi
+  array [0..7] of word;
+```
+
+Układ pamięci takiej tablicy będzie następujący:
+
+    LHLHLHLHLHLHLHLH
+
+Jeśli oznaczymy tablicę jako `STRIPED`
+
+```delphi
+  [striped] array [0..7] of word;
+```
+
+wygeneruje to następującą strukturę w pamięci:
+
+    LLLLLLLLHHHHHHHH
+
+Modyfikator `STRIPED` można stosować tylko dla tablic z typem prostym (`WORD`, `CARDINAL`, `SMALLINT`, `INTEGER`, `SHORTREAL`, `REAL`, `FLOAT16`, `POINTER`).
+
+Modyfikator `STRIPED` nie zadziała dla tablic z indeksem większym niż `255`.
+
     
 ### Inicjalizacja tablic
 
@@ -238,17 +266,27 @@ Tablicę typu `CHAR` możemy zaincjować przez `STRING`:
 Możliwa jest inicjalizacja tablicy bez podawania jej rozmiaru, korzystamy wtedy z nawiasów kwadratowych `[ ]` :
 ```
    PBox : array of char = ['H', 'e', 'l', 'l', 'o'];
-
    PBox : array of word = [1,2,3,4,5];
-	
+
    PBox : array of char = 'Hello';        // bez nawiasów [ ]
 ```
-Możliwe jest zaincjowanie tablicy typu `BYTE` plikiem binarnym, używamy wtedy dyrektywy kompilatora `{$bin2csv filename}` :
+
+#### $bin2csv
+Możliwe jest zaincjowanie tablicy typu `BYTE` plikiem binarnym, używamy wtedy dyrektywy kompilatora [`{$bin2csv filename}`](../skladnia/#bin2csv) :
 ```
    tb: array of byte = [ {$bin2csv filename} ];
-
    tb: array [0..11] of byte = ( 1,2,3, {$bin2csv filename} );
 ```
+
+#### $eval
+Innym sposobem zaincjowania tablicy zadanego typu jest użycie dyrektywy [`{$eval par1[,par2],"expression"}`](../skladnia/#eval) :
+```
+   tb: array of cardinal = [ {$eval 100,":1*32"} ];
+   tb: array of pointer = [ {$eval 24,"SCR_ADDRESS+:1*40"} ];
+
+   tb: array [0..11] of byte = ( {$eval 3,4,":1*:2"} );
+```
+
 
 ## [Rekordy](https://www.freepascal.org/docs-html/ref/refsu15.html#x39-550003.3.2)
 
@@ -258,7 +296,7 @@ W pamięci rekord reprezentowany jest przez wskaźnik `POINTER`.
         TPoint = record x,y: byte end;
     var px: TPoint;
 
-Domyślnie rekordy w **MP** są typu `PACKED`. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
+Domyślnie rekordy w **Mad-Pascal** są typu `PACKED`. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
 Jeśli zależy nam na zachowaniu kompatybilności z **FPC** należy dodatkowo poprzedzić słowo `RECORD` słowem `PACKED`.
 Bez tego rozmiar pamięci jaki zajmuje rekord będzie mógł się różnić, będzie mniej zajmował pamięci na **6502**, potencjalnie więcej o kilka bajtów na **PC**.
 
@@ -276,7 +314,7 @@ Dostęp do pól rekordu z poziomu asm:
 
 ### Tablica z rekordami
 
-**MP** obsługuje tylko tablice wskaźników rekordów.
+**Mad-Pascal** obsługuje tylko tablice wskaźników rekordów.
 
 ```Delphi
     type
@@ -314,7 +352,6 @@ Dostęp do pól rekordu z takiej tablicy:
   writeln(tab[1].x);
   writeln(tab[1].y);
 ```
-
 
 ## [Obiektowe](https://www.freepascal.org/docs-html/ref/refse28.html#x60-780005.1)
 
