@@ -30,6 +30,7 @@ Dostępne są:
 * `Records`
 * `Objects`
 * Separate program modules
+* Separate library modules
 * Recursion
 
 ## Układ katalogów
@@ -68,11 +69,9 @@ W katalogu z **Mad-Pascal** wymagana jest obecność odpowiednich plików i podk
 
 ## Kompilacja
 
-Aby skompilować źródło **Mad-Pascala**, można użyć kompilatora z **Delphi**, jeśli ktoś ma akurat zainstalowane środowisko **Delphi 7.0** lub nowsze.
+Aby skompilować źródło **Mad-Pascala** należy użyć kompilatora z pakietu **Free Pascal Compiler** (`FPC`), dostępnego na stronie projektu [freepascal.org](http://www.freepascal.org/).
 
-Innym sposobem, bardziej multi platformowym jest użycie kompilatora z pakietu **Free Pascal Compiler** (FPC), który można pobrać ze strony [freepascal.org](http://www.freepascal.org/).
-
-Uruchamiamy instalator, wybieramy katalog w którym zostanie zainstalowany FP. Ważne jest aby nie używać w nazwie katalogu znaku wykrzyknika `!` czy innych nie standardowych znaków. Jeśli nie uda nam się skompilować żadnego pliku, najpewniej winna jest nie standardowa nazwa ścieżki. Linia komend uruchamiająca kompilację może wyglądać następująco (wielkość liter w nazwach parametrów ma znaczenie):
+Uruchamiamy instalator, wybieramy katalog w którym zostanie zainstalowany `FPC`. Ważne jest aby nie używać w nazwie katalogu znaku wykrzyknika `!` czy innych niestandardowych znaków. Jeśli nie uda nam się skompilować żadnego pliku, najpewniej winna jest nie standardowa nazwa ścieżki. Linia komend uruchamiająca kompilację może wyglądać następująco (wielkość liter w nazwach parametrów ma znaczenie):
 
     fpc -Mdelphi -v -O3 mp.pas
 
