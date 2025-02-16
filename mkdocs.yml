@@ -1,10 +1,10 @@
 site_name: Mad-Pascal
 site_author: TeBe
 site_description: "Mad-Pascal Dokumentacja"
-site_keyword: "cross-compiler"
+site_keyword: "dokumentacja, pascal, atari 8bit, cross-compiler"
 
 repo_url: https://github.com/tebe6502/mad-pascal-mkdocs/
-edit_uri: main/docs/
+edit_uri: https://github.com/tebe6502/mad-pascal-mkdocs/docs/
 
 theme:
     name: readthedocs
