@@ -184,11 +184,11 @@
               
                 <h1 id="_1"></h1>
 <h2 id="for">FOR</h2>
-<p>Wartość licznika po zakończeniu działania instrukcji iteracyjnej <code>FOR</code> w <strong>FPC</strong> będzie równa wartości jaka została określona dla maksymalnej wartości licznika. W przypadku <strong>MP</strong> wartość będzie większa o <code>+1</code>.</p>
+<p>Wartość licznika po zakończeniu działania instrukcji iteracyjnej <code>FOR</code> w <strong>FPC</strong> będzie równa wartości jaka została określona dla maksymalnej wartości licznika. W przypadku <strong>Mad-Pascal</strong> wartość będzie większa o <code>+1</code>.</p>
 <p>Przykład:</p>
 <pre><code class="language-delphi">for i:=0 to 10 do;
 </code></pre>
-<p><strong>FPC</strong> po zakończeniu petli <code>i = 10</code>, <strong>MP</strong> <code>i = 11</code></p>
+<p><strong>FPC</strong> po zakończeniu petli <code>i = 10</code>, <strong>Mad-Pascal</strong> <code>i = 11</code></p>
 <h2 id="shl">SHL</h2>
 <p><strong>FPC</strong> podaje inne wyniki dla SHL które przekracza rozmiar danego typu, np.:</p>
 <pre><code class="language-delphi">i: byte;
@@ -197,11 +197,11 @@ c: cardinal;
 i:=1;
 c:=i shl 33;
 </code></pre>
-<p>Dla w/w przykładu <strong>FPC</strong> zwróci wartość <code>c = 2</code>, <strong>MP</strong> zwróci <code>c = 0</code>.</p>
+<p>Dla w/w przykładu <strong>FPC</strong> zwróci wartość <code>c = 2</code>, <strong>Mad-Pascal</strong> zwróci <code>c = 0</code>.</p>
 <p>Natomiast dla:</p>
 <pre><code class="language-delphi">c:=1 shl 33;
 </code></pre>
-<p><strong>FPC</strong> zwróci <code>c = 0</code>, tak samo jak *<em>MP</em>.</p>
+<p><strong>FPC</strong> zwróci <code>c = 0</code>, tak samo jak *<em>Mad-Pascal</em>.</p>
 <h2 id="stringi-w-pamieci">STRINGI W PAMIĘCI</h2>
 <pre><code class="language-delphi"> writeln('ala','ma','kota');
  writeln('ala','ma','psa');

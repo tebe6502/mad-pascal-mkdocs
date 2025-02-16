@@ -91,7 +91,7 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#exports">EXPORTS</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#external-httpswwwfreepascalorgdocs-htmlrefrefse98html">[EXTERNAL] (https://www.freepascal.org/docs-html/ref/refse98.html)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#external">EXTERNAL</a>
     </li>
         </ul>
     </li>
@@ -298,10 +298,14 @@ end.
 <h3 id="exports"><a href="https://wiki.freepascal.org/Exports">EXPORTS</a></h3>
 <p>Klauzula <code>exports</code> eksportuje identyfikatory z modułu <code>library</code>.</p>
 <p>Moduł <code>library</code> może mieć maksymalnie jedną klauzulę <code>exports</code>. Lista identyfikatorów wyszczególniona w klauzuli rozdzielona jest znakiem przecinka, znak średnika oznacza koniec listy.</p>
-<h3 id="external-httpswwwfreepascalorgdocs-htmlrefrefse98html">[EXTERNAL] (https://www.freepascal.org/docs-html/ref/refse98.html)</h3>
+<h3 id="external"><a href="https://www.freepascal.org/docs-html/ref/refse98.html">EXTERNAL</a></h3>
+<p>Modyfikator <code>external</code> pozwala wskazać procedury/funkcje, zmienne jako zewnętrzne, dostępne z innego modułu, biblioteki lub dołączonego kodu relokowalnego.</p>
+<pre><code class="language-delphi">   function dodaj(a,b: integer): integer; external 'TEST_LIB';
+   procedure prc(a,b,c: integer); external;  
+</code></pre>
 <h2 id="uses"><a href="https://wiki.freepascal.org/Uses">USES</a></h2>
 <p>Klauzula <code>uses</code> importuje identyfikatory z modułów <code>unit</code>.</p>
-<p>Każda jednostka <strong>MP</strong> – <code>program</code>, <code>unit</code>, lub <code>library</code> – może mieć maksymalnie jedną klauzulę <code>uses</code> na sekcję, która musi pojawić się zaraz po nagłówkach sekcji. </p>
+<p>Każda jednostka <strong>Mad-Pascal</strong> – <code>program</code>, <code>unit</code>, lub <code>library</code> – może mieć maksymalnie jedną klauzulę <code>uses</code> na sekcję, która musi pojawić się zaraz po nagłówkach sekcji. </p>
 <p>Nagłówki sekcji to <code>interface</code>, <code>implementation</code> w modułach <code>unit</code>. W <code>program</code> i <code>library</code> nie ma żadnych wyraźnych nagłówków sekcji, dlatego klauzula <code>uses</code> pojawia się bezpośrednio po nagłówku <code>program</code>, <code>library</code>.</p>
 <pre><code class="language-delphi">    uses crt, sysutils, atari;
 </code></pre>

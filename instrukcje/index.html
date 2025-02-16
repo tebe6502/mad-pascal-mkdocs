@@ -199,9 +199,11 @@ end;
 <pre><code class="language-delphi">    FOR zmienna := { wartość początkowa } TO { wartość końcowa } DO { instrukcje do wykonania }
     FOR zmienna := { wartość końcowa } DOWNTO { wartość początkowa } DO { instrukcje do wykonania }
 </code></pre>
-<p>Instrukcja <code>FOR</code> służy do organizacji obliczeń, które będą wykonywane z góry określoną liczbą razy. Zmienna sterująca musi być identyfikatorem typu porządkowego, a oba wyrażenia powinny być zgodne w sensie przypisania z typem zmiennej sterującej. W czasie realizacji pętli <code>TO</code> zmiennej sterującej przypisywana jest następna wartość w danym typie, w pętli <code>DOWNTO</code> poprzednia. Zabroniona jest <em>ręczna</em> zmiana wartości zmiennej sterującej. W przypadku takiej próby <strong>MP</strong> zasygnalizuje błąd
-<strong>Illegal assignment to for-loop variable</strong>.</p>
-<p>Kompilator dba o to aby nie wystąpiła pętla bez końca, dlatego można bez obaw stosować taką pętlę:</p>
+<p>Instrukcja <code>FOR</code> służy do organizacji obliczeń, które będą wykonywane z góry określoną liczbą razy.</p>
+<p>Zmienna sterująca musi być identyfikatorem typu porządkowego, a oba wyrażenia powinny być zgodne w sensie przypisania z typem zmiennej sterującej.</p>
+<p>W czasie realizacji pętli <code>TO</code> zmiennej sterującej przypisywana jest następna wartość w danym typie, w pętli <code>DOWNTO</code> poprzednia.</p>
+<p>Zabroniona jest <em>ręczna</em> zmiana wartości zmiennej sterującej. W przypadku takiej próby <strong>Mad-Pascal</strong> zasygnalizuje błąd <strong>Illegal assignment to for-loop variable</strong>.</p>
+<p>Kompilator dba o to aby nie wystąpiła pętla bez końca, dlatego w przeciwieństwie do pętli <code>repeat</code> i <code>while</code> można bez obaw stosować taką pętlę:</p>
 <pre><code class="language-delphi">    for i:=0 to 255 do writeln(i);    // dla zmiennej I typu BYTE
 </code></pre>
 <p>Po zakończeniu działania pętli <code>FOR</code> jej licznik będzie miał wartość <strong>+1</strong> większą niż wskazuje zakres jaki podaliśmy, czyli dla:</p>
@@ -225,7 +227,8 @@ end;
 <h3 id="while-do"><a href="https://www.freepascal.org/docs-html/ref/refsu60.html#x169-19100013.2.7">while do</a></h3>
 <pre><code class="language-delphi">    while { warunek } do { instrukcja do wykonania }
 </code></pre>
-<p>Konstrukcja ta służy do organizacji obliczeń, które będą wykonywane tak długo jak wyrażenie znajdujące się po słowie <code>WHILE</code> jest prawdą. Tak skonstruowana pętla może nie zostać wykonana ani razu.</p>
+<p>Konstrukcja ta służy do organizacji obliczeń, które będą wykonywane tak długo jak wyrażenie znajdujące się po słowie <code>WHILE</code> jest prawdą.</p>
+<p>W przypadku pętli <code>WHILE</code> warunek jest sprawdzany bezpośrednio przed jej wykonaniem, co w rezultacie może spowodować, że taka pętla nigdy niezostanie wykonana.</p>
 <pre><code class="language-delphi">    while BlitterBusy do;   // oczekiwanie na zakończenie działania blittera VBXE
 </code></pre>
 <p>Ograniczenia dla instrukcji <code>WHILE</code>:</p>
@@ -237,7 +240,8 @@ end;
     until { warunek zakończenia }
 </code></pre>
 <p>Instrukcja ta wykonuje cyklicznie inne instrukcje zawarte pomiędzy słowami <code>REPEAT</code> i <code>UNTIL</code> do momentu gdy wyrażenie znajdujące się za słowem <code>UNTIL</code> nie przyjmie wartości <code>TRUE</code>.</p>
-<p>Efekt zastosowania pętli <code>REPEAT</code> jest bardzo podobny do działania pętli <code>WHILE</code>. Pętla ta także może być wykonywana ogromną liczbę razy. Jedyna różnica polega na tym, że w pętli <code>REPEAT</code> warunek zakończenia sprawdzany jest dopiero po wykonaniu instrukcji. Oznacza to, że pętla <code>REPEAT</code> zawsze będzie wykonana co najmniej raz. Dopiero po pierwszej iteracji program sprawdzi, czy można zakończyć działanie pętli. W przypadku pętli <code>WHILE</code> warunek jest sprawdzany bezpośrednio przed jej wykonaniem, co w rezultacie może spowodować, że taka pętla nigdy niezostanie wykonana.</p>
+<p>Efekt zastosowania pętli <code>REPEAT</code> jest bardzo podobny do działania pętli <code>WHILE</code>. Jedyna różnica polega na tym, że w pętli <code>REPEAT</code> warunek zakończenia sprawdzany jest dopiero po wykonaniu instrukcji.</p>
+<p>Oznacza to, że pętla <code>REPEAT</code> zawsze będzie wykonana co najmniej raz. Dopiero po pierwszej iteracji program sprawdzi, czy można zakończyć działanie pętli.</p>
 <pre><code class="language-delphi">    i:=0;
     repeat
       inc(i);

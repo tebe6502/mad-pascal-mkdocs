@@ -170,13 +170,13 @@
               
                 <h1 id="_1"></h1>
 <h2 id="makra"><a href="https://www.freepascal.org/docs-html/prog/progse5.html">Makra</a></h2>
-<p><strong>MP</strong> pozwala na używanie makr, podobnie jak <strong>FPC</strong>, z tym tylko wyjątkiem że makra zawsze są włączone.</p>
+<p><strong>Mad-Pascal</strong> pozwala na używanie makr, podobnie jak <strong>FPC</strong>, z tym tylko wyjątkiem że makra zawsze są włączone.</p>
 <pre><code class="language-delphi"> {$macro on}
  {$macro off}
  {$macro+}
  {$macro-} 
 </code></pre>
-<p>Dyrektywa <code>{$macro on}</code> jest wymagana przez <strong>FPC</strong>, w <strong>MP</strong> jest zachowana tylko w celu zgodności.</p>
+<p>Dyrektywa <code>{$macro on}</code> jest wymagana przez <strong>FPC</strong>, w <strong>Mad-Pascal</strong> jest zachowana tylko w celu zgodności.</p>
 <h3 id="definiowanie-makra">Definiowanie makra</h3>
 <pre><code class="language-delphi">{$define label := expression}
 
@@ -227,7 +227,7 @@ begin
 
 end.
 </code></pre>
-<p>Makra z parametrami obsługiwane są przez <strong>MP</strong> ale nie przez <strong>FPC</strong>.</p>
+<p>Makra z parametrami obsługiwane są przez <strong>Mad-Pascal</strong> ale nie przez <strong>FPC</strong>.</p>
 <pre><code class="language-delphi">{$define SIGN_MASK := $8000}
 {$define SIGNED_INF_VALUE(x) := ((x and SIGN_MASK) or $7C00)}
 

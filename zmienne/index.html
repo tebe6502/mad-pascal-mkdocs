@@ -239,6 +239,37 @@ end.
 </blockquote>
 <pre><code class="language-delphi">procedure test(a,b,c: integer); register;
 </code></pre>
+<p>Umieszczenie zmiennych na stronie zerowej oznacza ich szybsze przetwarzanie przez <code>CPU 6502</code>, pozwala też kompilatorowi w przypadku typu <code>PByte</code> lepiej optymalizować kod.</p>
+<pre><code class="language-delphi">var ptr: PByte register;
+
+begin
+ptr:=pointer($bc40);
+
+ptr[5]:=ord('A'~);
+end.
+</code></pre>
+<p>zostanie wygenerowany</p>
+<pre><code>    lda #$40
+    sta PTR
+    lda #$BC
+    sta PTR+1
+
+    ldy #$05
+    lda #$21
+    sta (PTR),y
+</code></pre>
+<p>Jeśli <code>ptr</code> nie zostanie umieszczone na stronie zerowej, wynikiem będzie</p>
+<pre><code>    lda #$40
+    sta PTR
+    sta :bp2
+    lda #$BC
+    sta PTR+1
+    sta :bp2+1
+
+    ldy #$05
+    lda #$21
+    sta (:bp2),y
+</code></pre>
               
             </div>
           </div>

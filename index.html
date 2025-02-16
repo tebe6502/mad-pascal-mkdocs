@@ -161,9 +161,30 @@
             <div class="section">
               
                 <h1 id="mad-pascal">Mad-Pascal</h1>
-<p><strong>Mad-Pascal</strong> (MP) jest 32-bitowym kompilatorem <strong>Turbo Pascala</strong> dla <strong>Atari XE/XL</strong>. W założeniu jest kompatybilny z <strong>Free Pascal Compilator</strong> (FPC) (przełącznik <code>-MDelphi</code> powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla <strong>XE/XL</strong>, <strong>PC</strong> i każdej innej platformy dla której istnieje <strong>FPC</strong>. <strong>MP</strong> nie jest portem <strong>FPC</strong>, został napisany na podstawie kompilatorów <strong>SUB-Pascal</strong> (2009), <strong>XD-Pascal</strong> (2010), których autorem jest <a href="https://github.com/vtereshkov">Vasiliy Tereshkov</a>.</p>
+<p><strong>Mad-Pascal</strong> jest 32-bitowym kompilatorem <strong>Turbo Pascala</strong> dla <strong>Atari XE/XL</strong>. W założeniu jest kompatybilny z <strong>Free Pascal Compilator</strong> (FPC) (przełącznik <code>-MDelphi</code> powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla <strong>XE/XL</strong>, <strong>PC</strong> i każdej innej platformy dla której istnieje <strong>FPC</strong>. <strong>Mad-Pascal</strong> nie jest portem <strong>FPC</strong>, został napisany na podstawie kompilatorów <strong>SUB-Pascal</strong> (2009), <strong>XD-Pascal</strong> (2010), których autorem jest <a href="https://github.com/vtereshkov">Vasiliy Tereshkov</a>.</p>
 <p>Źródła dostępne na <a href="https://github.com/tebe6502/Mad-Pascal">GitHub</a> wraz z <a href="https://github.com/tebe6502/Mad-Pascal/releases">release</a> dla systemu Windows.</p>
 <h1 id="historia">Historia</h1>
+<h2 id="170"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.0">1.7.0</a></h2>
+<ul>
+<li>modyfikator [STRIPED] dla tablic o maksymalnym zakresie 0..255</li>
+<li>nowy target, neo6502 (-t neo)</li>
+<li>GRAPH.INC: Circle (szybsza wersja)</li>
+<li>poprawki lib/aplib.pas</li>
+<li>poprawki lib/zx0.pas</li>
+<li>poprawiona optymalizacja CASE</li>
+<li>dodana dyrektywa {$UNITPATH filename} jako odpowiednik {$LIBRARYPATH filename}</li>
+<li>dodana możliwość podania ścieżki dla modułu deklarowanego przez USES, np:</li>
+</ul>
+<pre><code>  uses crt, vector in '..\3d\vector.pas';
+</code></pre>
+<ul>
+<li>dodana obsługa modułów LIBRARY</li>
+<li>dodany modyfikator EXTERNAL dla zmiennych, procedur, funkcji</li>
+<li>dodana możliwość ustawienia adresu kompilacji z poziomu programu, np.:</li>
+</ul>
+<pre><code>  program name : address;
+  library name : address;  
+</code></pre>
 <h2 id="169"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.9">1.6.9</a></h2>
 <ul>
 <li>poprawiona alokacja pamięci dla tablic [0..0], wymuszany jest wstępnie 'ABSOLUTE $0000', oszczędzamy 1 bajt pamięci</li>
@@ -624,5 +645,5 @@ k:=w;
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2025-02-16 10:05:59.647911+00:00
+Build Date UTC : 2025-02-16 14:53:22.695022+00:00
 -->

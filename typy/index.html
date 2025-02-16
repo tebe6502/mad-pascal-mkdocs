@@ -287,14 +287,14 @@
 </table>
 <p><br/></p>
 <h2 id="wyliczeniowe"><a href="https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1">Wyliczeniowe</a></h2>
-<p>Typ wyliczeniowy w <strong>MP</strong> został zaimplementowany w podstawowej postaci, tzn.:</p>
+<p>Typ wyliczeniowy w <strong>Mad-Pascal</strong> został zaimplementowany w podstawowej postaci, tzn.:</p>
 <pre><code class="language-delphi">Type
   Days = (monday,tuesday,wednesday,thursday,friday,
           saturday,sunday);
 
   Joy = (right_down = 5, right_up, right, left_down = 9, left_up, left, down = 13, up, none);
 </code></pre>
-<p>Typ wyliczeniowy przechowywany jest tylko w pamięci kompilatora <strong>MP</strong>, do pliku wynikowego nie zostaną zapisane jakiekolwiek informacje dotyczące pól typu wyliczeniowego. Dopuszczalne jest użycie komendy <code>ORD</code>, <code>SIZEOF</code> oraz rzutowania dla typu wyliczeniowego.</p>
+<p>Typ wyliczeniowy przechowywany jest tylko w pamięci kompilatora <strong>Mad-Pascal</strong>, do pliku wynikowego nie zostaną zapisane jakiekolwiek informacje dotyczące pól typu wyliczeniowego. Dopuszczalne jest użycie komendy <code>ORD</code>, <code>SIZEOF</code> oraz rzutowania dla typu wyliczeniowego.</p>
 <pre><code class="language-delphi">var
    d: Days;
 
@@ -310,7 +310,7 @@
     sunday: writeln('sunday');
    end;
 </code></pre>
-<p>Aktualnie kompilator <strong>MP</strong> nie sprawdzi poprawności typów wyliczeniowych dla operacji <code>IF ELSE</code>.</p>
+<p>Aktualnie kompilator <strong>Mad-Pascal</strong> nie sprawdzi poprawności typów wyliczeniowych dla operacji <code>IF ELSE</code>.</p>
 <h2 id="rzeczywiste"><a href="https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2">Rzeczywiste</a></h2>
 <table>
 <thead>
@@ -418,7 +418,7 @@ c: char = 'X'~*;              // znak w inwersie, kodach ANTIC-a
 </tbody>
 </table>
 <p><br/>
-Wskaźniki w <strong>MP</strong> mogą być typowane i bez określonego typu, np.:</p>
+Wskaźniki w <strong>Mad-Pascal</strong> mogą być typowane i bez określonego typu, np.:</p>
 <pre><code class="language-delphi"> a: ^word;         // wskaźnik typowany na słowo
  b: pointer;       // wskaźnik bez typu
 </code></pre>
@@ -442,7 +442,7 @@ begin
 end;
 </code></pre>
 <h2 id="tablice-statyczne"><a href="https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1">Tablice statyczne</a></h2>
-<p>Tablice w <strong>MP</strong> są tylko statyczne, jednowymiarowe lub dwuwymiarowe z początkowym indeksem równym <code>0</code>, np.:</p>
+<p>Tablice w <strong>Mad-Pascal</strong> są tylko statyczne, jednowymiarowe lub dwuwymiarowe z początkowym indeksem równym <code>0</code>, np.:</p>
 <pre><code class="language-delphi">var tb: array [0..100] of word;
 var tb2: array [0..15, 0..31] of Boolean;
 var tab: array [0..7] of array [0..31] of byte;
@@ -552,7 +552,7 @@ var
     TPoint = record x,y: byte end;
 var px: TPoint;
 </code></pre>
-<p>Domyślnie rekordy w <strong>MP</strong> są typu <code>PACKED</code>. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
+<p>Domyślnie rekordy w <strong>Mad-Pascal</strong> są typu <code>PACKED</code>. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
 Jeśli zależy nam na zachowaniu kompatybilności z <strong>FPC</strong> należy dodatkowo poprzedzić słowo <code>RECORD</code> słowem <code>PACKED</code>.
 Bez tego rozmiar pamięci jaki zajmuje rekord będzie mógł się różnić, będzie mniej zajmował pamięci na <strong>6502</strong>, potencjalnie więcej o kilka bajtów na <strong>PC</strong>.</p>
 <p>type
@@ -565,7 +565,7 @@ ldy #px.x-DATAORIGIN
 lda (bp2),y
 </code></pre>
 <h3 id="tablica-z-rekordami">Tablica z rekordami</h3>
-<p><strong>MP</strong> obsługuje tylko tablice wskaźników rekordów.</p>
+<p><strong>Mad-Pascal</strong> obsługuje tylko tablice wskaźników rekordów.</p>
 <pre><code class="language-Delphi">    type
         TPoint = record x,y: byte end;    
 

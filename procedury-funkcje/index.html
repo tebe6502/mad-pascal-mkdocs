@@ -208,13 +208,13 @@
               
                 <h1 id="_1"></h1>
 <h2 id="procedury"><a href="https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014">Procedury</a></h2>
-<p><strong>MP</strong> pozwala na przekazanie do procedury maksymalnie <strong>8</strong> parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą <code>CONST</code> i referencję <code>VAR</code>.</p>
+<p><strong>Mad-Pascal</strong> pozwala na przekazanie do procedury maksymalnie <strong>8</strong> parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą <code>CONST</code> i referencję <code>VAR</code>.</p>
 <p>Parametry procedur odczytywane są i wartościowane od prawej do lewej strony <a href="https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas">tests\tests-medium\function_valuation_of_arguments.pas</a></p>
 <p>Możliwe jest zagnieżdżanie procedur.</p>
 <p>Możliwa jest rekurencja procedur, pod warunkiem że parametry procedury będą przekazywane przez wartość, będą typu prostego - porządkowego. Typ rekordowy, wskaźnikowy nie będzie właściwie alokowany w pamięci.</p>
 <p>Jeśli jest to możliwe kompilator przekazuje parametry do procedury poprzez zmienne z pominięciem stosu programowego.</p>
 <h2 id="funkcje"><a href="https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014">Funkcje</a></h2>
-<p><strong>MP</strong> pozwala na przekazanie do funkcji maksymalnie <strong>8</strong> parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą <code>CONST</code> i referencję <code>VAR</code>. </p>
+<p><strong>Mad-Pascal</strong> pozwala na przekazanie do funkcji maksymalnie <strong>8</strong> parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą <code>CONST</code> i referencję <code>VAR</code>. </p>
 <p>Wynik funkcji zwracamy przypisując go do nazwy funkcji lub korzystając z automatycznie deklarowanej zmiennej <code>RESULT</code>, np.:</p>
 <pre><code class="language-delphi">function add(a,b: word): cardinal;
 begin
@@ -444,7 +444,7 @@ end.
 <p><strong>Procedury/Funkcje</strong> oznaczona przez <code>ASSEMBLER</code> mogą składać się tylko z bloku <strong>ASM</strong>. Kompilator nie dokonuje analizy składni takich bloków, traktuje je jak komentarz, ewentualne błędy zostaną wychwycone dopiero podczas asemblacji.</p>
 <blockquote>
 <p><strong>UWAGA:</strong><br />
-<em>Wymagane jest aby zachować stan rejestru <code>X</code> <code>CPU6502</code>, który używany jest do obsługi stosu programowego <strong>MP</strong>.</em></p>
+<em>Wymagane jest aby zachować stan rejestru <code>X</code> <code>CPU6502</code>, który używany jest do obsługi stosu programowego <strong>Mad-Pascal</strong>.</em></p>
 </blockquote>
 <p>Kompilator dopuszcza dwie składnie bloku <code>ASM</code>, z klamrami { } jak dla komentarza i standardową bez klamer.</p>
 <pre><code class="language-delphi">ASM

@@ -174,8 +174,8 @@
               
                 <h1 id="_1"></h1>
 <h2 id="wstep">Wstęp</h2>
-<p><strong>Mad-Pascal</strong> (MP) jest 32-bitowym kompilatorem <strong>Turbo Pascala</strong> dla <strong>Atari XE/XL</strong>. W założeniu jest kompatybilny z <strong>Free Pascal Compilator</strong> (FPC) (przełącznik <code>-MDelphi</code> powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla <strong>XE/XL</strong>, <strong>PC</strong> i każdej innej platformy dla której istnieje <strong>FPC</strong>. <strong>MP</strong> nie jest portem <strong>FPC</strong>, został napisany na podstawie kompilatorów <strong>SUB-Pascal</strong> (2009), <strong>XD-Pascal</strong> (2010), których autorem jest <a href="mailto:vtereshkov@mail.ru">Vasiliy Tereshkov</a>.</p>
-<p>Program, który zadziała na Atari może mieć problem na <strong>PC</strong> jeżeli np. nie zaincjowaliśmy wskaźników adresem zmiennej, będziemy próbowali zapisywać coś pod adresem <code>$0000</code> (błąd ochrony pamięci). Mocną stroną <strong>MP</strong> jest szybka i wygodna możliwość dołączania wstawek assemblerowych. Program z wstawkami ASM nie będzie działał na innej platformie niż XE/XL. MP wykorzystuje 64KB pamięci podstawowej, korzystanie z pamięci rozszerzonej udostępnia <code>TMemoryStream</code>.</p>
+<p><strong>Mad-Pascal</strong> (MP) jest 32-bitowym kompilatorem <strong>Turbo Pascala</strong> dla <strong>Atari XE/XL</strong>. W założeniu jest kompatybilny z <strong>Free Pascal Compilator</strong> (FPC) (przełącznik <code>-MDelphi</code> powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla <strong>XE/XL</strong>, <strong>PC</strong> i każdej innej platformy dla której istnieje <strong>FPC</strong>. <strong>Mad-Pascal</strong> nie jest portem <strong>FPC</strong>, został napisany na podstawie kompilatorów <strong>SUB-Pascal</strong> (2009), <strong>XD-Pascal</strong> (2010), których autorem jest <a href="mailto:vtereshkov@mail.ru">Vasiliy Tereshkov</a>.</p>
+<p>Program, który zadziała na Atari może mieć problem na <strong>PC</strong> jeżeli np. nie zaincjowaliśmy wskaźników adresem zmiennej, będziemy próbowali zapisywać coś pod adresem <code>$0000</code> (błąd ochrony pamięci). Mocną stroną <strong>Mad-Pascal</strong> jest szybka i wygodna możliwość dołączania wstawek assemblerowych. Program z wstawkami ASM nie będzie działał na innej platformie niż XE/XL. MP wykorzystuje 64KB pamięci podstawowej, korzystanie z pamięci rozszerzonej udostępnia <code>TMemoryStream</code>.</p>
 <p>Alokacja zmiennych jest statyczna, nie ma dynamicznego zarządzania pamięcią. Parametry przekazywane do funkcji i procedur są przez wartość, zmienną lub stałą.</p>
 <p>Dostępne są:</p>
 <ul>
@@ -204,7 +204,7 @@
 <li>Recursion</li>
 </ul>
 <h2 id="ukad-katalogow">Układ katalogów</h2>
-<p>W katalogu z <strong>MP</strong> wymagana jest obecność odpowiednich plików i podkatalogów:</p>
+<p>W katalogu z <strong>Mad-Pascal</strong> wymagana jest obecność odpowiednich plików i podkatalogów:</p>
 <pre><code>  mp\
   mp.exe
      base\

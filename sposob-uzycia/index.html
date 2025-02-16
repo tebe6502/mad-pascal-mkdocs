@@ -168,19 +168,21 @@
               
                 <h1 id="_1"></h1>
 <h2 id="przeaczniki-kompilatora">Przełączniki kompilatora</h2>
-<pre><code class="language-bash">Syntax: mp source [switches]
+<pre><code class="language-bash">Syntax: mp inputfile [przełączniki]
 
--diag           tryb diagnostyczny
--define:symbol  definiowanie symbolu
--ipath:&lt;x&gt;      dodatkowa ścieżka poszukiwań
--target:&lt;x&gt;     docelowy system: a8 (domyślnie), c64
--code:address   adres uruchomienia programu
--data:address   adres pamięci dla zmiennych, tablic
--stack:address  adres pamięci dla stosu programowego (64 bajty)
--zpage:address  adres na stronie zerowej dla zmiennych (26 bajty)
+-ipath:&lt;folder&gt;     dodatkowa ścieżka poszukiwań
+-define:&lt;symbol&gt;    definiowanie symbolu
+-cpu:&lt;cpu&gt;          6502 (domyślnie), 65C02, 65816
+-target:&lt;platform&gt;  docelowy system: a8 (domyślnie), c64
+-code:&lt;address&gt;     adres uruchomienia programu
+-data:&lt;address&gt;     adres pamięci dla zmiennych, tablic
+-stack:&lt;address&gt;    adres pamięci dla stosu programowego (64 bajty)
+-zpage:&lt;address&gt;    adres na stronie zerowej dla zmiennych (26 bajty)
+-o:&lt;outputfile&gt;     domyślnie &lt;inputfile&gt;.a65
+-diag               tryb diagnostyczny
 </code></pre>
 <p>Użycie przełącznika <code>-diag</code> powoduje wygenerowanie dodatkowego pliku z informacją o wszystkich użytych zmiennych, procedurach, funkcjach.</p>
-<p>Domyślnym rozszerzeniem pliku wynikowego jest <code>*.A65</code>, plik taki assemblujemy z użyciem <a href="https://github.com/tebe6502/Mad-Assembler">Mad-Assemblera</a>, dodatkowo ustawiamy <code>-i:base</code>, <code>base</code> znajduje się w katalogu głównym <strong>MP</strong>), np.:</p>
+<p>Domyślnym rozszerzeniem pliku wynikowego jest <code>*.A65</code>, plik taki assemblujemy z użyciem <a href="https://github.com/tebe6502/Mad-Assembler">Mad-Assemblera</a>, dodatkowo ustawiamy <code>-i:base</code>, <code>base</code> znajduje się w katalogu głównym <strong>Mad-Pascal</strong>), np.:</p>
 <pre><code>mads source.a65 -x -i:base
 </code></pre>
 <p>Przełącznik <code>-x</code> <strong>Exclude unreferenced procedures</strong> jest bardzo istotny, pozwoli wygenerować najkrótszy kod wynikowy dla 6502, wszystkie procedury <code>.PROC</code>
