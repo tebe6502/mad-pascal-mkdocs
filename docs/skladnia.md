@@ -33,7 +33,7 @@ neginfinity
 
 ## [Komentarze](http://www.freepascal.org/docs-html/ref/refse2.html)
 
-W **MP** do oznaczenia komentarza jednoliniowego służą znaki `//`, dla wieloliniowego klamry `{ }`, lub `(* *)`.
+W **Mad-Pascal** do oznaczenia komentarza jednoliniowego służą znaki `//`, dla wieloliniowego klamry `{ }`, lub `(* *)`.
 
 ```delphi
 // to jest komentarz
@@ -369,7 +369,7 @@ Więcej na temat łączenia assemblera z **Mad Pascal**-em w rozdziale [Wstawki 
 {$MACRO+}
 {$MACRO-}
 ```
-Dyrektywa `{$macro }` włącza/wyłącza możliwość [definiowania makr](../makra/#definiowanie-makra), jest wymagana przez **FPC**, w **MP** jest zachowana tylko w celu zgodności.
+Dyrektywa `{$macro }` włącza/wyłącza możliwość [definiowania makr](../makra/#definiowanie-makra), jest wymagana przez **FPC**, w **Mad-Pascal** jest zachowana tylko w celu zgodności.
 
 
 ### [$OPTIMIZATION](https://www.freepascal.org/docs-html/prog/progsu58.html)

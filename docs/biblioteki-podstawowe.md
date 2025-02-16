@@ -402,7 +402,7 @@ Procedura odczytuje adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszcz
     procedure halt;
 ```
 
-Wywołanie powoduje natychmiastowe wyjście z programu. Można (opcjonalnie) podać kod błędu, w przypadku **MP** jest on ignorowany.
+Wywołanie powoduje natychmiastowe wyjście z programu. Można (opcjonalnie) podać kod błędu, w przypadku **Mad-Pascal** jest on ignorowany.
 
 
 ---
@@ -1645,7 +1645,7 @@ Typ 24-bitowy wykorzystywany do definicji adresów pamięci **VBXE**.
     end;
 ```
 
-Typ `TXDL` wykorzystywany przez procedury `GetXDL` i `SetXDL`. Pozwala na modyfikację programu dla **VBXE** wykorzystywanego przez **MP**.
+Typ `TXDL` wykorzystywany przez procedury `GetXDL` i `SetXDL`. Pozwala na modyfikację programu dla **VBXE** wykorzystywanego przez **Mad-Pascal**.
 
 ---
 

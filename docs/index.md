@@ -1,11 +1,31 @@
 # Mad-Pascal
 
-**Mad-Pascal** (MP) jest 32-bitowym kompilatorem **Turbo Pascala** dla **Atari XE/XL**. W założeniu jest kompatybilny z **Free Pascal Compilator** (FPC) (przełącznik `-MDelphi` powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla **XE/XL**, **PC** i każdej innej platformy dla której istnieje **FPC**. **MP** nie jest portem **FPC**, został napisany na podstawie kompilatorów **SUB-Pascal** (2009), **XD-Pascal** (2010), których autorem jest [Vasiliy Tereshkov](https://github.com/vtereshkov).
+**Mad-Pascal** jest 32-bitowym kompilatorem **Turbo Pascala** dla **Atari XE/XL**. W założeniu jest kompatybilny z **Free Pascal Compilator** (FPC) (przełącznik `-MDelphi` powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla **XE/XL**, **PC** i każdej innej platformy dla której istnieje **FPC**. **Mad-Pascal** nie jest portem **FPC**, został napisany na podstawie kompilatorów **SUB-Pascal** (2009), **XD-Pascal** (2010), których autorem jest [Vasiliy Tereshkov](https://github.com/vtereshkov).
 
 Źródła dostępne na [GitHub](https://github.com/tebe6502/Mad-Pascal) wraz z [release](https://github.com/tebe6502/Mad-Pascal/releases) dla systemu Windows.
 
 # Historia
 
+
+## [1.7.0](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.0)
+- modyfikator [STRIPED] dla tablic o maksymalnym zakresie 0..255
+- nowy target, neo6502 (-t neo)
+- GRAPH.INC: Circle (szybsza wersja)
+- poprawki lib/aplib.pas
+- poprawki lib/zx0.pas
+- poprawiona optymalizacja CASE
+- dodana dyrektywa {$UNITPATH filename} jako odpowiednik {$LIBRARYPATH filename}
+- dodana możliwość podania ścieżki dla modułu deklarowanego przez USES, np:
+```
+  uses crt, vector in '..\3d\vector.pas';
+```
+- dodana obsługa modułów LIBRARY
+- dodany modyfikator EXTERNAL dla zmiennych, procedur, funkcji
+- dodana możliwość ustawienia adresu kompilacji z poziomu programu, np.:
+```
+  program name : address;
+  library name : address;  
+```
 
 ## [1.6.9](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.9)
 - poprawiona alokacja pamięci dla tablic [0..0], wymuszany jest wstępnie 'ABSOLUTE $0000', oszczędzamy 1 bajt pamięci

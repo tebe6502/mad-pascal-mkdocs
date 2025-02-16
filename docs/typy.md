@@ -25,7 +25,7 @@
 <br/>
 ## [Wyliczeniowe](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1)
 
-Typ wyliczeniowy w **MP** został zaimplementowany w podstawowej postaci, tzn.:
+Typ wyliczeniowy w **Mad-Pascal** został zaimplementowany w podstawowej postaci, tzn.:
 
 ```delphi
 Type
@@ -34,7 +34,7 @@ Type
 
   Joy = (right_down = 5, right_up, right, left_down = 9, left_up, left, down = 13, up, none);
 ```
-Typ wyliczeniowy przechowywany jest tylko w pamięci kompilatora **MP**, do pliku wynikowego nie zostaną zapisane jakiekolwiek informacje dotyczące pól typu wyliczeniowego. Dopuszczalne jest użycie komendy `ORD`, `SIZEOF` oraz rzutowania dla typu wyliczeniowego.
+Typ wyliczeniowy przechowywany jest tylko w pamięci kompilatora **Mad-Pascal**, do pliku wynikowego nie zostaną zapisane jakiekolwiek informacje dotyczące pól typu wyliczeniowego. Dopuszczalne jest użycie komendy `ORD`, `SIZEOF` oraz rzutowania dla typu wyliczeniowego.
 
 ```delphi
 var
@@ -53,7 +53,7 @@ var
    end;
 ```
 
-Aktualnie kompilator **MP** nie sprawdzi poprawności typów wyliczeniowych dla operacji `IF ELSE`.
+Aktualnie kompilator **Mad-Pascal** nie sprawdzi poprawności typów wyliczeniowych dla operacji `IF ELSE`.
 
 ## [Rzeczywiste](https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2)
 
@@ -117,7 +117,7 @@ c: char = 'X'~*;              // znak w inwersie, kodach ANTIC-a
 |POINTER            |0 .. 65535               |2            |
 
 <br/>
-Wskaźniki w **MP** mogą być typowane i bez określonego typu, np.:
+Wskaźniki w **Mad-Pascal** mogą być typowane i bez określonego typu, np.:
 
 ```delphi
  a: ^word;         // wskaźnik typowany na słowo
@@ -152,7 +152,7 @@ end;
 
 ## [Tablice statyczne](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
 
-Tablice w **MP** są tylko statyczne, jednowymiarowe lub dwuwymiarowe z początkowym indeksem równym `0`, np.:
+Tablice w **Mad-Pascal** są tylko statyczne, jednowymiarowe lub dwuwymiarowe z początkowym indeksem równym `0`, np.:
 
 ```delphi
 var tb: array [0..100] of word;
@@ -296,7 +296,7 @@ W pamięci rekord reprezentowany jest przez wskaźnik `POINTER`.
         TPoint = record x,y: byte end;
     var px: TPoint;
 
-Domyślnie rekordy w **MP** są typu `PACKED`. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
+Domyślnie rekordy w **Mad-Pascal** są typu `PACKED`. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
 Jeśli zależy nam na zachowaniu kompatybilności z **FPC** należy dodatkowo poprzedzić słowo `RECORD` słowem `PACKED`.
 Bez tego rozmiar pamięci jaki zajmuje rekord będzie mógł się różnić, będzie mniej zajmował pamięci na **6502**, potencjalnie więcej o kilka bajtów na **PC**.
 
@@ -314,7 +314,7 @@ Dostęp do pól rekordu z poziomu asm:
 
 ### Tablica z rekordami
 
-**MP** obsługuje tylko tablice wskaźników rekordów.
+**Mad-Pascal** obsługuje tylko tablice wskaźników rekordów.
 
 ```Delphi
     type

@@ -2,9 +2,9 @@
 
 ## Wstęp
 
-**Mad-Pascal** (MP) jest 32-bitowym kompilatorem **Turbo Pascala** dla **Atari XE/XL**. W założeniu jest kompatybilny z **Free Pascal Compilator** (FPC) (przełącznik `-MDelphi` powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla **XE/XL**, **PC** i każdej innej platformy dla której istnieje **FPC**. **MP** nie jest portem **FPC**, został napisany na podstawie kompilatorów **SUB-Pascal** (2009), **XD-Pascal** (2010), których autorem jest [Vasiliy Tereshkov](mailto:vtereshkov@mail.ru).
+**Mad-Pascal** (MP) jest 32-bitowym kompilatorem **Turbo Pascala** dla **Atari XE/XL**. W założeniu jest kompatybilny z **Free Pascal Compilator** (FPC) (przełącznik `-MDelphi` powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla **XE/XL**, **PC** i każdej innej platformy dla której istnieje **FPC**. **Mad-Pascal** nie jest portem **FPC**, został napisany na podstawie kompilatorów **SUB-Pascal** (2009), **XD-Pascal** (2010), których autorem jest [Vasiliy Tereshkov](mailto:vtereshkov@mail.ru).
 
-Program, który zadziała na Atari może mieć problem na **PC** jeżeli np. nie zaincjowaliśmy wskaźników adresem zmiennej, będziemy próbowali zapisywać coś pod adresem `$0000` (błąd ochrony pamięci). Mocną stroną **MP** jest szybka i wygodna możliwość dołączania wstawek assemblerowych. Program z wstawkami ASM nie będzie działał na innej platformie niż XE/XL. MP wykorzystuje 64KB pamięci podstawowej, korzystanie z pamięci rozszerzonej udostępnia `TMemoryStream`.
+Program, który zadziała na Atari może mieć problem na **PC** jeżeli np. nie zaincjowaliśmy wskaźników adresem zmiennej, będziemy próbowali zapisywać coś pod adresem `$0000` (błąd ochrony pamięci). Mocną stroną **Mad-Pascal** jest szybka i wygodna możliwość dołączania wstawek assemblerowych. Program z wstawkami ASM nie będzie działał na innej platformie niż XE/XL. MP wykorzystuje 64KB pamięci podstawowej, korzystanie z pamięci rozszerzonej udostępnia `TMemoryStream`.
 
 Alokacja zmiennych jest statyczna, nie ma dynamicznego zarządzania pamięcią. Parametry przekazywane do funkcji i procedur są przez wartość, zmienną lub stałą.
 
@@ -34,7 +34,7 @@ Dostępne są:
 
 ## Układ katalogów
 
-W katalogu z **MP** wymagana jest obecność odpowiednich plików i podkatalogów:
+W katalogu z **Mad-Pascal** wymagana jest obecność odpowiednich plików i podkatalogów:
 
 ```
   mp\

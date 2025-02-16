@@ -2,7 +2,7 @@
 
 ## [Makra](https://www.freepascal.org/docs-html/prog/progse5.html)
 
-**MP** pozwala na używanie makr, podobnie jak **FPC**, z tym tylko wyjątkiem że makra zawsze są włączone.
+**Mad-Pascal** pozwala na używanie makr, podobnie jak **FPC**, z tym tylko wyjątkiem że makra zawsze są włączone.
 
 ```delphi
  {$macro on}
@@ -11,7 +11,7 @@
  {$macro-} 
 ```
 
-Dyrektywa `{$macro on}` jest wymagana przez **FPC**, w **MP** jest zachowana tylko w celu zgodności.
+Dyrektywa `{$macro on}` jest wymagana przez **FPC**, w **Mad-Pascal** jest zachowana tylko w celu zgodności.
 
 ### Definiowanie makra
 
@@ -74,7 +74,7 @@ begin
 end.
 ```
 
-Makra z parametrami obsługiwane są przez **MP** ale nie przez **FPC**.
+Makra z parametrami obsługiwane są przez **Mad-Pascal** ale nie przez **FPC**.
 
 ```delphi
 {$define SIGN_MASK := $8000}

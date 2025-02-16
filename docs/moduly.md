@@ -152,19 +152,21 @@ Moduł `library` może mieć maksymalnie jedną klauzulę `exports`. Lista ident
 
 
 
-### [EXTERNAL] (https://www.freepascal.org/docs-html/ref/refse98.html)
+### [EXTERNAL](https://www.freepascal.org/docs-html/ref/refse98.html)
 
+Modyfikator `external` pozwala wskazać procedury/funkcje, zmienne jako zewnętrzne, dostępne z innego modułu, biblioteki lub dołączonego kodu relokowalnego.
 
-
-
-
+```delphi
+   function dodaj(a,b: integer): integer; external 'TEST_LIB';
+   procedure prc(a,b,c: integer); external;  
+```
 
 
 ## [USES](https://wiki.freepascal.org/Uses)
 
 Klauzula `uses` importuje identyfikatory z modułów `unit`.
 
-Każda jednostka **MP** – `program`, `unit`, lub `library` – może mieć maksymalnie jedną klauzulę `uses` na sekcję, która musi pojawić się zaraz po nagłówkach sekcji. 
+Każda jednostka **Mad-Pascal** – `program`, `unit`, lub `library` – może mieć maksymalnie jedną klauzulę `uses` na sekcję, która musi pojawić się zaraz po nagłówkach sekcji. 
 
 Nagłówki sekcji to `interface`, `implementation` w modułach `unit`. W `program` i `library` nie ma żadnych wyraźnych nagłówków sekcji, dlatego klauzula `uses` pojawia się bezpośrednio po nagłówku `program`, `library`.
 
