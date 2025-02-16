@@ -1,10 +1,11 @@
-# [Mad-Pascal](https://github.com/tebe6502/Mad-Pascal) [MkDocs](https://www.mkdocs.org/)
+# Instrukcja [Mad-Pascal](https://github.com/tebe6502/Mad-Pascal)
+
+Instrukcja dla [Mad-Pascal](https://github.com/tebe6502/Mad-Pascal).
+Instrukcję można utworzyć w następujący sposób za pomocą [MkDocs](https://www.mkdocs.org/).
 
 ```
 mkdocs serve
 mkdocs build
 ```
 
-Wersja wygenerowana (rekomendowana) przez **MkDocs** znajduje się pod adresem [zbyti.great-site/mp-docs](http://zbyti.great-site.net/mp-docs/)
-
-Dokumentacja (uproszczone menu) jest także dostępna na serwerach [readthedocs.io](https://mad-pascal.readthedocs.io/).
+Najnowszą wygenerowaną wersję można znaleźć na stronie [github-pages](https://tebe6502.github.io/mad-pascal-mkdocs/)

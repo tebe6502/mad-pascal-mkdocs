@@ -20,7 +20,7 @@ nav:
     - Zmienne: zmienne.md
     - Instrukcje: instrukcje.md
     - Programy, moduły, biblioteki: moduly.md
-    - Procedury, funkcje, modyfikatory: procedury-funkcje.md
+    - Procedur, funkcje, modyfikatory: procedury-funkcje.md
     - Makra: makra.md
     - Wstawki assemblera: asm.md
     - Pliki zasobów: zasoby.md
