@@ -97,7 +97,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedury, funkcje, modyfikatory</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedur, funkcje, modyfikatory</a>
                     </li>
                 </ul>
                 <ul>
@@ -201,6 +201,7 @@
 <li><code>Records</code></li>
 <li><code>Objects</code></li>
 <li>Separate program modules</li>
+<li>Separate library modules</li>
 <li>Recursion</li>
 </ul>
 <h2 id="ukad-katalogow">Układ katalogów</h2>
@@ -234,9 +235,8 @@
          system.inc
 </code></pre>
 <h2 id="kompilacja">Kompilacja</h2>
-<p>Aby skompilować źródło <strong>Mad-Pascala</strong>, można użyć kompilatora z <strong>Delphi</strong>, jeśli ktoś ma akurat zainstalowane środowisko <strong>Delphi 7.0</strong> lub nowsze.</p>
-<p>Innym sposobem, bardziej multi platformowym jest użycie kompilatora z pakietu <strong>Free Pascal Compiler</strong> (FPC), który można pobrać ze strony <a href="http://www.freepascal.org/">freepascal.org</a>.</p>
-<p>Uruchamiamy instalator, wybieramy katalog w którym zostanie zainstalowany FP. Ważne jest aby nie używać w nazwie katalogu znaku wykrzyknika <code>!</code> czy innych nie standardowych znaków. Jeśli nie uda nam się skompilować żadnego pliku, najpewniej winna jest nie standardowa nazwa ścieżki. Linia komend uruchamiająca kompilację może wyglądać następująco (wielkość liter w nazwach parametrów ma znaczenie):</p>
+<p>Aby skompilować źródło <strong>Mad-Pascala</strong> należy użyć kompilatora z pakietu <strong>Free Pascal Compiler</strong> (<code>FPC</code>), dostępnego na stronie projektu <a href="http://www.freepascal.org/">freepascal.org</a>.</p>
+<p>Uruchamiamy instalator, wybieramy katalog w którym zostanie zainstalowany <code>FPC</code>. Ważne jest aby nie używać w nazwie katalogu znaku wykrzyknika <code>!</code> czy innych niestandardowych znaków. Jeśli nie uda nam się skompilować żadnego pliku, najpewniej winna jest nie standardowa nazwa ścieżki. Linia komend uruchamiająca kompilację może wyglądać następująco (wielkość liter w nazwach parametrów ma znaczenie):</p>
 <pre><code>fpc -Mdelphi -v -O3 mp.pas
 </code></pre>
 <ul>
