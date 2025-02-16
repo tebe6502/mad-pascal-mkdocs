@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Instrukcje - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Instrukcje";
+    var mkdocs_page_input_path = "instrukcje.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../wprowadzenie/">Wprowadzenie</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mapa/">Mapa pamięci</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sposob-uzycia/">Sposób użycia</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../skladnia/">Składnia</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../stale/">Stałe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../typy/">Typy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zmienne/">Zmienne</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Instrukcje</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#warunkowe">Warunkowe</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#case-of-else">case of else</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#if-then-else">if then else</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iteracyjne">Iteracyjne</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#for-to-downto-do">for to downto do</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#for-in-do">for in do</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#while-do">while do</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repeat-until">repeat until</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../moduly/">Programy, moduły, biblioteki</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedury, funkcje, modyfikatory</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../makra/">Makra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Wstawki assemblera</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zasoby/">Pliki zasobów</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../przerwania/">Obsługa przerwań</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pliki/">Operacje na plikach</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatywa dla DOS-a</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../biblioteki-podstawowe/">Biblioteki podstawowe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../porady/">Porady</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../przyklady/">Przykłady</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projekty/">Projekty</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Instrukcje</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/mad-pascal-mkdocs/edit/master/docs/instrukcje.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="warunkowe">Warunkowe</h2>
+<h3 id="case-of-else"><a href="https://www.freepascal.org/docs-html/ref/refsu55.html#x164-18600013.2.2">case of else</a></h3>
+<p>Obecnie <strong>Mad Pascal</strong> akceptuje dla zmiennej <code>CASE</code> typy tylko o długości 1 bajta: <code>SHORTINT</code> <code>BYTE</code> <code>CHAR</code> <code>BOOLEAN</code>.</p>
+<pre><code class="language-delphi">case a of               // dla zmiennej A typu CHAR
+  'A'..'Z': begin end;
+  '0'..'9': begin end;
+  '+','*': begin end;
+end;
+</code></pre>
+<h3 id="if-then-else"><a href="https://www.freepascal.org/docs-html/ref/refsu56.html#x165-18700013.2.3">if then else</a></h3>
+<p>Instrukcje warunkowe <code>IF</code> mogą być zagnieżdżane. Wykorzystywane jest to przy budowie bardziej złożonych warunków.</p>
+<h2 id="iteracyjne">Iteracyjne</h2>
+<h3 id="for-to-downto-do"><a href="https://www.freepascal.org/docs-html/ref/refsu57.html">for to downto do</a></h3>
+<pre><code class="language-delphi">    FOR zmienna := { wartość początkowa } TO { wartość końcowa } DO { instrukcje do wykonania }
+    FOR zmienna := { wartość końcowa } DOWNTO { wartość początkowa } DO { instrukcje do wykonania }
+</code></pre>
+<p>Instrukcja <code>FOR</code> służy do organizacji obliczeń, które będą wykonywane z góry określoną liczbą razy. Zmienna sterująca musi być identyfikatorem typu porządkowego, a oba wyrażenia powinny być zgodne w sensie przypisania z typem zmiennej sterującej. W czasie realizacji pętli <code>TO</code> zmiennej sterującej przypisywana jest następna wartość w danym typie, w pętli <code>DOWNTO</code> poprzednia. Zabroniona jest <em>ręczna</em> zmiana wartości zmiennej sterującej. W przypadku takiej próby <strong>MP</strong> zasygnalizuje błąd
+<strong>Illegal assignment to for-loop variable</strong>.</p>
+<p>Kompilator dba o to aby nie wystąpiła pętla bez końca, dlatego można bez obaw stosować taką pętlę:</p>
+<pre><code class="language-delphi">    for i:=0 to 255 do writeln(i);    // dla zmiennej I typu BYTE
+</code></pre>
+<p>Po zakończeniu działania pętli <code>FOR</code> jej licznik będzie miał wartość <strong>+1</strong> większą niż wskazuje zakres jaki podaliśmy, czyli dla:</p>
+<pre><code class="language-delphi">    for i:=0 to 10 do;
+</code></pre>
+<p>Wartość zmiennej <code>I</code> jaką odczytamy to <code>I = 11</code>, w przypadku <code>FPC</code> będzie to <code>I = 10</code>.</p>
+<h3 id="for-in-do"><a href="https://www.freepascal.org/docs-html/ref/refsu59.html">for in do</a></h3>
+<pre><code class="language-delphi">    FOR zmienna IN array DO {instrukcje do wykonania}
+    FOR char IN 'string literal' DO {instrukcje do wykonania}
+</code></pre>
+<p>Konstrukcja <code>FOR IN DO</code> pozwala na szybsze odczytywanie elementów tablic lub stałych tekstowych.</p>
+<pre><code class="language-delphi">    var
+    days : array [0..6] of string =
+    ('poniedzialek', 'wtorek', 'sroda' ,'czwartek', 'piatek', 'sobota', 'niedziela');
+
+    a: string;
+
+    begin
+      for a in days do writeln(a);
+</code></pre>
+<h3 id="while-do"><a href="https://www.freepascal.org/docs-html/ref/refsu60.html#x169-19100013.2.7">while do</a></h3>
+<pre><code class="language-delphi">    while { warunek } do { instrukcja do wykonania }
+</code></pre>
+<p>Konstrukcja ta służy do organizacji obliczeń, które będą wykonywane tak długo jak wyrażenie znajdujące się po słowie <code>WHILE</code> jest prawdą. Tak skonstruowana pętla może nie zostać wykonana ani razu.</p>
+<pre><code class="language-delphi">    while BlitterBusy do;   // oczekiwanie na zakończenie działania blittera VBXE
+</code></pre>
+<p>Ograniczenia dla instrukcji <code>WHILE</code>:</p>
+<pre><code class="language-delphi">    while i&lt;=255 do inc(i); // pętla bez końca gdy zmienna I typu BYTE
+</code></pre>
+<h3 id="repeat-until"><a href="https://www.freepascal.org/docs-html/ref/refsu59.html#x168-19000013.2.6">repeat until</a></h3>
+<pre><code class="language-delphi">    repeat
+      { instrukcje do wykonania }
+    until { warunek zakończenia }
+</code></pre>
+<p>Instrukcja ta wykonuje cyklicznie inne instrukcje zawarte pomiędzy słowami <code>REPEAT</code> i <code>UNTIL</code> do momentu gdy wyrażenie znajdujące się za słowem <code>UNTIL</code> nie przyjmie wartości <code>TRUE</code>.</p>
+<p>Efekt zastosowania pętli <code>REPEAT</code> jest bardzo podobny do działania pętli <code>WHILE</code>. Pętla ta także może być wykonywana ogromną liczbę razy. Jedyna różnica polega na tym, że w pętli <code>REPEAT</code> warunek zakończenia sprawdzany jest dopiero po wykonaniu instrukcji. Oznacza to, że pętla <code>REPEAT</code> zawsze będzie wykonana co najmniej raz. Dopiero po pierwszej iteracji program sprawdzi, czy można zakończyć działanie pętli. W przypadku pętli <code>WHILE</code> warunek jest sprawdzany bezpośrednio przed jej wykonaniem, co w rezultacie może spowodować, że taka pętla nigdy niezostanie wykonana.</p>
+<pre><code class="language-delphi">    i:=0;
+    repeat
+      inc(i);
+    until i=0;      // pętla wykona się 256 razy
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../moduly/" class="btn btn-neutral float-right" title="Programy, moduły, biblioteki">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../zmienne/" class="btn btn-neutral" title="Zmienne"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../zmienne/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../moduly/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Procedury, funkcje, modyfikatory - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Procedury, funkcje, modyfikatory";
+    var mkdocs_page_input_path = "procedury-funkcje.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../wprowadzenie/">Wprowadzenie</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mapa/">Mapa pamięci</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sposob-uzycia/">Sposób użycia</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../skladnia/">Składnia</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../stale/">Stałe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../typy/">Typy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zmienne/">Zmienne</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instrukcje/">Instrukcje</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../moduly/">Programy, moduły, biblioteki</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Procedury, funkcje, modyfikatory</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#procedury">Procedury</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funkcje">Funkcje</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#przekazywanie-parametrow">Przekazywanie parametrów</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#przekazywanie-przez-wartosc">Przekazywanie przez wartość</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#przekazywanie-przez-staa">Przekazywanie przez stałą</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#przekazywanie-przez-referencje">Przekazywanie przez referencję</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parametry-bez-typu">Parametry bez typu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tablice-otwarte">Tablice otwarte</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#procedury-zagniezdzone">Procedury zagnieżdżone</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modyfikatory">Modyfikatory</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#assembler">assembler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#overload">overload</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#forward">forward</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#register">register</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interrupt">interrupt</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#keep">keep</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pascal">pascal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stdcall">stdcall</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inline">inline</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#external">external</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../makra/">Makra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Wstawki assemblera</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zasoby/">Pliki zasobów</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../przerwania/">Obsługa przerwań</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pliki/">Operacje na plikach</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatywa dla DOS-a</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../biblioteki-podstawowe/">Biblioteki podstawowe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../porady/">Porady</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../przyklady/">Przykłady</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projekty/">Projekty</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Procedury, funkcje, modyfikatory</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/mad-pascal-mkdocs/edit/master/docs/procedury-funkcje.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="procedury"><a href="https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014">Procedury</a></h2>
+<p><strong>MP</strong> pozwala na przekazanie do procedury maksymalnie <strong>8</strong> parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą <code>CONST</code> i referencję <code>VAR</code>.</p>
+<p>Parametry procedur odczytywane są i wartościowane od prawej do lewej strony <a href="https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas">tests\tests-medium\function_valuation_of_arguments.pas</a></p>
+<p>Możliwe jest zagnieżdżanie procedur.</p>
+<p>Możliwa jest rekurencja procedur, pod warunkiem że parametry procedury będą przekazywane przez wartość, będą typu prostego - porządkowego. Typ rekordowy, wskaźnikowy nie będzie właściwie alokowany w pamięci.</p>
+<p>Jeśli jest to możliwe kompilator przekazuje parametry do procedury poprzez zmienne z pominięciem stosu programowego.</p>
+<h2 id="funkcje"><a href="https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014">Funkcje</a></h2>
+<p><strong>MP</strong> pozwala na przekazanie do funkcji maksymalnie <strong>8</strong> parametrów. Dostępne są trzy sposoby przekazywania parametrów: przez wartość, stałą <code>CONST</code> i referencję <code>VAR</code>. </p>
+<p>Wynik funkcji zwracamy przypisując go do nazwy funkcji lub korzystając z automatycznie deklarowanej zmiennej <code>RESULT</code>, np.:</p>
+<pre><code class="language-delphi">function add(a,b: word): cardinal;
+begin
+  Result := a+b;
+end;
+
+function mul(a,b: word): cardinal;
+begin
+  mul := a*b;
+end;
+</code></pre>
+<ul>
+<li>Używanie modyfikatora <code>INTERRUPT</code> nie jest zalecane.</li>
+</ul>
+<p>Parametry funkcji odczytywane są i wartościowane od prawej do lewej strony <a href="https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas">tests\tests-medium\function_valuation_of_arguments.pas</a></p>
+<p>Możliwe jest zagnieżdżanie funkcji.</p>
+<p>Możliwa jest rekurencja funkcji, pod warunkiem, że parametry funkcji będą przekazywane przez wartość, będą typu prostego - porządkowego. Typ rekordowy, wskaźnikowy nie będzie właściwie alokowany w pamięci.</p>
+<p>Jeśli jest to możliwe kompilator przekazuje parametry do funkcji poprzez zmienne z pominięciem stosu programowego.</p>
+<h2 id="przekazywanie-parametrow">Przekazywanie parametrów</h2>
+<p>Można przekazywać do 8 parametrów do funkcji lub procedury. Oddziela się je średnikami. Każdy z parametrów ma własny typ. 
+Zmienne podawane zazwyczaj w parametrach są kopiowane w inny obszar pamięci i właśnie do tego obszaru ma dostęp programista. 
+Kompilator <code>Mad Pascala</code> wykonuje kopię parametrów, nie należy przekazywać zbyt dużej ilości danych, by nie spowolnić działania programu. Zaleca się przekazywać do czterech bajtów.</p>
+<h3 id="przekazywanie-przez-wartosc"><a href="https://4programmers.net/Delphi/Procedury_i_funkcje#przekazywanie-parametrow-przez-wartosc">Przekazywanie przez wartość</a></h3>
+<p>Przekazywanie parametrów przez wartość jest sposobem najprostszym z możliwych. Deklaracja procedury nie musi zawierać żadnych dodatkowych słów kluczowych - wystarczy poniższa konstrukcja nagłówka procedury bądź funkcji:</p>
+<pre><code class="language-delphi">procedure Foo(S : String);
+</code></pre>
+<p>Przekazanie parametru przez wartość wiąże się utworzeniem jego kopii lokalnej do wykorzystania jedynie przez procedurę lub funkcję. Oryginalna wartość zmiennej przekazanej do procedury nie zostaje w żaden sposób naruszona.</p>
+<h3 id="przekazywanie-przez-staa"><a href="https://4programmers.net/Delphi/Procedury_i_funkcje#przekazywanie-parametrow-przez-stala">Przekazywanie przez stałą</a></h3>
+<p>Umieszczenie w deklaracji parametrów słowa kluczowego <code>CONST</code> spowoduje przekazywanie parametrów jako stałych.</p>
+<pre><code class="language-delphi">procedure Show(const Message : String);
+begin
+  Writeln(Message);
+end;
+</code></pre>
+<p>Procedura nie może w żaden sposób wpływać na zawartość parametru. Próba nadania przez procedurę jakiejś wartości spowoduje komunikat o błędzie:
+<code>Can't assign values to const variable</code>, nie można więc zapisać tego w ten sposób:</p>
+<pre><code class="language-delphi">procedure Show(const Message : String);
+begin
+  Message := 'Nowa wartość';
+  Writeln(Message);
+end;
+</code></pre>
+<p>Obecnie kompilator <code>MP</code> odkłada takie parametry w pamięci podobnie jak w przypadku przekazywania przez wartość, docelowo powinien tylko przez wskaźnik.</p>
+<h3 id="przekazywanie-przez-referencje"><a href="https://4programmers.net/Delphi/Procedury_i_funkcje#przekazywanie-parametrow-przez-referencje">Przekazywanie przez referencję</a></h3>
+<p>Przekazywanie parametrów przez referencję polega na umieszczeniu przed parametrami słowa kluczowego <code>VAR</code>. Dzięki temu kod znajdujący się wewnątrz procedury może zmienić wartość parametru.</p>
+<p>Sposób przekazywania danych przez referencję jest optymalny, gdyż nie jest tworzona kopia zmiennej. W związku z tym jest możliwe przekazywanie danych z procedury na zewnątrz.</p>
+<pre><code class="language-delphi">uses crt;
+
+procedure SetValue(var a,b,c,d: byte);
+begin
+{ próba nadania nowej wartości dla parametru }
+  a := a  + 2;
+  b := a  + 3;
+  c := b  + 4;
+  d := c  + 5;
+end;
+
+var a,b,c,d: byte;
+
+begin
+ a:=3;
+
+ SetValue(a,b,c,d);
+
+ writeln(a);     // 5
+ writeln(b);     // 8
+ writeln(c);     // 12
+ writeln(d);     // 17
+
+ repeat until keypressed;
+
+end.
+</code></pre>
+<h3 id="parametry-bez-typu"><a href="https://www.freepascal.org/docs-html/ref/refsu70.html#x186-21000014.4.7">Parametry bez typu</a></h3>
+<p><code>MP</code> pozwala deklarować parametry procedur i funkcji, które nie posiadają typu. W takim wypadku, nazwy parametrów muszą być poprzedzone słowem kluczowym <code>VAR</code>.</p>
+<p>Dostęp do wartości takich parametrów musi odbywać się poprzez rzutowanie.</p>
+<pre><code class="language-delphi">var w: cardinal;
+
+procedure doit(var d);
+
+begin
+  Writeln('As integer: ',PInteger(@D)^);
+  Writeln('As Byte   : ',PByte(@D)^);
+end;
+
+
+begin
+
+w:=31411;
+
+doit(w);
+
+end.
+
+&gt;&gt; 31411
+&gt;&gt; 179
+</code></pre>
+<p>Przekazywanie parametru przez wskaźnik, zależnie od typu takiego wskaźnika:</p>
+<pre><code class="language-delphi">var pn: pointer;
+    tb: array [0..0] of byte;
+
+procedure doit(var a); overload;
+begin
+
+ writeln('VAR',',',cardinal(@a));
+
+end;
+
+procedure doit(var a: pointer); overload;
+begin
+
+ writeln('VAR POINTER',',',cardinal(a));
+
+end;
+
+
+begin
+
+ pn:=@tb;
+
+ doit(tb);       // VAR
+
+ doit(pn);       // VAR POINTER
+
+end.
+</code></pre>
+<p>Odczyt pliku pod adres wskazany przez wskaźnik:</p>
+<pre><code class="language-delphi">procedure BlockRead(var f: file; var Buf; count: word; var Result: word);
+</code></pre>
+<pre><code class="language-delphi">var pn: pointer;
+    f: file;
+
+begin
+
+ InitGraph(15+16);
+
+ pn:=pointer(dpeek(88));
+
+ assign(f, 'FILENAME'); reset(f, 1);
+
+ blockread(f, pn^, 192*40);
+
+ close(f);
+
+end.
+</code></pre>
+<p>Odczyt pliku pod adres wskazany przez tablicę:</p>
+<pre><code class="language-delphi">var bf: array [0..0] of byte;
+    f: file;
+
+begin
+
+ InitGraph(15+16);
+
+ bf:=pointer(dpeek(88));
+
+ assign(f, 'FILENAME'); reset(f, 1);
+
+ blockread(f, bf, 192*40);
+
+ close(f);
+
+end.
+</code></pre>
+<h3 id="tablice-otwarte"><a href="https://www.freepascal.org/docs-html/ref/refsu69.html#x185-20900014.4.6">Tablice otwarte</a></h3>
+<p>Obecnie kompilator <code>MP</code> nie wspiera <code>tablic otwartych</code> ani nie pozwala na przekazywanie <code>tablic otwartych</code> jako parametru.</p>
+<pre><code class="language-delphi">function Foo(const A : array of const) : String;
+</code></pre>
+<pre><code class="language-delphi">ShowMessage(Foo(['test', 10, ' ', 'mama', 1000]));
+</code></pre>
+<pre><code class="language-delphi">function Foo(const A : array of const) : String;
+var
+  i : Integer;
+begin
+  for I := 0 to High(A) do
+  begin
+    case A[i].VType of
+      vtInteger: Result := Result + IntToStr(A[i].VInteger);
+      vtChar: Result := Result + A[i].VChar;
+      vtString: Result := Result + A[i].VString^;
+      vtAnsiString: Result := Result + String(A[i].VAnsiString);
+      vtVariant: Result := Result + String(A[i].VVariant^);
+      { itd. }
+    end;
+  end;
+end;
+</code></pre>
+<h2 id="procedury-zagniezdzone"><a href="https://4programmers.net/Delphi/Procedury_i_funkcje#procedury-zagniezdzone">Procedury zagnieżdżone</a></h2>
+<p>Nic nie stoi na przeszkodzie, aby daną procedurę lub funkcję umieścić w innej procedurze lub funkcji.</p>
+<pre><code class="language-delphi">procedure A;
+
+  procedure B;
+  begin
+
+  end;
+
+begin
+
+end;
+</code></pre>
+<p>Z powyższego zapisu wynika, że procedura lub funkcja zagnieżdżona (w tym wypadku procedura <code>B</code>) musi zostać umieszczona przed blokiem <code>BEGIN</code>.</p>
+<p>W takim przypadku nadal obowiązują zasady o zmiennych lokalnych. Oznacza to, że zmienna umieszczona w procedurze <code>B</code> nie będzie dostępna dla procedury <code>A</code>.</p>
+<p>Przy zastosowaniu procedur zagnieżdżonych obowiązują również inne zasady. Procedura zewnętrzna do <code>A</code> nie ma dostępu do procedury <code>B</code>, procedura <code>B</code> ma dostęp do parametrów wywołania procedury <code>A</code>. </p>
+<pre><code class="language-delphi">program nested;
+
+function E(x: byte): byte;
+
+  function F(y: byte): byte;
+    begin
+    F := x + y
+    end;
+
+  begin
+  Result := F(3) + F(2)
+  end;
+
+begin
+  writeln(E(1));
+
+  while true do;
+end.
+</code></pre>
+<p>W powyższym przykładzie, zmienne <code>X</code>, <code>Y</code> są dostępne w funkcji <code>F</code>, natomiast dla funkcji <code>E</code> dostępna jest tylko zmienna <code>X</code>.</p>
+<p>Procedury i funkcje zagnieżdżone mogą okazać się przydatne, gdy do realizacji jednej funkcji przydatna lub wymagana jest inna procedura lub funkcja, która, z punktu widzenia innych procedur lub funkcji danego modułu, jest zbędna. Jednocześnie warto przypomnieć, że zagnieżdżenie pozwala na wywoływanie bez przekazywania parametrów z funkcji nadrzędnej.</p>
+<h2 id="modyfikatory">Modyfikatory</h2>
+<h3 id="assembler"><code>assembler</code></h3>
+<p><strong>Procedury/Funkcje</strong> oznaczona przez <code>ASSEMBLER</code> mogą składać się tylko z bloku <strong>ASM</strong>. Kompilator nie dokonuje analizy składni takich bloków, traktuje je jak komentarz, ewentualne błędy zostaną wychwycone dopiero podczas asemblacji.</p>
+<blockquote>
+<p><strong>UWAGA:</strong><br />
+<em>Wymagane jest aby zachować stan rejestru <code>X</code> <code>CPU6502</code>, który używany jest do obsługi stosu programowego <strong>MP</strong>.</em></p>
+</blockquote>
+<p>Kompilator dopuszcza dwie składnie bloku <code>ASM</code>, z klamrami { } jak dla komentarza i standardową bez klamer.</p>
+<pre><code class="language-delphi">ASM
+  lda #10
+  sta 712
+END;
+</code></pre>
+<pre><code class="language-delphi">ASM
+{  lda #10
+   sta 712
+};
+</code></pre>
+<pre><code class="language-delphi">procedure name; assembler;
+asm
+  lda #10
+  sta 712
+end;
+</code></pre>
+<pre><code class="language-delphi">procedure name; assembler;
+asm
+{
+  lda #10
+  sta 712
+};
+end;
+</code></pre>
+<h3 id="overload"><code>overload</code></h3>
+<p><strong>Procedury/Funkcje</strong> przeciążone rozpoznawane są na podstawie listy parametrów.</p>
+<pre><code class="language-delphi">procedure suma(var i: integer; a,b: integer); overload;
+begin
+  i := a+b;
+end;
+
+procedure suma(var i: integer; a,b,c: integer); overload;
+begin
+  i := a+b+c;
+end;
+
+function fsuma(a,b: word): cardinal; assembler; overload;
+asm
+{
+  adw a b result
+};
+end;
+
+function fsuma(a,b: real): real; overload;
+begin
+  Result := a+b;
+end;
+</code></pre>
+<p>Przy przekazywaniu parametrów do <strong>procedury/funkcji</strong> należy pamiętać że <strong>Mad Pascal</strong> rozszerza typ obliczanych wyrażeń, dlatego jeśli zależy nam na określonym typie powinniśmy dokonać rzutowania.</p>
+<pre><code class="language-delphi">procedure tst(a,b: shortint); overload;
+begin
+ writeln('shortint');
+end;
+
+procedure tst(a,b: smallint); overload;
+begin
+ writeln('smallint');
+end;
+
+procedure tst(a,b: integer); overload;
+begin
+ writeln('integer');
+end;
+</code></pre>
+<pre><code class="language-delphi">dla a,b = shortint
+
+tst(a,b)    -&gt; wybierze shortint
+
+tst(a+1,b)  -&gt; wybierze integer
+
+tst(smallint(a+1),b)  -&gt; wybierze smallint
+</code></pre>
+<h3 id="forward"><code>forward</code></h3>
+<p>Jeżeli chcemy aby <strong>procedura/funkcja</strong> była zadeklarowana za miejscem jej pierwszego wywołania, należy użyć modyfikator <code>FORWARD</code>.</p>
+<pre><code class="language-delphi">procedure nazwa [(lista-parametrów-formalnych)]; forward;
+
+...
+...
+...
+
+procedure nazwa;
+begin
+end;
+</code></pre>
+<h3 id="register"><code>register</code></h3>
+<p>Użycie modyfikatora <code>REGISTER</code> spowoduje, że trzy pierwsze parametry formalne <strong>procedury/funkcji</strong> będą umieszczone na stronie zerowej, w 32-bitowych rejestrach programowych, odpowiednio <code>EDX</code>, <code>ECX</code>, <code>EAX</code>.</p>
+<pre><code>procedure nazwa (a,b,c: cardinal); register;
+// a = edx
+// b = ecx
+// c = eax
+</code></pre>
+<p>W przypadku funkcji, zmienna RESULT przechowująca wartość funkcji alokowana jest na stronie zerowej pod adresem <code>:STACKORIGIN-4</code> który odpowiada bezpośrednio zmiennej <code>:TMP</code></p>
+<pre><code>function nazwa (a,b,c: cardinal): cardinal; register;
+// a = edx
+// b = ecx
+// c = eax
+// Result = :STACKORIGIN-4 (:TMP)
+</code></pre>
+<p>Jeśli w ciele procedury/funkcji występują operacje mnożenia/dzielenia, albo operacje na tablicach dwu-wymiarowych wówczas rejestry <code>EDX</code>, <code>ECX</code>, <code>EAX</code> mogą ulec zniszczeniu co spowoduje "niespodziewane" rezultaty.</p>
+<h3 id="interrupt"><code>interrupt</code></h3>
+<p><strong>Procedury/Funkcje</strong> oznaczone przez <code>INTERRUPT</code> kompilator będzie kończył rozkazem <code>RTI</code> (standardowo <code>RTS</code>).</p>
+<p>Niezależnie czy w programie wystąpi wywołanie takiej <strong>procedury/funkcji</strong> kompilator zawsze wygeneruje dla niej kod.</p>
+<p>Na wejściu <strong>procedury/funkcji</strong> oznaczonej przez <code>INTERRUPT</code> programista musi zadbać o zachowanie rejestrów <strong>CPU</strong> <code>A</code> <code>X</code> <code>Y</code>, na wyjściu o przywrócenie stanu takich rejestrów, kompilator ogranicza się tylko do wstawienia końcowego rozkazu <code>RTI</code>.</p>
+<p>Kompilator zgłosi błąd jeśli w takiej procedurze/funkcji wystąpią rozkazy assemblera odwołujące się do zmiennych <code>:BP</code>, <code>:BP2</code> lub <code>:STACKORIGIN</code>.</p>
+<pre><code class="language-delphi">procedure dli; interrupt; assembler;
+asm
+   pha
+
+    lda #$c8
+    sta wsync
+    sta $d01a
+
+    pla
+end;             // rozkaz RTI zostanie wstawiony automatycznie
+</code></pre>
+<h3 id="keep"><code>keep</code></h3>
+<p>Użycie modyfikator <code>KEEP</code> spowoduje że tak oznaczona <strong>procedura/funkcja</strong> zostanie zawsze skompilowana niezależnie czy wystąpiło, czy nie wystąpiło odwołanie w programie do takiej <strong>procedury/funkcji</strong>.</p>
+<h3 id="pascal"><code>pascal</code></h3>
+<p>Użycie modyfikatora <code>PASCAL</code> spowoduje, że <strong>procedura/funkcja</strong> będzie traktowana jako rekurencyjna. Standardowo kompilator automatycznie wykrywa rekurencję, ale mogą zdarzyć się sytuacje dla których będzie to niemożliwe.
+Przykład <a href="https://github.com/tebe6502/Mad-Pascal/blob/master/samples/a8/math/evaluate.pas">samples/math/evaluate.pas</a></p>
+<h3 id="stdcall"><code>stdcall</code></h3>
+<p>Użycie modyfikatora <code>STDCALL</code> spowoduje wymuszenie przekazywania parametrów do procedury/funkcji poprzez stos programowy. Domyślnie kompilator stara się przekazywać parametry przez zmienne, bez udziału stosu programowego.</p>
+<h3 id="inline"><code>inline</code></h3>
+<p>Procedura, funkcja zostaje zamieniona na makro <strong>Mad Assemblera</strong>, pozbywamy się wywołań z udziałem rozkazu <code>JSR</code>.</p>
+<p>Nie ma możliwości używania rekurencji dla takich <strong>procedur/funkcji</strong>.</p>
+<h3 id="external"><code>external</code></h3>
+<p>Modyfikator <code>EXTERNAL</code> informuje kompilator że <strong>procedura/funkcja</strong> zostanie dolinkowana</p>
+<p><code>{$LINK filename}</code></p>
+<p>na etapie assemblacji.</p>
+<p>Przykład kilku procedur, które zostaną dolinkowane do programu w Pascalu (procedura z 1 argumentem typu BYTE jest wyjątkiem, taki argument przekazywany jest przez rejestr akumulatora)</p>
+<pre><code class="language-delphi">
+.public proc1, proc2, proc3
+
+.reloc
+
+.proc proc1 (.byte a) .reg
+
+ rts
+.endp
+
+
+.proc proc2 (.word tmp) .var
+
+ rts
+
+tmp dta a(0)
+
+.endp
+
+
+.proc proc3 (.byte x,y,z) .var
+
+ rts
+
+x brk
+y brk
+z brk
+.endp
+</code></pre>
+<p>Przykład wykorzystania w Pascalu</p>
+<pre><code class="language-delphi"> procedure proc1 (a: byte); external;
+ procedure proc2 (a: word); external;
+ procedure proc3 (a,b,c: byte); external;
+
+ {$link filename.obx}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../makra/" class="btn btn-neutral float-right" title="Makra">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../moduly/" class="btn btn-neutral" title="Programy, moduły, biblioteki"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../moduly/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../makra/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

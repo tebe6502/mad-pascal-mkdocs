@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Pliki zasobów - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Pliki zasob\u00f3w";
+    var mkdocs_page_input_path = "zasoby.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../wprowadzenie/">Wprowadzenie</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mapa/">Mapa pamięci</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sposob-uzycia/">Sposób użycia</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../skladnia/">Składnia</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../stale/">Stałe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../typy/">Typy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zmienne/">Zmienne</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instrukcje/">Instrukcje</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../moduly/">Programy, moduły, biblioteki</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedury, funkcje, modyfikatory</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../makra/">Makra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Wstawki assemblera</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Pliki zasobów</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pliki-zasobow">Pliki zasobów</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#skadnia-plikow-rc">Składnia plików RC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mozliwosc-adowania-zasobow-pod-rom">Możliwość ładowania zasobów pod ROM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#waczenie-do-aplikacji-pliku-rc">Włączenie do aplikacji pliku RC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dostep-do-zasobow">Dostęp do zasobów.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rcasm">RCASM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#saprplay">SAPRPLAY</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../przerwania/">Obsługa przerwań</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pliki/">Operacje na plikach</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatywa dla DOS-a</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../biblioteki-podstawowe/">Biblioteki podstawowe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../porady/">Porady</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../przyklady/">Przykłady</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projekty/">Projekty</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Pliki zasobów</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/mad-pascal-mkdocs/edit/master/docs/zasoby.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="pliki-zasobow"><a href="/skladnia/#r-resource">Pliki zasobów</a></h2>
+<h3 id="skadnia-plikow-rc">Składnia plików RC</h3>
+<p>Pliki <code>RC</code> są zwykłymi plikami tekstowymi. Zawierają listę zasobów, które należy włączyć do kompilowanego pliku.
+Podstawowy element składni wygląda następująco:</p>
+<pre><code>NazwaZasobu  TypZasobu  NazwaPliku  [0 0 0 0 0 0 0 0]
+
+RCLABEL      RCTYPE     RCFILE      [PAR0, PAR1, PAR2, PAR3, PAR4, PAR5, PAR6, PAR7]
+</code></pre>
+<p>W treści pliku <code>RC</code> mogą znaleźć się komentarze, poprzedzone znakiem <code>;</code> lub <code>#</code>. Przykład pliku <code>RC</code>:</p>
+<pre><code class="language-delphi">    ; to jest player MPT
+    mpt_player  MPTPLAY
+
+    # to jest modul
+    mpt_modul   MPT 'porazka.mpt'
+
+    dane    RCDATA 'dane.xex' 6
+</code></pre>
+<p>Typ zasobu określa format włączanego pliku.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Typ zasobu</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">RCDATA</td>
+<td>Dowolny typ danych, np.:</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>label RCDATA 'filename'</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>label RCDATA 'filename' OFFSET</td>
+</tr>
+<tr>
+<td align="center">EXTMEM</td>
+<td>Dowolny typ danych ładowany do pamięci dodatkowej <code>PORTB</code>, adres ładowania ustalany <br> jest na podstawie <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">RCASM</td>
+<td>Plik w assemblerze, który zostanie dołączony i zasemblowany (makra nie są dozwolone).</td>
+</tr>
+<tr>
+<td align="center">DOSFILE</td>
+<td>Plik z nagłówkiem <strong>Atari DOS</strong>, adres ładowania takiego pliku powinien być identyczny <br> jak <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">LIBRARY</td>
+<td>Skompilowany moduł <code>LIBRARY</code>, ładowany do banku <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">RELOC</td>
+<td>Plik relokowalny w formacie <strong>Mad Assemblera</strong>, plik zostanie poddany relokacji pod <br> wskazany adres <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">RMT</td>
+<td>Plik modułu <strong>Raster Music Tracker-a</strong>, plik zostanie poddany relokacji pod wskazany <br> adres <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">MPT</td>
+<td>Plik modułu <strong>Music ProTracker-a</strong>, plik zostanie poddany relokacji pod wskazany <br> adres <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">CMC</td>
+<td>Plik modułu <strong>Chaos Music Composer-a</strong>, plik zostanie poddany relokacji pod wskazany <br> adres <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">SAPR</td>
+<td>Plik z danymi SAP-R, ładowany pod wskazany adres <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">PP</td>
+<td>Plik spakowny <strong>Power Packer</strong>-em, ładowany pod wskazany adres <code>RCLABEL</code></td>
+</tr>
+<tr>
+<td align="center">RMTPLAY</td>
+<td>Player dla modułu <strong>RMT</strong>, ładowany na początek strony pamięci od adresu <code>RCLABEL</code>,<br>jako <code>RCFILE</code> podajemy plik <code>.FEAT</code>, <code>PAR0</code> tryb playera 0..3:</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>0 =&gt; compile RMTplayer for 4 tracks mono</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>1 =&gt; compile RMTplayer for 8 tracks stereo</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>2 =&gt; compile RMTplayer for 4 tracks stereo L1 R2 R3 L4</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>3 =&gt; compile RMTplayer for 4 tracks stereo L1 L2 R3 R4</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>oraz opcjonalnie <code>PAR1</code> jako adres dla zmiennych na stronie zerowej (domyślnie <code>$E0</code>)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">RMTPLAY2</td>
+<td>Player dla modułu <strong>RMT</strong>, ładowany na początek strony pamięci od adresu <code>RCLABEL</code>,<br>jako <code>RCFILE</code> podajemy plik <code>.FEAT</code>, <code>PAR0</code> tryb playera 0..3:</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>0 =&gt; compile RMTplayer for 4 tracks mono</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>1 =&gt; compile RMTplayer for 8 tracks stereo</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>2 =&gt; compile RMTplayer for 4 tracks stereo L1 R2 R3 L4</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>3 =&gt; compile RMTplayer for 4 tracks stereo L1 L2 R3 R4</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>oraz opcjonalnie <code>PAR1</code> jako adres dla zmiennych na stronie zerowej (domyślnie <code>$E0</code>)</td>
+</tr>
+<tr>
+<td align="center">SAPRPLAY</td>
+<td>Player SAP-R LZSS, nie wymaga podawania nazwy pliku <code>RCFILE</code>, <br> adres <code>RCLABEL</code> tylko od początku strony</td>
+</tr>
+<tr>
+<td align="center">MPTPLAY</td>
+<td>Player dla modułu <strong>MPT</strong>, nie wymaga podawania nazwy pliku <code>RCFILE</code></td>
+</tr>
+<tr>
+<td align="center">CMCPLAY</td>
+<td>Player dla modułu <strong>CMC</strong>, nie wymaga podawania nazwy pliku <code>RCFILE</code></td>
+</tr>
+<tr>
+<td align="center">XBMP</td>
+<td>Plik <strong>BMP</strong> <strong><code>Windows Bitmap</code></strong> (8 BitsPerPixel) ładowany do pamięci <strong>VBXE</strong> <br> pod wskazany adres <code>RCLABEL</code>, <br> od indeksu koloru <code>PAR0</code> -&gt; <code>color select</code>, <br> w palecie kolorów <strong>VBXE</strong> <code>PAR1</code> -&gt; <code>palette select</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mozliwosc-adowania-zasobow-pod-rom">Możliwość ładowania zasobów pod ROM</h3>
+<pre><code>    CMC             RAM / ROM
+    CMCPLAY         RAM / ROM
+    DOSFILE         RAM / ROM
+    EXTMEM
+    LIBRARY         PORTB
+    MPT             RAM / ROM
+    MPTPLAY         RAM / ROM
+    PP              RAM / ROM
+    RCASM           RAM / ROM
+    RCDATA          RAM / ROM
+    RELOC           RAM
+    RMT             RAM / ROM
+    RMTPLAY         RAM
+    RMTPLAY2        RAM / ROM
+    XBMP
+    SAPR            RAM / ROM
+    SAPRPLAY        RAM / ROM
+</code></pre>
+<h3 id="waczenie-do-aplikacji-pliku-rc">Włączenie do aplikacji pliku RC</h3>
+<p>W kodzie źródłowym programu należy wpisać dyrektywę kompilatora (np. na początku sekcji implementacji):</p>
+<pre><code>{$R mojezasoby.rc}
+</code></pre>
+<p>Dodatkowo należy podać w kodzie programu wartość dla etykiet <code>RCLABEL</code> odpowiednich zasobów, np.:</p>
+<pre><code class="language-delphi">const
+
+    mpt_player = $8000;
+
+    mpt_modul = $9000;
+</code></pre>
+<p>Włączenie pliku <code>RC</code> następuje w momencie kompilacji programu.</p>
+<p>Jeśli adres zasobu wskazuje adres pod <code>ROM</code> (<code>$C000..$FFFF</code>) wówczas wyłączany jest <code>ANTIC</code>. Przy uruchomieniu programu należy wpisać odpowiednią wartość do rejestru <code>DMACTL</code>
+aby włączyć obraz z powrotem.</p>
+<h3 id="dostep-do-zasobow">Dostęp do zasobów.</h3>
+<p>Zasoby umieszczane są pod wskazanymi <code>RCLABEL</code> adresami w pamięci. Wyjątkiem są zasoby <code>RCDATA</code>, <code>SAPR</code>, <code>PP</code> dla których możliwe jest pominięcie definicji <code>RCLABEL</code> w kodzie programu.</p>
+<p>W przypadku braku definicji <code>RCLABEL</code> zasób zostaje dołączony do kompilowanego programu, dostęp możliwy jest poprzez procedurę <code>GetResourceHandle</code>.</p>
+<pre><code>GetResourceHandle(pointer, 'rclabel');
+</code></pre>
+<p>Procedura <code>GetResourceHandle</code> ustala wartość wskaźnika <strong>POINTER</strong> dla zasobu <code>RCLABEL</code>.</p>
+<pre><code>SizeOfResource(variable, 'rclabel');
+</code></pre>
+<p>Procedura <code>SizeOfResource</code> zwraca długość zasobu <code>RCLABEL</code> w zmiennej <strong>VARIABLE</strong>.</p>
+<h3 id="rcasm">RCASM</h3>
+<blockquote>
+<p><em>W zasobach <code>ASM</code> nie ma możliwości używania makr.</em></p>
+</blockquote>
+<h3 id="saprplay">SAPRPLAY</h3>
+<p>Player SAP-R LZSS wymaga podania adresu od początku strony pamięci. Główny kod playera zajmuje <strong>$0300</strong> bajtów, bufory <strong>$0900</strong>, w sumie <strong>$0C00</strong> bajtów.</p>
+<p><strong>SAP-R</strong> jest to plik z kolejnymi wartościami rejestrów <strong>POKEY</strong>-a (<code>$D200..$D208</code>). Zapis pliku <strong>SAP-R</strong> umożliwia emulator <strong>Altirra</strong>, lub program <a href="https://forums.atariage.com/topic/315537-rmt2lzss-convert-rmt-tunes-to-lzss-for-fast-playback"><strong>RMT2LZSS</strong></a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../przerwania/" class="btn btn-neutral float-right" title="Obsługa przerwań">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../asm/" class="btn btn-neutral" title="Wstawki assemblera"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../asm/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../przerwania/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

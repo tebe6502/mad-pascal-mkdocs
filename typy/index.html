@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Typy - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Typy";
+    var mkdocs_page_input_path = "typy.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../wprowadzenie/">Wprowadzenie</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mapa/">Mapa pamięci</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sposob-uzycia/">Sposób użycia</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../skladnia/">Składnia</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../stale/">Stałe</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Typy</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#podstawowe">Podstawowe</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#logiczne">Logiczne</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wyliczeniowe">Wyliczeniowe</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rzeczywiste">Rzeczywiste</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#znakowe">Znakowe</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wskaznikowe">Wskaźnikowe</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tablice-statyczne">Tablice statyczne</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tablice-striped">Tablice STRIPED</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inicjalizacja-tablic">Inicjalizacja tablic</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#bin2csv">$bin2csv</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eval">$eval</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rekordy">Rekordy</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tablica-z-rekordami">Tablica z rekordami</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#obiektowe">Obiektowe</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proceduralne">Proceduralne</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#plikowe-binarne">Plikowe binarne</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#plikowe-tekstowe">Plikowe tekstowe</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nieoznaczone">Nieoznaczone</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zmienne/">Zmienne</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instrukcje/">Instrukcje</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../moduly/">Programy, moduły, biblioteki</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedury, funkcje, modyfikatory</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../makra/">Makra</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Wstawki assemblera</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../zasoby/">Pliki zasobów</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../przerwania/">Obsługa przerwań</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pliki/">Operacje na plikach</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatywa dla DOS-a</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../biblioteki-podstawowe/">Biblioteki podstawowe</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../porady/">Porady</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../przyklady/">Przykłady</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projekty/">Projekty</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Typy</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/mad-pascal-mkdocs/edit/master/docs/typy.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="podstawowe"><a href="https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1">Podstawowe</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Range</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">BYTE</td>
+<td align="center">0 .. 255</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">SHORTINT</td>
+<td align="center">-128 .. 127</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">WORD</td>
+<td align="center">0 .. 65535</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">SMALLINT</td>
+<td align="center">-32768 .. 32767</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">CARDINAL</td>
+<td align="center">0 .. 4294967295</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">LONGWORD</td>
+<td align="center">0 .. 4294967295</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">DWORD</td>
+<td align="center">0 .. 4294967295</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">UINT32</td>
+<td align="center">0 .. 4294967295</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">INTEGER</td>
+<td align="center">-2147483648 .. 2147483647</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">LONGINT</td>
+<td align="center">-2147483648 .. 2147483647</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="logiczne"><a href="https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1">Logiczne</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Ord(True)</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">BOOLEAN</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="wyliczeniowe"><a href="https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1">Wyliczeniowe</a></h2>
+<p>Typ wyliczeniowy w <strong>MP</strong> został zaimplementowany w podstawowej postaci, tzn.:</p>
+<pre><code class="language-delphi">Type
+  Days = (monday,tuesday,wednesday,thursday,friday,
+          saturday,sunday);
+
+  Joy = (right_down = 5, right_up, right, left_down = 9, left_up, left, down = 13, up, none);
+</code></pre>
+<p>Typ wyliczeniowy przechowywany jest tylko w pamięci kompilatora <strong>MP</strong>, do pliku wynikowego nie zostaną zapisane jakiekolwiek informacje dotyczące pól typu wyliczeniowego. Dopuszczalne jest użycie komendy <code>ORD</code>, <code>SIZEOF</code> oraz rzutowania dla typu wyliczeniowego.</p>
+<pre><code class="language-delphi">var
+   d: Days;
+
+   d:=friday;
+   writeln(ord(d));
+   writeln(ord(sunday));
+   writeln(sizeof(days));
+   writeln(sizeof(monday));
+
+   d:=days(20);
+
+   case d of
+    sunday: writeln('sunday');
+   end;
+</code></pre>
+<p>Aktualnie kompilator <strong>MP</strong> nie sprawdzi poprawności typów wyliczeniowych dla operacji <code>IF ELSE</code>.</p>
+<h2 id="rzeczywiste"><a href="https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2">Rzeczywiste</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Range</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SHORTREAL (Q8.8)</td>
+<td align="center">-128..127</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">REAL (Q24.8)</td>
+<td align="center">-8388608..8388607</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">SINGLE (IEEE-754)</td>
+<td align="center">1.5E-45 .. 3.4E38</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">FLOAT (IEEE-754)</td>
+<td align="center">1.5E-45 .. 3.4E38</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">FLOAT16 (IEEE-754)</td>
+<td align="center">65504 .. -65504</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+Konwersja typu <code>FLOAT</code>, <code>SINGLE</code> do liczby całkowitej dostępna jest tylko w zakresie <code>INTEGER</code>. Typ <code>INTEGER</code> nie pozwoli zaprezentować maksymalnej wartości <code>3.4E38</code> typu <code>FLOAT</code> <code>SINGLE</code>.</p>
+<h2 id="znakowe"><a href="https://www.freepascal.org/docs-html/ref/refsu6.html#x29-320003.2.1">Znakowe</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Range</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CHAR</td>
+<td align="center">ATASCII (0 .. 255)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">STRING</td>
+<td align="center">1 .. 255</td>
+<td align="center">256</td>
+</tr>
+<tr>
+<td align="left">PCHAR</td>
+<td align="center">0 .. 65535</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+Ciąg znaków <code>STRING</code> reprezentowany jest jako tablica o możliwym maksymalnym rozmiarze <code>[0..255]</code> (w <strong>FPC</strong> ten typ to <code>SHORTSTRING</code>). Pierwszym bajtem takiej tablicy <code>[0]</code> jest długość ciągu z zakresu <code>0..255</code>. Od bajtu <code>[1..]</code> zaczyna się właściwy ciąg znaków.</p>
+<p>W <strong>FPC</strong> <code>STRING</code> nie jest równoznaczny z <code>SHORTSTRING</code>, inaczej ustalamy adresy dla <strong>FPC</strong> <code>STRING</code>, inaczej dla <code>SHORTSTRING</code>.</p>
+<pre><code class="language-delphi">    var P: PChar;
+        s: string;
+
+    P:=pointer(s);
+    P:=pointer(@s);
+</code></pre>
+<pre><code class="language-delphi">    var P: PChar;
+        s: string[255];   // shortstring
+
+    P:=pointer(@s);       // s[0]
+    P:=pointer(@s[1]);
+</code></pre>
+<p>Ciąg znaków <code>PCHAR</code> reprezentowany jest przez wskaźnik do typu <code>CHAR</code>. Znakiem końca ciągu <code>PCHAR</code> jest znak <code>#0</code>.</p>
+<p>Dopuszczalne jest użycie dodatkowych znaków po końcowym apostrofie, takich jak <code>*</code>, <code>~</code>.</p>
+<p>Znak <code>*</code> oznacza ciąg w inwersie, tylda <code>~</code> ciąg w kodach <strong>ANTIC-a</strong>.</p>
+<p>Innym sposobem modyfikacji wyprowadzanych znaków jest użycie systemowej zmiennej <code>TextAttr</code>, każdy znak wyprowadzany na ekran jest poddawany operacji <code>ORA TextAttr</code> (domyślnie <code>TextAttr = 0</code>).</p>
+<pre><code class="language-delphi">a: string = 'Atari'*;         // ciąg znaków w inwersie
+b: string = 'Spectrum'~;      // ciąg znaków w kodach ANTIC-a
+c: char = 'X'~*;              // znak w inwersie, kodach ANTIC-a
+</code></pre>
+<h2 id="wskaznikowe"><a href="https://www.freepascal.org/docs-html/ref/refse15.html">Wskaźnikowe</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Range</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">POINTER</td>
+<td align="center">0 .. 65535</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+Wskaźniki w <strong>MP</strong> mogą być typowane i bez określonego typu, np.:</p>
+<pre><code class="language-delphi"> a: ^word;         // wskaźnik typowany na słowo
+ b: pointer;       // wskaźnik bez typu
+</code></pre>
+<p>Niezaincjowany wskaźnik najczęściej będzie miał adres <code>$0000</code>, należy zadbać aby przed jego wykorzystaniem zaincjować go adresem odpowiedniej zmiennej, np.:</p>
+<pre><code>a := @tmp;         // wskaźnikowi A zostaje przypisany adres zmiennej TMP
+</code></pre>
+<p>Jeśli tego nie zrobimy to w przypadku uruchomienia takiego programu na <strong>PC</strong> spowodujemy błąd ochrony pamięci <strong>Access Violation</strong>.</p>
+<p>Zwiększanie wskaźnika przez <code>INC</code> zwiększy go o rozmiar typu na jaki wskazuje. Zmniejszenie wskaźnika przez <code>DEC</code> zmniejszy go o rozmiar typu na jaki wskazuje. Jeśli typ jest nieokreślony, wówczas domyślną wartością zwiększania/zmniejszanie będzie <code>1</code>.</p>
+<p>Dla wskaźników dopuszczalne są operacje relacji <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, oraz operacje arytmetyczne <code>+</code> oraz <code>-</code>.</p>
+<p>Przy pomocy wskaźnika możemy dokonać rzutowania zmiennej na inny typ:</p>
+<pre><code class="language-delphi">var
+   s: single;
+   d: cardinal;
+
+begin
+
+ s := 3.14;
+
+ d:=PCardinal(@s)^; // d = $4048F5C3
+
+end;
+</code></pre>
+<h2 id="tablice-statyczne"><a href="https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1">Tablice statyczne</a></h2>
+<p>Tablice w <strong>MP</strong> są tylko statyczne, jednowymiarowe lub dwuwymiarowe z początkowym indeksem równym <code>0</code>, np.:</p>
+<pre><code class="language-delphi">var tb: array [0..100] of word;
+var tb2: array [0..15, 0..31] of Boolean;
+var tab: array [0..7] of array [0..31] of byte;
+var tab256: array [byte] of word;
+
+var [striped] tb: array [0..99] of cardinal;
+</code></pre>
+<p>W przypadku początkowego indeksu innego niż zero zostanie wygenerowany błąd <strong>Error: Array lower bound is not zero</strong>.</p>
+<p>W pamięci tablica reprezentowana jest przez wskaźnik <code>POINTER</code>, wskaźnik jest adresem tablicy w pamięci <code>WORD</code>. Najszybszą metodą odwołania się do tablicy nie przekraczającej <code>256</code> bajtów z poziomu assemblera jest zastosowanie przedrostka <code>ADR.</code>, np.:</p>
+<pre><code>asm
+ lda adr.tb,y   ; bezpośrednie odwołanie do tablicy TB
+ lda tb         ; odwołanie do wskaźnika tablicy TB
+end;
+</code></pre>
+<p>Kompilator generuje kod dla tablic zależnie od ich deklaracji:</p>
+<ul>
+<li>gdy nie przekracza 256 bajtów</li>
+</ul>
+<pre><code class="language-delphi">array [0..255] of byte;
+array [0..127] of word;
+array [0..63] of cardinal;
+</code></pre>
+<p>Gdy liczba bajtów zajmowanych przez tablicę nie przekracza 256 bajtów generowany jest najszybszy kod odwołujący się bezpośrednio do adresu tablicy (przedrostek <code>ADR.</code>) z pominięciem wskaźnika. Dla takiej tablicy nie ma możliwości zmiany adresu.</p>
+<pre><code>ldy #118
+lda adr.tb,y
+</code></pre>
+<ul>
+<li>gdy liczba elementów tablicy wynosi <code>1</code></li>
+</ul>
+<pre><code class="language-delphi">array [0..0] of type;
+</code></pre>
+<p>Gdy liczba elementów tablicy wynosi <code>1</code> jest ona traktowana specjalnie. Generowany kod odwołuje się do tablicy poprzez wzkaźnik. Istnieje możliwość ustalenia nowego adresu takiej tablicy.</p>
+<pre><code>lda TB
+add I
+tay
+lda TB+1
+adc #$00
+sta bp+1
+lda (bp),y
+</code></pre>
+<ul>
+<li>gdy przekracza 256 bajtów</li>
+</ul>
+<pre><code class="language-delphi">array [0..255+1] of byte;
+array [0..127+1] of word;
+array [0..63+1] of cardinal;
+</code></pre>
+<p>Gdy liczba bajtów zajmowanych przez tablicę przekracza 256 bajtów generowany kod odwołuje się do tablicy poprzez wskaźnik. Istnieje możliwość ustalenia nowego adresu takiej tablicy.</p>
+<pre><code>lda TB
+add I
+tay
+lda TB+1
+adc #$00
+sta bp+1
+lda (bp),y
+</code></pre>
+<h3 id="tablice-striped"><a href="../zmienne/#striped">Tablice STRIPED</a></h3>
+<p>Dla poniższego przykłady kompilator musi pomnożyć indeks przez dwa, aby uzyskać dostęp do każdego elementu. </p>
+<pre><code class="language-delphi">  array [0..7] of word;
+</code></pre>
+<p>Układ pamięci takiej tablicy będzie następujący:</p>
+<pre><code>LHLHLHLHLHLHLHLH
+</code></pre>
+<p>Jeśli oznaczymy tablicę jako <code>STRIPED</code></p>
+<pre><code class="language-delphi">  [striped] array [0..7] of word;
+</code></pre>
+<p>wygeneruje to następującą strukturę w pamięci:</p>
+<pre><code>LLLLLLLLHHHHHHHH
+</code></pre>
+<p>Modyfikator <code>STRIPED</code> można stosować tylko dla tablic z typem prostym (<code>WORD</code>, <code>CARDINAL</code>, <code>SMALLINT</code>, <code>INTEGER</code>, <code>SHORTREAL</code>, <code>REAL</code>, <code>FLOAT16</code>, <code>POINTER</code>).</p>
+<p>Modyfikator <code>STRIPED</code> nie zadziała dla tablic z indeksem większym niż <code>255</code>.</p>
+<h3 id="inicjalizacja-tablic">Inicjalizacja tablic</h3>
+<p>Inicjalizacja tablicy <code>CONST</code> lub <code>VAR</code> przebiega w ten sam sposób. Po słowie określającym typ danych tablicy umieszczamy znak <code>=</code> i kolejne elementy tablicy między nawiasami okrągłymi <code>( val0, val1, ... )</code> :</p>
+<pre><code>const
+   PBox : array [0..1] of word = (12,10);
+
+var
+   PBox : array [0..1] of word = (12,10);
+</code></pre>
+<p>W przypadku tablicy dwuwymiarowej:</p>
+<pre><code>   PBox : array [0..1, 0..1] of word = ( (12,10) , (1,6) );
+</code></pre>
+<p>Tablicę typu <code>CHAR</code> możemy zaincjować przez <code>STRING</code>:</p>
+<pre><code>   PBox : array [0..4] of char = 'Hello';
+</code></pre>
+<p>Możliwa jest inicjalizacja tablicy bez podawania jej rozmiaru, korzystamy wtedy z nawiasów kwadratowych <code>[ ]</code> :</p>
+<pre><code>   PBox : array of char = ['H', 'e', 'l', 'l', 'o'];
+   PBox : array of word = [1,2,3,4,5];
+
+   PBox : array of char = 'Hello';        // bez nawiasów [ ]
+</code></pre>
+<h4 id="bin2csv">$bin2csv</h4>
+<p>Możliwe jest zaincjowanie tablicy typu <code>BYTE</code> plikiem binarnym, używamy wtedy dyrektywy kompilatora <a href="../skladnia/#bin2csv"><code>{$bin2csv filename}</code></a> :</p>
+<pre><code>   tb: array of byte = [ {$bin2csv filename} ];
+   tb: array [0..11] of byte = ( 1,2,3, {$bin2csv filename} );
+</code></pre>
+<h4 id="eval">$eval</h4>
+<p>Innym sposobem zaincjowania tablicy zadanego typu jest użycie dyrektywy <a href="../skladnia/#eval"><code>{$eval par1[,par2],"expression"}</code></a> :</p>
+<pre><code>   tb: array of cardinal = [ {$eval 100,&quot;:1*32&quot;} ];
+   tb: array of pointer = [ {$eval 24,&quot;SCR_ADDRESS+:1*40&quot;} ];
+
+   tb: array [0..11] of byte = ( {$eval 3,4,&quot;:1*:2&quot;} );
+</code></pre>
+<h2 id="rekordy"><a href="https://www.freepascal.org/docs-html/ref/refsu15.html#x39-550003.3.2">Rekordy</a></h2>
+<p>W pamięci rekord reprezentowany jest przez wskaźnik <code>POINTER</code>.</p>
+<pre><code>type
+    TPoint = record x,y: byte end;
+var px: TPoint;
+</code></pre>
+<p>Domyślnie rekordy w <strong>MP</strong> są typu <code>PACKED</code>. Rozmiar całkowity pól rekordu ograniczony jest do 256 bajtów.
+Jeśli zależy nam na zachowaniu kompatybilności z <strong>FPC</strong> należy dodatkowo poprzedzić słowo <code>RECORD</code> słowem <code>PACKED</code>.
+Bez tego rozmiar pamięci jaki zajmuje rekord będzie mógł się różnić, będzie mniej zajmował pamięci na <strong>6502</strong>, potencjalnie więcej o kilka bajtów na <strong>PC</strong>.</p>
+<p>type
+    TPoint = packed record x,y: byte end;</p>
+<pre><code>var px: TPoint;
+</code></pre>
+<p>Dostęp do pól rekordu z poziomu asm:</p>
+<pre><code>mwa px bp2
+ldy #px.x-DATAORIGIN
+lda (bp2),y
+</code></pre>
+<h3 id="tablica-z-rekordami">Tablica z rekordami</h3>
+<p><strong>MP</strong> obsługuje tylko tablice wskaźników rekordów.</p>
+<pre><code class="language-Delphi">    type
+        TPoint = record x,y: byte end;    
+
+    var 
+        tab: array [0..3] of ^TPoint;
+</code></pre>
+<p>Taka tablica musi zostać zaincjowana odpowiednimi adresami rekordów, domyślnie na początku wszystkie pola takiej tablicy są wyzerowane.</p>
+<p>Pierwszy sposób zaincjowania tablicy wskaźników rekordów:</p>
+<pre><code class="language-Delphi">    var
+       a1,a2,a3,a4: TPoint;       
+
+    begin
+     tab[0] := @a1;
+     tab[1] := @a2;
+     tab[2] := @a3;
+     tab[3] := @a4;   
+    end.
+</code></pre>
+<p>Drugi sposób:</p>
+<pre><code class="language-Delphi">    begin
+     GetMem(tab[0], sizeof(TPoint));
+     GetMem(tab[1], sizeof(TPoint));
+     GetMem(tab[2], sizeof(TPoint));
+     GetMem(tab[3], sizeof(TPoint));
+    end.
+</code></pre>
+<p>Dostęp do pól rekordu z takiej tablicy:</p>
+<pre><code class="language-Delphi">  writeln(tab[1].x);
+  writeln(tab[1].y);
+</code></pre>
+<h2 id="obiektowe"><a href="https://www.freepascal.org/docs-html/ref/refse28.html#x60-780005.1">Obiektowe</a></h2>
+<p>Obiekty to rekordy z dodatkowymi metodami. W pamięci obiekt reprezentowany jest przez wskaźnik <code>POINTER</code>.</p>
+<pre><code class="language-delphi">type
+    TRMT = Object
+
+    player: pointer;
+    modul: pointer;
+
+    procedure Init(a: byte); assembler;
+    procedure Play; assembler;
+    procedure Stop; assembler;
+
+    end;
+</code></pre>
+<p>W obiektach możliwe jest użycie procedur <code>CONSTRUCTOR</code> oraz <code>DESTRUCTOR</code>. Wywołanie takich procedur odbywa się tylko ręcznie.</p>
+<h2 id="proceduralne"><a href="https://www.freepascal.org/docs-html/ref/refse17.html">Proceduralne</a></h2>
+<p>W pamięci zmienne typu proceduralnego reprezentowane są przez wskaźnik <code>POINTER</code>.</p>
+<pre><code class="language-delphi">type
+    tprc = procedure (a: byte; c: word);
+    tfun = function (a:smallint; x: single): byte;
+
+var
+    fn: function (a,b,c: byte): word;
+</code></pre>
+<p>Dla typu proceduralnego procedury/funkcje z argumentami wymagają użycia modyfikatora <code>STDCALL</code>, co wymusi użycie stosu programowego.</p>
+<pre><code class="language-delphi">var
+   fn: function (a,b: word): word;
+
+function test(a,b,c,d: word): word; stdcall;
+begin
+
+end;
+
+begin
+
+fn := @test;
+
+fn(1,2);
+
+end;
+</code></pre>
+<p>Dla procedur z argumentami zamiast modyfikatora <code>STDCALL</code> dopuszczalny jest modyfikator <code>REGISTER</code>, pod warunkiem że będą to maksymalnie trzy argumenty.</p>
+<pre><code class="language-delphi">var
+   prc: procedure (a,b: word);
+
+procedure test(a,b,c: cardinal); register;
+begin
+
+// a -&gt; EDX
+// b -&gt; ECX
+// c -&gt; EAX
+
+end;
+
+begin
+
+prc := @test;
+
+prc(3,6);
+
+end;
+</code></pre>
+<p>W przypadku kiedy nie przekazujemy do procedury/funkcji argumentów użycie modyfikatora nie jest konieczne.</p>
+<h2 id="plikowe-binarne"><a href="https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4">Plikowe binarne</a></h2>
+<p>Typ <code>FILE</code> reprezentuje uchwyt do pliku oraz definiuje rozmiar rekordu.</p>
+<pre><code class="language-delphi">type
+  ftype = array [0..63] of cardinal;
+
+var
+  f: file;               // rekord domyślny =128 bajtów
+  f: file of byte;       // rekord 1 bajt
+  f: file of ftype;      // rekord 256 bajtów (ftype = 64 * 4)
+</code></pre>
+<p>W pamięci <strong>XE/XL</strong> uchwyt <code>FILE</code> reprezentowany jest przez wskaźnik <code>POINTER</code> do tablicy o strukturze (rozmiar 12 bajtów):</p>
+<pre><code>.struct s@file
+pfname   .word      ; pointer to string with filename
+record   .word      ; record size
+chanel   .byte      ; channel *$10
+eof      .byte      ; EOF status
+buffer   .word      ; load/write buffer
+nrecord  .word      ; number of records for load/write
+numread  .word      ; pointer to variable, length of loaded data
+.ends
+</code></pre>
+<p>Do procedur, funkcji typ <code>FILE</code> może być przekazywany tylko jako zmienna.</p>
+<p>Typy, procedury i funkcje związane z plikami binarnymi:
+<code>Assign</code> - <code>Close</code> - <code>Reset</code> - <code>Rewrite</code> - <code>BlockRead</code> - <code>BlockWrite</code> - <code>FileExists</code> - <code>IOResult</code></p>
+<h2 id="plikowe-tekstowe"><a href="https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4">Plikowe tekstowe</a></h2>
+<p>Typ <code>TEXT</code> reprezentuje uchwyt do pliku tekstowego.</p>
+<pre><code class="language-delphi">var
+  t: text;
+  f: textfile;
+</code></pre>
+<p>W pamięci <strong>XE/XL</strong> uchwyt <code>TEXT</code>reprezentowany jest przez wskaźnik <code>POINTER</code> do tablicy o strukturze (rozmiar 12 bajtów):</p>
+<pre><code>.struct s@file
+pfname   .word      ; pointer to string with filename
+record   .word      ; record size
+chanel   .byte      ; channel *$10
+eof      .byte      ; EOF status
+buffer   .word      ; load/write buffer
+nrecord  .word      ; number of records for load/write
+numread  .word      ; pointer to variable, length of loaded data
+.ends
+</code></pre>
+<p>Do procedur, funkcji typ <code>TEXT</code> może być przekazywany tylko jako zmienna.</p>
+<p>Typy, procedury i funkcje związane z plikami tekstowymi:
+<code>Assign</code> - <code>Close</code> - <code>Reset</code> - <code>Rewrite</code> - <code>Append</code> - <code>Readln</code> - <code>Writeln</code> - <code>FileExists</code> - <code>IOResult</code></p>
+<h2 id="nieoznaczone"><a href="https://www.freepascal.org/docs-html/ref/refsu70.html">Nieoznaczone</a></h2>
+<pre><code class="language-Delphi"> procedure Something (var Data);
+ procedure Something (const Data);
+</code></pre>
+<p>Brak podania typu parametru oznacza że do procedury/funkcji zostanie przekazany tylko adres parametru bez oznaczenia typu.</p>
+<p>Jest to odpowiednikiem następującej deklaracji C/C++:</p>
+<pre><code class="language-Delphi"> void Something(void* Data);
+</code></pre>
+<p>Wewnątrz procedury/funkcji z nieoznaczonym parametrem, jeśli nieoznaczony parametr jest używany w wyrażeniu lub wartość musi być do niego przypisana, zawsze należy użyć rzutowania typu.</p>
+<pre><code>var x: word;
+
+procedure test(var a);
+begin
+
+  writeln(PWord(@a)^);  // = 95
+
+  PWord(@a)^ := 11;
+
+end;
+
+begin
+
+  x:=95;
+
+  test(x);              // = 11
+
+end.
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../zmienne/" class="btn btn-neutral float-right" title="Zmienne">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../stale/" class="btn btn-neutral" title="Stałe"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../stale/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../zmienne/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
