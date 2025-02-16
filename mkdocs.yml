@@ -4,6 +4,7 @@ site_description: "Mad-Pascal Dokumentacja"
 site_keyword: "cross-compiler"
 
 repo_url: https://github.com/tebe6502/mad-pascal-mkdocs/
+edit_uri: main/docs/
 
 theme:
     name: readthedocs
