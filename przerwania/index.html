@@ -101,6 +101,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#setintvec">SetIntVec</a>
     </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#irq-timer1-timer2-timer4">IRQ - TIMER1, TIMER2, TIMER4</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#getintvec_1">GetIntVec</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#setintvec_1">SetIntVec</a>
     </li>
         </ul>
@@ -236,20 +242,15 @@ asm
  jmp sysvbv
 
 end;
-
-
-## IRQ - TIMER1, TIMER2, TIMER4
-
-Do obsługi przerwań **IRQ** - **TIMER1**, **TIMER2**, **TIMER4** dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
-
-### GetIntVec
-
-    GetIntVec(iTIM1, pointer);  // pobranie adresu programu obsługi przerwań TIMER 1 ($0210)
-    GetIntVec(iTIM2, pointer);  // pobranie adresu programu obsługi przerwań TIMER 2 ($0212)
-    GetIntVec(iTIM4, pointer);  // pobranie adresu programu obsługi przerwań TIMER 4 ($0214)
-
-```delphi
-var oldIRQ: pointer;
+</code></pre>
+<h2 id="irq-timer1-timer2-timer4">IRQ - TIMER1, TIMER2, TIMER4</h2>
+<p>Do obsługi przerwań <strong>IRQ</strong> - <strong>TIMER1</strong>, <strong>TIMER2</strong>, <strong>TIMER4</strong> dedykowane są dwie procedury <code>GetIntVec</code> oraz <code>SetIntVec</code>. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez <a href="/skladnia/#romoff">$DEFINE ROMOFF</a>)</p>
+<h3 id="getintvec_1">GetIntVec</h3>
+<pre><code>GetIntVec(iTIM1, pointer);  // pobranie adresu programu obsługi przerwań TIMER 1 ($0210)
+GetIntVec(iTIM2, pointer);  // pobranie adresu programu obsługi przerwań TIMER 2 ($0212)
+GetIntVec(iTIM4, pointer);  // pobranie adresu programu obsługi przerwań TIMER 4 ($0214)
+</code></pre>
+<pre><code class="language-delphi">var oldIRQ: pointer;
 
 begin
 

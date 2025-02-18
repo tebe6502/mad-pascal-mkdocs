@@ -218,7 +218,7 @@ end.
 </code></pre>
 <blockquote>
 <p><strong>UWAGA:</strong><br />
-<em>Z tego samego obszaru 16 bajtów strony zerowej korzysta kompilator alokując tam swoje programowe rejestry <code>EDX</code> <code>ECX</code> <code>EAX</code> dlatego użycie modyfikatora <code>REGISTER</code> nie jest możliwe kiedy procedura lub funkcja też używa <code>REGISTER</code>.</em></p>
+<em>Z tego samego obszaru 16 bajtów strony zerowej korzysta kompilator alokując tam swoje programowe rejestry <code>EDX</code> <code>ECX</code> <code>EAX</code> dlatego użycie modyfikatora <code>REGISTER</code> nie jest możliwe kiedy procedura lub funkcja również korzysta z <code>REGISTER</code>.</em></p>
 </blockquote>
 <pre><code class="language-delphi">procedure test(a,b,c: integer); register;
 </code></pre>
