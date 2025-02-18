@@ -1,6 +1,6 @@
 #
 
-## [Pliki zasobów](/skladnia/#r-resource)
+## [Pliki zasobów](../skladnia/#r-resource)
 
 ### Składnia plików RC
 

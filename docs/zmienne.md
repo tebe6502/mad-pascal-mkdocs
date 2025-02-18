@@ -82,7 +82,7 @@ var
 ```
 
 > **UWAGA:**  
-> _Z tego samego obszaru 16 bajtów strony zerowej korzysta kompilator alokując tam swoje programowe rejestry `EDX` `ECX` `EAX` dlatego użycie modyfikatora `REGISTER` nie jest możliwe kiedy procedura lub funkcja też używa `REGISTER`._
+> _Z tego samego obszaru 16 bajtów strony zerowej korzysta kompilator alokując tam swoje programowe rejestry `EDX` `ECX` `EAX` dlatego użycie modyfikatora `REGISTER` nie jest możliwe kiedy procedura lub funkcja również korzysta z `REGISTER`._
 
 
 ```delphi
