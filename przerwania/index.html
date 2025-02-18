@@ -228,6 +228,7 @@ asm
 
 end;
 </code></pre>
+<p>Przerwanie <strong>VBLDI</strong> (VBL natychmiastowe) kończymy skokiem pod adres <code>SYSVBV</code> ($E45F) co spowoduje kontynuację obsługi przerwania VBL.</p>
 <pre><code class="language-delphi">procedure newVBL; interrupt; assembler;
 asm
 
@@ -242,7 +243,6 @@ SetIntVec(iVBLI, @newVBL);
 
 end.
 </code></pre>
-<p>Przerwanie <strong>VBLDI</strong> (VBL natychmiastowe) kończymy skokiem pod adres <code>SYSVBV</code> ($E45F) co spowoduje kontynuację obsługi przerwania VBL.</p>
 <p>Jeśli wyłączyliśmy <code>ROM</code> przez <code>{$define romoff}</code> i korzystamy z procedur umieszczonych w pamięci <code>$C000..$FFFF</code> musimy zadbać o odpowiednie ustawienie <code>PORTB</code>.</p>
 <pre><code class="language-delphi">procedure newVBL; interrupt; assembler;
 asm
