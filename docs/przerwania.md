@@ -2,7 +2,7 @@
 
 ## VBL, DLI
 
-Do obsługi przerwań [**VBLD**](https://atariwiki.org/wiki/Wiki.jsp?page=VVBLKD), [**VBLI**](https://atariwiki.org/wiki/Wiki.jsp?page=VVBLKI), [**DLI**](https://atariwiki.org/wiki/Wiki.jsp?page=VDSLST) dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
+Do obsługi przerwań [**VBLD**](https://atariwiki.org/wiki/Wiki.jsp?page=VVBLKD), [**VBLI**](https://atariwiki.org/wiki/Wiki.jsp?page=VVBLKI), [**DLI**](https://atariwiki.org/wiki/Wiki.jsp?page=VDSLST) dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](../skladnia/#romoff))
 
 ### GetIntVec
 
@@ -59,7 +59,7 @@ asm
  jmp xitvbv
 
 end;
-
+```
 
 
 ```delphi
@@ -99,7 +99,7 @@ end;
 
 ## IRQ - TIMER1, TIMER2, TIMER4
 
-Do obsługi przerwań **IRQ** - **TIMER1**, **TIMER2**, **TIMER4** dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](/skladnia/#romoff))
+Do obsługi przerwań **IRQ** - **TIMER1**, **TIMER2**, **TIMER4** dedykowane są dwie procedury `GetIntVec` oraz `SetIntVec`. Do prawidłowego działania wymagana jest obecność OS-a (wyłączenie ROM tylko przez [$DEFINE ROMOFF](../skladnia/#romoff))
 
 ### GetIntVec
 
