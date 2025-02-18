@@ -19,7 +19,7 @@ nav:
     - Typy: typy.md
     - Zmienne: zmienne.md
     - Instrukcje: instrukcje.md
-    - Programy, moduły, biblioteki: moduly.md
+    - Program, moduły, biblioteki: moduly.md
     - Procedur, funkcje, modyfikatory: procedury-funkcje.md
     - Makra: makra.md
     - Wstawki assemblera: asm.md

@@ -96,8 +96,10 @@ const
 
 Włączenie pliku `RC` następuje w momencie kompilacji programu.
 
-Jeśli adres zasobu wskazuje adres pod ``ROM`` (``$C000..$FFFF``) wówczas wyłączany jest ``ANTIC``. Przy uruchomieniu programu należy wpisać odpowiednią wartość do rejestru ``DMACTL``
+Jeśli adres zasobu wskazuje adres ``$BC20..``, który normalnie zajmuje program ``ANTIC``-a wówczas wyłączany jest ``ANTIC``. Przy uruchomieniu programu należy wpisać odpowiednią wartość do rejestru ``DMACTL``
 aby włączyć obraz z powrotem.
+
+Jeśli adres zasobu wskazuje adres pod ``ROM`` z przedziału ``$E000..$E3FF`` wówczac wymuszana jest definicja symbolu ``NOROMFONT``, który zapobiega przepisaniu zestawu znaków gdy aktywujemy dyrektywę ``{$define romoff}``.
 
 
 ### Dostęp do zasobów.
