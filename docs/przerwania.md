@@ -61,6 +61,7 @@ asm
 end;
 ```
 
+Przerwanie **VBLDI** (VBL natychmiastowe) kończymy skokiem pod adres `SYSVBV` ($E45F) co spowoduje kontynuację obsługi przerwania VBL.
 
 ```delphi
 procedure newVBL; interrupt; assembler;
@@ -77,8 +78,6 @@ SetIntVec(iVBLI, @newVBL);
 
 end.
 ```
-
-Przerwanie **VBLDI** (VBL natychmiastowe) kończymy skokiem pod adres `SYSVBV` ($E45F) co spowoduje kontynuację obsługi przerwania VBL.
 
 Jeśli wyłączyliśmy `ROM` przez `{$define romoff}` i korzystamy z procedur umieszczonych w pamięci `$C000..$FFFF` musimy zadbać o odpowiednie ustawienie `PORTB`.
 
