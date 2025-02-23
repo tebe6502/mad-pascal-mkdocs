@@ -6,6 +6,14 @@
 
 # Historia
 
+## [1.7.2](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.2)
+- optymallizacje, bugfixes
+- szybszy kod dla tablic ABSOLUTE
+- unit SYSTEM dodana tablica 'mem: array [0..0] of byte absolute $0000'
+- optymalizacja dla CASE (tail optimize)
+- optymalizacja INC/DEC dla tablic [striped]
+- nowy unit E80, handler E: w trybie HiRes, 80 kolumn
+- nowy unit RC4, szyfrowanie algorytmem RC4
 
 ## [1.7.0](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.0)
 - modyfikator [STRIPED] dla tablic o maksymalnym zakresie 0..255
