@@ -164,6 +164,16 @@
 <p><strong>Mad-Pascal</strong> jest 32-bitowym kompilatorem <strong>Turbo Pascala</strong> dla <strong>Atari XE/XL</strong>. W założeniu jest kompatybilny z <strong>Free Pascal Compilator</strong> (FPC) (przełącznik <code>-MDelphi</code> powinien być aktywny), co oznacza możliwość otrzymania kodu uruchomieniowego dla <strong>XE/XL</strong>, <strong>PC</strong> i każdej innej platformy dla której istnieje <strong>FPC</strong>. <strong>Mad-Pascal</strong> nie jest portem <strong>FPC</strong>, został napisany na podstawie kompilatorów <strong>SUB-Pascal</strong> (2009), <strong>XD-Pascal</strong> (2010), których autorem jest <a href="https://github.com/vtereshkov">Vasiliy Tereshkov</a>.</p>
 <p>Źródła dostępne na <a href="https://github.com/tebe6502/Mad-Pascal">GitHub</a> wraz z <a href="https://github.com/tebe6502/Mad-Pascal/releases">release</a> dla systemu Windows.</p>
 <h1 id="historia">Historia</h1>
+<h2 id="172"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.2">1.7.2</a></h2>
+<ul>
+<li>optymallizacje, bugfixes</li>
+<li>szybszy kod dla tablic ABSOLUTE</li>
+<li>unit SYSTEM dodana tablica 'mem: array [0..0] of byte absolute $0000'</li>
+<li>optymalizacja dla CASE (tail optimize)</li>
+<li>optymalizacja INC/DEC dla tablic [striped]</li>
+<li>nowy unit E80, handler E: w trybie HiRes, 80 kolumn</li>
+<li>nowy unit RC4, szyfrowanie algorytmem RC4</li>
+</ul>
 <h2 id="170"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.0">1.7.0</a></h2>
 <ul>
 <li>modyfikator [STRIPED] dla tablic o maksymalnym zakresie 0..255</li>
@@ -645,5 +655,5 @@ k:=w;
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2025-02-18 22:41:29.704184+00:00
+Build Date UTC : 2025-02-23 18:05:43.284613+00:00
 -->
