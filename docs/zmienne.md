@@ -71,6 +71,16 @@ var
    var ptr: PByte absolute buf;
 ```
 
+> **UWAGA:**
+> Użycie modyfikatora `ABSOLUTE` nie jest możliwe dla tablic z typem `STRING'.
+
+```delphi
+var
+   tab: array [0..11] of string absolute $a000;
+```
+Dla w/w przykładu zostanie wygenerowany komunikat błędu *Error: ABSOLUTE modifier is not available for this type of array*.
+
+
 ## [REGISTER]()
 
 Modyfikator `REGISTER` ustala adres pamięci dla zmiennych `VAR` na stronie zerowej (maksymalnie można przydzielić 16 bajtów).
