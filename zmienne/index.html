@@ -227,6 +227,14 @@ end.
    procedure test(var buf);
    var ptr: PByte absolute buf;
 </code></pre>
+<blockquote>
+<p><strong>UWAGA:</strong>
+Użycie modyfikatora <code>ABSOLUTE</code> nie jest możliwe dla tablic z typem `STRING'.</p>
+</blockquote>
+<pre><code class="language-delphi">var
+   tab: array [0..11] of string absolute $a000;
+</code></pre>
+<p>Dla w/w przykładu zostanie wygenerowany komunikat błędu <em>Error: ABSOLUTE modifier is not available for this type of array</em>.</p>
 <h2 id="register"><a href="">REGISTER</a></h2>
 <p>Modyfikator <code>REGISTER</code> ustala adres pamięci dla zmiennych <code>VAR</code> na stronie zerowej (maksymalnie można przydzielić 16 bajtów).</p>
 <pre><code class="language-delphi">var
