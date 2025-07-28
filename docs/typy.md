@@ -18,9 +18,17 @@
 <br/>
 ## [Logiczne](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
 
-|Type               |Ord(True)                |Size in bytes|
-|:------------------|:-----------------------:|:-----------:|
-|BOOLEAN            |1                        |1            |
+|Type               |Ord(True)  |Ord(False)   |Size in bytes|
+|:------------------|:---------:|:-----------:|:-----------:|
+|BOOLEAN            |1 +.. 255   |0            |1            |
+
+Typ `BOOLEAN` może przechowywać wartości `1 .. 255` dla `TRUE`, wartość `0` dla `FALSE`.
+
+```delphi
+ bol:=Boolean(140);
+
+ writeln(ord(bol),',',bol);      // 140,TRUE
+```
 
 <br/>
 ## [Wyliczeniowe](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1)
