@@ -1,6 +1,6 @@
 #
 
-## [VAR](https://www.freepascal.org/docs-html/ref/refse22.html#x53-730004.2)
+## [Deklaracja](https://www.freepascal.org/docs-html/ref/refse22.html#x53-730004.2)
 
 Słowo `VAR` rozpoczyna sekcję deklaracji zmiennych.
 
@@ -20,6 +20,8 @@ var
 
     tb: array [0..3] of byte = (0,1,2,3);
 ```
+
+## [Modyfikatory]()
 
 ### [VOLATILE](https://pl.wikipedia.org/wiki/Zmienna_ulotna)
 
@@ -55,7 +57,7 @@ var
   adr.tab+$300
 ```
 
-## [ABSOLUTE]()
+### [ABSOLUTE](https://wiki.freepascal.org/Absolute)
 
 Modyfikator `ABSOLUTE` pozwala ustalić adres w pamięci dla zmiennych `VAR`.
 
@@ -72,7 +74,7 @@ var
 ```
 
 > **UWAGA:**
-> Użycie modyfikatora `ABSOLUTE` nie jest możliwe dla tablic z typem `STRING'.
+> Użycie modyfikatora `ABSOLUTE` nie jest możliwe dla tablic z typem `STRING`.
 
 ```delphi
 var
@@ -81,7 +83,7 @@ var
 Dla w/w przykładu zostanie wygenerowany komunikat błędu *Error: ABSOLUTE modifier is not available for this type of array*.
 
 
-## [REGISTER]()
+### [REGISTER]()
 
 Modyfikator `REGISTER` ustala adres pamięci dla zmiennych `VAR` na stronie zerowej (maksymalnie można przydzielić 16 bajtów).
 

@@ -1,6 +1,26 @@
 #
 
-## Zarezerwowane słowa
+## [Komentarze](http://www.freepascal.org/docs-html/ref/refse2.html)
+
+W **Mad-Pascal** do oznaczenia komentarza jednoliniowego służą znaki `//`, dla wieloliniowego klamry `{ }`, lub `(* *)`.
+
+```delphi
+// to jest komentarz
+inc(a); // to jest komentarz
+
+(* komentarz *)
+
+(*
+  komentarz
+*)
+
+{ to
+  jest
+  komentarz
+}
+```
+
+## Słowa zastrzeżone
 
 ### rozkazy
 
@@ -31,49 +51,43 @@ infinity
 neginfinity
 ```
 
-## [Komentarze](http://www.freepascal.org/docs-html/ref/refse2.html)
+## [Identyfikatory](https://www.freepascal.org/docs-html/ref/refse4.html#x15-140001.4)
 
-W **Mad-Pascal** do oznaczenia komentarza jednoliniowego służą znaki `//`, dla wieloliniowego klamry `{ }`, lub `(* *)`.
+Identyfikatory oznaczają nazwy zdefiniowane przez programistę dla określonych stałych, typów, zmiennych, procedur i funkcji,
+modułów oraz programów. Wszystkie nazwy zdefiniowane przez programistę w kodzie źródłowym – z wyjątkiem słów zastrzeżonych – są
+oznaczane jako identyfikatory.
 
-```delphi
-// to jest komentarz
-inc(a); // to jest komentarz
-
-(* komentarz *)
-
-(*
-  komentarz
-*)
-
-{ to
-  jest
-  komentarz
-}
+```Delphi
+ myprocedure;
+ 
+ program test;
+ 
+ var
+   myname: byte;
 ```
 
-## Wyrażenia
 
-### [Liczby](http://www.freepascal.org/docs-html/ref/refse6.html)
+## [Liczby](http://www.freepascal.org/docs-html/ref/refse6.html)
 
-#### zapis decymalny
+### zapis decymalny
 ```delphi
 -100
 -2437325
 1743
 ```
-#### zapis hexadecymalny
+### zapis hexadecymalny
 ```delphi
 $100
 $e430
 $000001
 ```
-#### zapis binarny
+### zapis binarny
 ```delphi
 %0001001010
 %000000001
 %001000
 ```
-#### zapis kodami ATASCII
+### zapis kodami ATASCII
 ```delphi
 'a'
 'fds'
@@ -82,9 +96,9 @@ $000001
 #$9b
 ```
 
-### Operatory
+## Operatory
 
-#### arytmetyczne
+### arytmetyczne
 
 ```delphi
 +   Addition
@@ -95,7 +109,7 @@ DIV Integer division
 MOD Remainder
 ```
 
-#### bitowe
+### bitowe
 
 ```delphi
 NOT Bitwise negation (unary)
@@ -106,7 +120,7 @@ SHL Bitwise shift to the left
 SHR Bitwise shift to the right
 ```
 
-#### logiczne
+### logiczne
 
 ```delphi
 NOT logical negation (unary)
@@ -115,7 +129,7 @@ OR  logical or
 XOR logical xor
 ```
 
-#### relacji
+### relacji
 
 ```delphi
 =   Equal

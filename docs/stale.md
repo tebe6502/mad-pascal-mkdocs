@@ -1,6 +1,6 @@
 #
 
-## [CONST](https://www.freepascal.org/docs-html/ref/refse9.html)
+## [Podstawowe](https://www.freepascal.org/docs-html/ref/refse9.html)
 
 Słowo `CONST` rozpoczyna sekcję deklaracji stałych.
 
@@ -22,8 +22,9 @@ const
 
 Kompilator na podstawie wartości dobiera typ dla deklarowanych stałych. Dla wartości *0..255* będzie to typ `BYTE`, *256..65535* typ `WORD`, *-128..127* typ `SHORTINT` itd.
 
+## [Typowane](https://www.freepascal.org/docs-html/ref/refse10.html#x22-210002.2)
 
-Istnieje możliwość określenia typu przez programistę,
+Istnieje możliwość określenia typu stałej:
 
 ```delphi
 const
@@ -31,7 +32,9 @@ const
   b: byte = -11;
 ```
 
-Dodatkowo kompilator ma predefiniowane stałe:
+## [Predefiniowane]()
+
+Kompilator ma predefiniowane stałe:
 
   - NIL
   - EOL

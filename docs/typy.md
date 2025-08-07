@@ -20,7 +20,7 @@
 
 |Type               |Ord(True)  |Ord(False)   |Size in bytes|
 |:------------------|:---------:|:-----------:|:-----------:|
-|BOOLEAN            |1 +.. 255   |0            |1            |
+|BOOLEAN            |1 .. 255   |0            |1            |
 
 Typ `BOOLEAN` może przechowywać wartości `1 .. 255` dla `TRUE`, wartość `0` dla `FALSE`.
 
@@ -519,9 +519,9 @@ Jest to odpowiednikiem następującej deklaracji C/C++:
  void Something(void* Data);
 ```
 
-Wewnątrz procedury/funkcji z nieoznaczonym parametrem, jeśli nieoznaczony parametr jest używany w wyrażeniu lub wartość musi być do niego przypisana, zawsze należy użyć rzutowania typu.
+Wewnątrz procedury/funkcji z nieoznaczonym parametrem, jeśli nieoznaczony parametr jest używany w wyrażeniu lub zostaje przypisana mu wartość, zawsze należy użyć rzutowania typu.
 
-
+```Delphi
     var x: word;
  
     procedure test(var a);
@@ -540,4 +540,4 @@ Wewnątrz procedury/funkcji z nieoznaczonym parametrem, jeśli nieoznaczony para
       test(x);              // = 11
  
     end.
- 
+```
