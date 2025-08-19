@@ -6,6 +6,17 @@
 
 # Historia
 
+## [1.7.4](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.4)
+- poprawki błędów i optymalizacje
+- ulepszone operacje na typie ENUM
+- dodana obsługa konstrukcji WITH
+- nowe unity: SHA256, GIF, AES, BFONT
+
+## [1.7.3](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.3)
+- poprawki błędów i optymalizacje
+- dodane wsparcie dla adresowania wskaźnika do tablicy w OBJECT
+- dodana optymalizacja 'opt_BOOLEAN_OR.inc'
+
 ## [1.7.2](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.2)
 - optymallizacje, bugfixes
 - szybszy kod dla tablic ABSOLUTE

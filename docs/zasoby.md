@@ -37,6 +37,7 @@ Typ zasobu określa format włączanego pliku.
 | RELOC      | Plik relokowalny w formacie **Mad Assemblera**, plik zostanie poddany relokacji pod <br> wskazany adres `RCLABEL`|
 | RMT        | Plik modułu **Raster Music Tracker-a**, plik zostanie poddany relokacji pod wskazany <br> adres `RCLABEL`       |
 | MPT        | Plik modułu **Music ProTracker-a**, plik zostanie poddany relokacji pod wskazany <br> adres `RCLABEL`           |
+| MD1        | Plik modułu **Music ProTracker-a** z samplami, plik zostanie poddany relokacji pod <br> wskazany adres `RCLABEL`  |
 | CMC        | Plik modułu **Chaos Music Composer-a**, plik zostanie poddany relokacji pod wskazany <br> adres `RCLABEL`       |
 | SAPR       | Plik z danymi SAP-R, ładowany pod wskazany adres `RCLABEL`    |
 | PP         | Plik spakowny **Power Packer**-em, ładowany pod wskazany adres `RCLABEL`  |
@@ -55,6 +56,7 @@ Typ zasobu określa format włączanego pliku.
 |            | oraz opcjonalnie `PAR1` jako adres dla zmiennych na stronie zerowej (domyślnie `$E0`)                  |
 | SAPRPLAY   | Player SAP-R LZSS, nie wymaga podawania nazwy pliku `RCFILE`, <br> adres `RCLABEL` tylko od początku strony |
 | MPTPLAY    | Player dla modułu **MPT**, nie wymaga podawania nazwy pliku `RCFILE`                                       | 
+| MD1PLAY    | Player dla modułu **MD1**, nie wymaga podawania nazwy pliku `RCFILE`                                       | 
 | CMCPLAY    | Player dla modułu **CMC**, nie wymaga podawania nazwy pliku `RCFILE`                                       |
 | XBMP       | Plik **BMP** **`Windows Bitmap`** (8 BitsPerPixel) ładowany do pamięci **VBXE** <br> pod wskazany adres `RCLABEL`, <br> od indeksu koloru `PAR0` -> `color select`, <br> w palecie kolorów **VBXE** `PAR1` -> `palette select` |
 
@@ -66,7 +68,9 @@ Typ zasobu określa format włączanego pliku.
         EXTMEM
         LIBRARY         PORTB
         MPT             RAM / ROM
+        MD1             RAM / ROM
         MPTPLAY         RAM / ROM
+        MD1PLAY         RAM / ROM
         PP              RAM / ROM
         RCASM           RAM / ROM
         RCDATA          RAM / ROM
