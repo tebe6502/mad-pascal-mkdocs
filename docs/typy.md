@@ -104,7 +104,9 @@ W **FPC** `STRING` nie jest równoznaczny z `SHORTSTRING`, inaczej ustalamy adre
     P:=pointer(@s[1]);
 ```
 
-Ciąg znaków `PCHAR` reprezentowany jest przez wskaźnik do typu `CHAR`. Znakiem końca ciągu `PCHAR` jest znak `#0`.
+Ciąg znaków `PCHAR` (oraz każda tablica typu `CHAR`) reprezentowany jest przez wskaźnik do typu `CHAR`. Znakiem końca ciągu `PCHAR` powinien być znak `#0` (kompilator **Mad Pascal** nie dodaje tego znaku automatycznie).
+
+    Typ `PCHAR` możemy testować funkcją `COMPAREMEM` (unit `SYSUTILS`).
 
 Dopuszczalne jest użycie dodatkowych znaków po końcowym apostrofie, takich jak `*`, `~`.
 
