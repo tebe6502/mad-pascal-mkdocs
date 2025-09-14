@@ -1,69 +1,63 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta name="author" content="TeBe">
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Składnia - Mad-Pascal</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Sk\u0142adnia";
-    var mkdocs_page_input_path = "skladnia.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="TeBe" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Składnia - Mad-Pascal</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sk\u0142adnia";
+        var mkdocs_page_input_path = "skladnia.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/delphi.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Mad-Pascal</a>
-        <div role="search">
+          <a href=".." class="icon icon-home"> Mad-Pascal
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../wprowadzenie/">Wprowadzenie</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../mapa/">Mapa pamięci</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../sposob-uzycia/">Sposób użycia</a>
-                    </li>
-                </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Składnia</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../wprowadzenie/">Wprowadzenie</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mapa/">Mapa pamięci</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sposob-uzycia/">Sposób użycia</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Składnia</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#zarezerwowane-sowa">Zarezerwowane słowa</a>
+    <li class="toctree-l2"><a class="reference internal" href="#komentarze">Komentarze</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sowa-zastrzezone">Słowa zastrzeżone</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#rozkazy">rozkazy</a>
     </li>
@@ -71,33 +65,29 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#komentarze">Komentarze</a>
+    <li class="toctree-l2"><a class="reference internal" href="#identyfikatory">Identyfikatory</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#wyrazenia">Wyrażenia</a>
+    <li class="toctree-l2"><a class="reference internal" href="#liczby">Liczby</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#liczby">Liczby</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#zapis-decymalny">zapis decymalny</a>
+    <li class="toctree-l3"><a class="reference internal" href="#zapis-decymalny">zapis decymalny</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#zapis-hexadecymalny">zapis hexadecymalny</a>
+    <li class="toctree-l3"><a class="reference internal" href="#zapis-hexadecymalny">zapis hexadecymalny</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#zapis-binarny">zapis binarny</a>
+    <li class="toctree-l3"><a class="reference internal" href="#zapis-binarny">zapis binarny</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#zapis-kodami-atascii">zapis kodami ATASCII</a>
+    <li class="toctree-l3"><a class="reference internal" href="#zapis-kodami-atascii">zapis kodami ATASCII</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#operatory">Operatory</a>
+    <li class="toctree-l2"><a class="reference internal" href="#operatory">Operatory</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#arytmetyczne">arytmetyczne</a>
+    <li class="toctree-l3"><a class="reference internal" href="#arytmetyczne">arytmetyczne</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#bitowe">bitowe</a>
+    <li class="toctree-l3"><a class="reference internal" href="#bitowe">bitowe</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#logiczne">logiczne</a>
+    <li class="toctree-l3"><a class="reference internal" href="#logiczne">logiczne</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#relacji">relacji</a>
-    </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#relacji">relacji</a>
     </li>
         </ul>
     </li>
@@ -202,106 +192,113 @@
         </ul>
     </li>
     </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../stale/">Stałe</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../typy/">Typy</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../zmienne/">Zmienne</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../instrukcje/">Instrukcje</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../moduly/">Program, moduły, biblioteki</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedur, funkcje, modyfikatory</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../makra/">Makra</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Wstawki assemblera</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../zasoby/">Pliki zasobów</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../przerwania/">Obsługa przerwań</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../pliki/">Operacje na plikach</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatywa dla DOS-a</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../biblioteki-podstawowe/">Biblioteki podstawowe</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../porady/">Porady</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../przyklady/">Przykłady</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../projekty/">Projekty</a>
-                    </li>
-                </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stale/">Stałe</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../typy/">Typy</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../zmienne/">Zmienne</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../instrukcje/">Instrukcje</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../moduly/">Program, moduły, biblioteki</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedur, funkcje, modyfikatory</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../makra/">Makra</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../asm/">Wstawki assemblera</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../zasoby/">Pliki zasobów</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../przerwania/">Obsługa przerwań</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pliki/">Operacje na plikach</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatywa dla DOS-a</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../biblioteki-podstawowe/">Biblioteki podstawowe</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../porady/">Porady</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../przyklady/">Przykłady</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../projekty/">Projekty</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Mad-Pascal</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mad-Pascal</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>Składnia</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Składnia</li>
     <li class="wy-breadcrumbs-aside">
-      
     </li>
   </ul>
-  
   <hr/>
 </div>
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <h1 id="_1"></h1>
-<h2 id="zarezerwowane-sowa">Zarezerwowane słowa</h2>
+<h2 id="komentarze"><a href="http://www.freepascal.org/docs-html/ref/refse2.html">Komentarze</a></h2>
+<p>W <strong>Mad-Pascal</strong> do oznaczenia komentarza jednoliniowego służą znaki <code>//</code>, dla wieloliniowego klamry <code>{ }</code>, lub <code>(* *)</code>.</p>
+<pre><code class="language-delphi">// to jest komentarz
+inc(a); // to jest komentarz
+
+(* komentarz *)
+
+(*
+  komentarz
+*)
+
+{ to
+  jest
+  komentarz
+}
+</code></pre>
+<h2 id="sowa-zastrzezone">Słowa zastrzeżone</h2>
 <h3 id="rozkazy">rozkazy</h3>
 <pre><code class="language-delphi">absolute           and                 array              asm               assembler
 begin              case                const              constructor       div
@@ -325,48 +322,42 @@ nan
 infinity
 neginfinity
 </code></pre>
-<h2 id="komentarze"><a href="http://www.freepascal.org/docs-html/ref/refse2.html">Komentarze</a></h2>
-<p>W <strong>Mad-Pascal</strong> do oznaczenia komentarza jednoliniowego służą znaki <code>//</code>, dla wieloliniowego klamry <code>{ }</code>, lub <code>(* *)</code>.</p>
-<pre><code class="language-delphi">// to jest komentarz
-inc(a); // to jest komentarz
+<h2 id="identyfikatory"><a href="https://www.freepascal.org/docs-html/ref/refse4.html#x15-140001.4">Identyfikatory</a></h2>
+<p>Identyfikatory oznaczają nazwy zdefiniowane przez programistę dla określonych stałych, typów, zmiennych, procedur i funkcji,
+modułów oraz programów. Wszystkie nazwy zdefiniowane przez programistę w kodzie źródłowym – z wyjątkiem słów zastrzeżonych – są
+oznaczane jako identyfikatory.</p>
+<pre><code class="language-Delphi"> myprocedure;
 
-(* komentarz *)
+ program test;
 
-(*
-  komentarz
-*)
-
-{ to
-  jest
-  komentarz
-}
+ var
+   myname: byte;
 </code></pre>
-<h2 id="wyrazenia">Wyrażenia</h2>
-<h3 id="liczby"><a href="http://www.freepascal.org/docs-html/ref/refse6.html">Liczby</a></h3>
-<h4 id="zapis-decymalny">zapis decymalny</h4>
+<h2 id="liczby"><a href="http://www.freepascal.org/docs-html/ref/refse6.html">Liczby</a></h2>
+<h3 id="zapis-decymalny">zapis decymalny</h3>
 <pre><code class="language-delphi">-100
 -2437325
 1743
 </code></pre>
-<h4 id="zapis-hexadecymalny">zapis hexadecymalny</h4>
+<h3 id="zapis-hexadecymalny">zapis hexadecymalny</h3>
 <pre><code class="language-delphi">$100
 $e430
 $000001
 </code></pre>
-<h4 id="zapis-binarny">zapis binarny</h4>
+<h3 id="zapis-binarny">zapis binarny</h3>
 <pre><code class="language-delphi">%0001001010
 %000000001
 %001000
 </code></pre>
-<h4 id="zapis-kodami-atascii">zapis kodami ATASCII</h4>
+<h3 id="zapis-kodami-atascii">zapis kodami ATASCII</h3>
 <pre><code class="language-delphi">'a'
 'fds'
 'W'
 #65#32#65
 #$9b
 </code></pre>
-<h3 id="operatory">Operatory</h3>
-<h4 id="arytmetyczne">arytmetyczne</h4>
+<h2 id="operatory">Operatory</h2>
+<h3 id="arytmetyczne">arytmetyczne</h3>
 <pre><code class="language-delphi">+   Addition
 -   Subtraction
 *   Multiplication
@@ -374,7 +365,7 @@ $000001
 DIV Integer division
 MOD Remainder
 </code></pre>
-<h4 id="bitowe">bitowe</h4>
+<h3 id="bitowe">bitowe</h3>
 <pre><code class="language-delphi">NOT Bitwise negation (unary)
 AND Bitwise and
 OR  Bitwise or
@@ -382,13 +373,13 @@ XOR Bitwise xor
 SHL Bitwise shift to the left
 SHR Bitwise shift to the right
 </code></pre>
-<h4 id="logiczne">logiczne</h4>
+<h3 id="logiczne">logiczne</h3>
 <pre><code class="language-delphi">NOT logical negation (unary)
 AND logical and
 OR  logical or
 XOR logical xor
 </code></pre>
-<h4 id="relacji">relacji</h4>
+<h3 id="relacji">relacji</h3>
 <pre><code class="language-delphi">=   Equal
 &lt;&gt;  Not equal
 &lt;   Less than
@@ -672,29 +663,21 @@ bmp   XBMP     'pic.bmp' 80
 <p>Wygenerowanie komunikatu z ostrzeżeniem <code>WARNING</code>.</p>
               
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../sposob-uzycia/" class="btn btn-neutral float-left" title="Sposób użycia"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../stale/" class="btn btn-neutral float-right" title="Stałe">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../sposob-uzycia/" class="btn btn-neutral" title="Sposób użycia"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -702,26 +685,30 @@ bmp   XBMP     'pic.bmp' 80
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/tebe6502/mad-pascal-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../sposob-uzycia/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../stale/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/tebe6502/mad-pascal-mkdocs/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../sposob-uzycia/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../stale/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

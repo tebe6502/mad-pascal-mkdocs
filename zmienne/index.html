@@ -1,181 +1,166 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta name="author" content="TeBe">
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Zmienne - Mad-Pascal</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Zmienne";
-    var mkdocs_page_input_path = "zmienne.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="TeBe" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Zmienne - Mad-Pascal</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Zmienne";
+        var mkdocs_page_input_path = "zmienne.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/delphi.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Mad-Pascal</a>
-        <div role="search">
+          <a href=".." class="icon icon-home"> Mad-Pascal
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../wprowadzenie/">Wprowadzenie</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../mapa/">Mapa pamięci</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../sposob-uzycia/">Sposób użycia</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../skladnia/">Składnia</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../stale/">Stałe</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../typy/">Typy</a>
-                    </li>
-                </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Zmienne</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../wprowadzenie/">Wprowadzenie</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mapa/">Mapa pamięci</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sposob-uzycia/">Sposób użycia</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../skladnia/">Składnia</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stale/">Stałe</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../typy/">Typy</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Zmienne</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#var">VAR</a>
+    <li class="toctree-l2"><a class="reference internal" href="#deklaracja">Deklaracja</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modyfikatory">Modyfikatory</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#volatile">VOLATILE</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#striped">STRIPED</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#absolute">ABSOLUTE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#register">REGISTER</a>
+    </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#absolute">ABSOLUTE</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#register">REGISTER</a>
-    </li>
     </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../instrukcje/">Instrukcje</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../moduly/">Program, moduły, biblioteki</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedur, funkcje, modyfikatory</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../makra/">Makra</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Wstawki assemblera</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../zasoby/">Pliki zasobów</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../przerwania/">Obsługa przerwań</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../pliki/">Operacje na plikach</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatywa dla DOS-a</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../biblioteki-podstawowe/">Biblioteki podstawowe</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../porady/">Porady</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../przyklady/">Przykłady</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../projekty/">Projekty</a>
-                    </li>
-                </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../instrukcje/">Instrukcje</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../moduly/">Program, moduły, biblioteki</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../procedury-funkcje/">Procedur, funkcje, modyfikatory</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../makra/">Makra</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../asm/">Wstawki assemblera</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../zasoby/">Pliki zasobów</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../przerwania/">Obsługa przerwań</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pliki/">Operacje na plikach</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatywa dla DOS-a</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../biblioteki-podstawowe/">Biblioteki podstawowe</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../porady/">Porady</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../przyklady/">Przykłady</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../projekty/">Projekty</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Mad-Pascal</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mad-Pascal</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>Zmienne</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Zmienne</li>
     <li class="wy-breadcrumbs-aside">
-      
     </li>
   </ul>
-  
   <hr/>
 </div>
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <h1 id="_1"></h1>
-<h2 id="var"><a href="https://www.freepascal.org/docs-html/ref/refse22.html#x53-730004.2">VAR</a></h2>
+<h2 id="deklaracja"><a href="https://www.freepascal.org/docs-html/ref/refse22.html#x53-730004.2">Deklaracja</a></h2>
 <p>Słowo <code>VAR</code> rozpoczyna sekcję deklaracji zmiennych.</p>
 <pre><code class="language-delphi">var
     label: type;
@@ -190,6 +175,7 @@
 
     tb: array [0..3] of byte = (0,1,2,3);
 </code></pre>
+<h2 id="modyfikatory"><a href="">Modyfikatory</a></h2>
 <h3 id="volatile"><a href="https://pl.wikipedia.org/wiki/Zmienna_ulotna">VOLATILE</a></h3>
 <p>Modyfikator <code>VOLATILE</code> oznacza zmienną jako tzw. ulotną. Oznaczenie jako <code>VOLATILE</code> powoduje wyłączenie optymalizacji kodu wynikowego dla tej zmiennej,
 jest to przydatne w przypadku rejestrów sprzętowych których wartości mogą ulegać zmianie przy każdym kolejnym odczycie.</p>
@@ -215,7 +201,7 @@ end.
   adr.tab+$200
   adr.tab+$300
 </code></pre>
-<h2 id="absolute"><a href="">ABSOLUTE</a></h2>
+<h3 id="absolute"><a href="https://wiki.freepascal.org/Absolute">ABSOLUTE</a></h3>
 <p>Modyfikator <code>ABSOLUTE</code> pozwala ustalić adres w pamięci dla zmiennych <code>VAR</code>.</p>
 <pre><code class="language-delphi">var
    a: byte absolute $0600;
@@ -229,13 +215,13 @@ end.
 </code></pre>
 <blockquote>
 <p><strong>UWAGA:</strong>
-Użycie modyfikatora <code>ABSOLUTE</code> nie jest możliwe dla tablic z typem `STRING'.</p>
+Użycie modyfikatora <code>ABSOLUTE</code> nie jest możliwe dla tablic z typem <code>STRING</code>.</p>
 </blockquote>
 <pre><code class="language-delphi">var
    tab: array [0..11] of string absolute $a000;
 </code></pre>
 <p>Dla w/w przykładu zostanie wygenerowany komunikat błędu <em>Error: ABSOLUTE modifier is not available for this type of array</em>.</p>
-<h2 id="register"><a href="">REGISTER</a></h2>
+<h3 id="register"><a href="">REGISTER</a></h3>
 <p>Modyfikator <code>REGISTER</code> ustala adres pamięci dla zmiennych <code>VAR</code> na stronie zerowej (maksymalnie można przydzielić 16 bajtów).</p>
 <pre><code class="language-delphi">var
    a: byte register;
@@ -280,29 +266,21 @@ end.
 </code></pre>
               
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../typy/" class="btn btn-neutral float-left" title="Typy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../instrukcje/" class="btn btn-neutral float-right" title="Instrukcje">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../typy/" class="btn btn-neutral" title="Typy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -310,26 +288,30 @@ end.
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/tebe6502/mad-pascal-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../typy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../instrukcje/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/tebe6502/mad-pascal-mkdocs/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../typy/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../instrukcje/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
