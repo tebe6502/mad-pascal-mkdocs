@@ -136,7 +136,8 @@ Funkcje, procedury i inne identyfikatory są eksportowane z dokładnymi nazwami 
 Aby móc korzystać z bibliotek w modułach `UNIT` lub programie `PROGRAM`, należy je najpierw skompilować i zasemblować, przełącznik **Mad Assembler-a** `-hm` musi być aktywny.
 
 ```DELPHI
-mads.exe library.pas -hm -xi:<Mad_Pascal_path>\base
+mp.exe library.pas -ipath:<Mad_Pascal_path>\lib 
+mads.exe library.a65 -hm -xi:<Mad_Pascal_path>\base
 ```
 
 Plików `.pas` z kodem źródłowym bibliotek nie możemy umieszczać w klauzuli `uses`.
