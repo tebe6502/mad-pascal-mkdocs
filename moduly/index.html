@@ -180,6 +180,10 @@ uses // List of unit dependencies goes here...
 end.
 </code></pre>
 <h2 id="unit"><a href="https://www.freepascal.org/docs-html/ref/refse111.html#x224-24600016.2">UNIT</a></h2>
+<blockquote>
+<p><strong>UWAGA:</strong><br />
+<em>Nazwa pliku z modułem musi być zgodna co do wielkości liter z nazwą jaką wpisujemy po słowie UNIT.</em></p>
+</blockquote>
 <p>Moduły <code>UNIT</code> występują tylko w postaci źródłowych plików <code>.pas</code>, nie można ich skompilować oddzielnie.</p>
 <p>Moduły <code>UNIT</code> składają się z sekcji:</p>
 <ul>
@@ -190,7 +194,7 @@ end.
 <pre><code class="language-delphi">{
   Example UNIT
 }
-unit Unit1;
+unit Unit1;       // -&gt; filename 'Unit1.pas'   !!! keep the same case !!!
 
 interface
 
@@ -211,7 +215,7 @@ initialization
 end.
 </code></pre>
 <p>Przykład:</p>
-<pre><code class="language-delphi">unit test;
+<pre><code class="language-delphi">unit test;        // -&gt; nazwa pliku 'test.pas'
 
 interface
 
