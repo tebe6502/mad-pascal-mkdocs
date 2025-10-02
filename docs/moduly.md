@@ -22,6 +22,9 @@ end.
 
 ## [UNIT](https://www.freepascal.org/docs-html/ref/refse111.html#x224-24600016.2)
 
+> **UWAGA:**  
+> _Nazwa pliku z modułem musi być zgodna co do wielkości liter z nazwą jaką wpisujemy po słowie UNIT._
+
 Moduły `UNIT` występują tylko w postaci źródłowych plików `.pas`, nie można ich skompilować oddzielnie.
 
 Moduły `UNIT` składają się z sekcji:
@@ -34,7 +37,7 @@ Moduły `UNIT` składają się z sekcji:
 {
   Example UNIT
 }
-unit Unit1;
+unit Unit1;       // -> filename 'Unit1.pas'   !!! keep the same case !!!
 
 interface
 
@@ -57,7 +60,7 @@ end.
 
 Przykład:
 ```delphi
-unit test;
+unit test;        // -> nazwa pliku 'test.pas'
 
 interface
 
